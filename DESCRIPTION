@@ -1,0 +1,10 @@
+Package: repeated
+Version: 1.0
+Title: Non-normal Repeated Measurements Models
+Author: Jim Lindsey <jlindsey@gen.unimaas.nl>
+Maintainer:  Jim Lindsey <jlindsey@gen.unimaas.nl>
+Depends:  R (>= 1.4), rmutil
+Description: Various functions to fit models for non-normal repeated
+	measurements.
+License: GPL version 2 or later
+URL: popgen.unimaas.nl/~jlindsey/rcode.html
