@@ -28,6 +28,97 @@
 #    A function to fit binary random effects models with two levels
 #  of nesting.
 #
+
+
+##' Binary Random Effects Models with Two Levels of Nesting
+##' 
+##' \code{binnest} is designed to handle binary and binomial data with two
+##' levels of nesting. The first level is the individual and the second will
+##' consist of clusters within individuals.
+##' 
+##' The variance components at the two levels can only depend on the covariates
+##' if \code{response} has class, \code{repeated}.
+##' 
+##' 
+##' @param response A list of three column matrices with counts, corresponding
+##' totals (not necessary if the response is binary), and (second-level)
+##' nesting indicator for each individual, one matrix or dataframe of such
+##' counts, or an object of class, response (created by
+##' \code{\link[rmutil]{restovec}}) or repeated (created by
+##' \code{\link[rmutil]{rmna}}).
+##' @param totals If \code{response} is a matrix or dataframe, a corresponding
+##' matrix or dataframe of totals (not necessary if the response is binary).
+##' Ignored otherwise.
+##' @param nest If \code{response} is a matrix or dataframe, a corresponding
+##' matrix or dataframe of nesting indicators. Ignored otherwise.
+##' @param ccov If \code{response} is a matrix, dataframe, list, or object of
+##' class, \code{response}, a matrix of time-constant covariates or an object
+##' of class, \code{tccov} (created by \code{\link[rmutil]{tcctomat}}). All of
+##' these covariates are used in the fixed effects part of the model. Ignored
+##' if response has class, \code{repeated}.
+##' @param tvcov If \code{response} is a matrix, dataframe, list, or object of
+##' class, \code{response}, an object of class, \code{tvcov} (created by
+##' \code{\link[rmutil]{tvctomat}}). All of these covariates are used in the
+##' fixed effects part of the model. Ignored if response has class,
+##' \code{repeated}.
+##' @param mu If \code{response} has class, \code{repeated}, a formula
+##' beginning with ~, specifying a linear regression function for the fixed
+##' effects, in the Wilkinson and Rogers notation, containing selected
+##' covariates in the response object. (A logit link is assumed.)
+##' @param re1 If \code{response} has class, \code{repeated}, a formula
+##' beginning with ~, specifying a linear regression function for the variance
+##' of the first level of nesting, in the Wilkinson and Rogers notation,
+##' containing selected covariates in the response object. If NULL, a random
+##' effect is not fitted at this level. (A log link is assumed.)
+##' @param re2 If \code{response} has class, \code{repeated}, a formula
+##' beginning with ~, specifying a linear regression function for the variance
+##' of the second level of nesting, in the Wilkinson and Rogers notation,
+##' containing selected covariates in the response object. If NULL, a random
+##' effect is not fitted at this level. (A log link is assumed.)
+##' @param preg Initial parameter estimates for the fixed effect regression
+##' model: either the model specified by \code{mu} or else the intercept plus
+##' one for each covariate in \code{ccov} and \code{tvcov}.
+##' @param pre1 Initial parameter estimates for the first level of nesting
+##' variance model: either the model specified by \code{re1} or just the
+##' intercept. If NULL, a random effect is not fitted at this level.
+##' @param pre2 Initial parameter estimates for the second level of nesting
+##' variance model: either the model specified by \code{re1} or just the
+##' intercept. If NULL, a random effect is not fitted at this level.
+##' @param binom.mix A vector of two values giving the totals for the binomial
+##' distributions used as the mixing distributions at the two levels of
+##' nesting.
+##' @param binom.prob A vector of two values giving the probabilities in the
+##' binomial distributions used as the mixing distributions at the two levels
+##' of nesting. If they are 0.5, the mixing distributions approximate normal
+##' mixing distributions; otherwise, they are skewed.
+##' @param fcalls Number of function calls allowed.
+##' @param eps Convergence criterion.
+##' @param print.level If 1, the iterations are printed out.
+##' @return A list of classes \code{binnest} is returned.
+##' @author T.R. Ten Have and J.K. Lindsey
+##' @seealso \code{\link[repeated]{gar}}, \code{\link[rmutil]{read.list}},
+##' \code{\link[rmutil]{restovec}}, \code{\link[rmutil]{rmna}},
+##' \code{\link[rmutil]{tcctomat}}, \code{\link[rmutil]{tvctomat}}.
+##' @references Ten Have, T.R., Kunselman, A.R., and Tran, L. (1999) Statistics
+##' in Medicine 18, 947-960.
+##' @keywords models
+##' @examples
+##' 
+##' #y <- rbind(matrix(rbinom(20,1,0.6), ncol=4),
+##' #	matrix(rbinom(20,1,0.4), ncol=4))
+##' y <- matrix(c(1,1,0,1,1,1,1,0,1,1,1,1,1,1,1,1,0,1,1,0,0,1,0,1,1,0,1,0,
+##' 	1,1,1,1,1,1,1,1,0,1,1,0),nrow=10,ncol=4,byrow=TRUE)
+##' resp <- restovec(y, nest=1:4, times=FALSE)
+##' ccov <- tcctomat(c(rep(0,5),rep(1,5)), name="treatment")
+##' reps <- rmna(resp, ccov=ccov)
+##' # two random effects
+##' binnest(reps, mu=~treatment, preg=c(1,0), pre1=1, pre2=1)
+##' # first level random effect only
+##' binnest(reps, mu=~treatment, preg=c(1,-1), pre1=1)
+##' # second level random effect only
+##' binnest(reps, mu=~treatment, preg=c(1,-1), pre2=1)
+##' 
+##' @export binnest
 binnest <- function(response, totals=NULL, nest=NULL, ccov=NULL, tvcov=NULL,
 	mu=~1, re1=~1, re2=~1, preg=NULL, pre1=NULL, pre2=NULL,
 	binom.mix=c(10,10), binom.prob=c(0.5,0.5), fcalls=900,

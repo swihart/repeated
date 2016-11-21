@@ -25,6 +25,30 @@
 #    A function to fit the marginal homogeneity model to a square
 #  contingency table
 
+
+
+##' Marginal Homogeneity Models
+##' 
+##' \code{marg.hom} fits a marginal homogeneity model to a contingency table
+##' that has two margins of equal size.
+##' 
+##' 
+##' @param freq Vector of frequencies
+##' @param marg1 Factor variable for the first margin
+##' @param marg2 Factor variable for the second margin
+##' @return A list containing the call, the model, the deviance, the degrees of
+##' freedom, the aic, the fitted values, and the residuals is returned.
+##' @author J.K. Lindsey
+##' @keywords models
+##' @examples
+##' 
+##' # 4x4x2 table in Freq, with margins indexed by Left and Right
+##' Freq <- rpois(32,10)
+##' Left <- gl(4,1,32)
+##' Right <- gl(4,4,32)
+##' marg.hom(Freq, Left, Right)
+##' 
+##' @export marg.hom
 marg.hom <- function(freq,marg1,marg2){
 call <- sys.call()
 #

@@ -30,6 +30,197 @@
 #    A function to fit generalized nonlinear mixed models with normal
 #  random effect
 
+
+
+##' Generalized Nonlinear Mixed Models
+##' 
+##' \code{gnlmm} fits user-specified nonlinear regression equations to one or
+##' both parameters of the common one and two parameter distributions. The
+##' intercept of the location regression has a normally-distributed random
+##' effect. This normal mixing distribution is computed by Gauss-Hermite
+##' integration.
+##' 
+##' The \code{scale} of the random effect is the link function to be applied.
+##' For example, if it is \code{log}, the supplied mean function, \code{mu}, is
+##' transformed as exp(log(mu)+sd), where sd is the random effect parameter.
+##' 
+##' It is recommended that initial estimates for \code{pmu} and \code{pshape}
+##' be obtained from \code{gnlr}.
+##' 
+##' Nonlinear regression models can be supplied as formulae where parameters
+##' are unknowns in which case factor variables cannot be used and parameters
+##' must be scalars. (See \code{\link[rmutil]{finterp}}.)
+##' 
+##' The printed output includes the -log likelihood (not the deviance), the
+##' corresponding AIC, the maximum likelihood estimates, standard errors, and
+##' correlations.
+##' 
+##' 
+##' @param y A response vector for uncensored data, a two column matrix for
+##' binomial data or censored data, with the second column being the censoring
+##' indicator (1: uncensored, 0: right censored, -1: left censored), or an
+##' object of class, \code{response} (created by
+##' \code{\link[rmutil]{restovec}}) or \code{repeated} (created by
+##' \code{\link[rmutil]{rmna}}) or \code{\link[rmutil]{lvna}}). If the
+##' \code{repeated} data object contains more than one response variable, give
+##' that object in \code{envir} and give the name of the response variable to
+##' be used here. The beta, simplex, and two-sided power distributions for
+##' proportions do not allow censoring.
+##' @param distribution Either a character string containing the name of the
+##' distribution or a function giving the -log likelihood and calling the
+##' location and shape functions. Distributions are binomial, beta binomial,
+##' double binomial, mult(iplicative) binomial, Poisson, negative binomial,
+##' double Poisson, mult(iplicative) Poisson, gamma count, Consul generalized
+##' Poisson, logarithmic series, geometric, normal, inverse Gauss, logistic,
+##' exponential, gamma, Weibull, extreme value, Cauchy, Pareto, Laplace, and
+##' Levy, beta, simplex, and two-sided power. All but the binomial-based
+##' distributions and the beta, simplex, and two-sided power may be right
+##' and/or left censored. (For definitions of distributions, see the
+##' corresponding [dpqr]distribution help.)
+##' @param mu A user-specified function of \code{pmu}, and possibly
+##' \code{linear}, giving the regression equation for the location. This may
+##' contain a linear part as the second argument to the function. It may also
+##' be a formula beginning with ~, specifying a either linear regression
+##' function for the location parameter in the Wilkinson and Rogers notation or
+##' a general function with named unknown parameters. If it contains unknown
+##' parameters, the keyword \code{linear} may be used to specify a linear part.
+##' If nothing is supplied, the location is taken to be constant unless the
+##' linear argument is given.
+##' @param shape A user-specified function of \code{pshape}, and possibly
+##' \code{linear} and/or \code{mu}, giving the regression equation for the
+##' dispersion or shape parameter. This may contain a linear part as the second
+##' argument to the function and the location function as last argument (in
+##' which case \code{shfn} must be set to TRUE). It may also be a formula
+##' beginning with ~, specifying either a linear regression function for the
+##' shape parameter in the Wilkinson and Rogers notation or a general function
+##' with named unknown parameters. If it contains unknown parameters, the
+##' keyword \code{linear} may be used to specify a linear part and the keyword
+##' \code{mu} to specify a function of the location parameter. If nothing is
+##' supplied, this parameter is taken to be constant unless the linear argument
+##' is given. This parameter is the logarithm of the usual one.
+##' @param linear A formula beginning with ~ in W&R notation, specifying the
+##' linear part of the regression function for the location parameter or list
+##' of two such expressions for the location and/or shape parameters.
+##' @param nest The variable classifying observations by the unit upon which
+##' they were observed. Ignored if \code{y} or \code{envir} has class,
+##' response.
+##' @param pmu Vector of initial estimates for the location parameters. If
+##' \code{mu} is a formula with unknown parameters, their estimates must be
+##' supplied either in their order of appearance in the expression or in a
+##' named list.
+##' @param pshape Vector of initial estimates for the shape parameters. If
+##' \code{shape} is a formula with unknown parameters, their estimates must be
+##' supplied either in their order of appearance in the expression or in a
+##' named list.
+##' @param psd Initial estimate of the standard deviation of the normal mixing
+##' distribution.
+##' @param exact If TRUE, fits the exact likelihood function for continuous
+##' data by integration over intervals of observation, i.e. interval censoring.
+##' @param wt Weight vector.
+##' @param delta Scalar or vector giving the unit of measurement (always one
+##' for discrete data) for each response value, set to unity by default.
+##' Ignored if y has class, response. For example, if a response is measured to
+##' two decimals, \code{delta=0.01}. If the response is transformed, this must
+##' be multiplied by the Jacobian. The transformation cannot contain unknown
+##' parameters. For example, with a log transformation, \code{delta=1/y}. (The
+##' delta values for the censored response are ignored.)
+##' @param shfn If true, the supplied shape function depends on the location
+##' (function). The name of this location function must be the last argument of
+##' the shape function.
+##' @param scale The scale on which the random effect is applied:
+##' \code{identity}, \code{log}, \code{logit}, \code{reciprocal}, or
+##' \code{exp}.
+##' @param points The number of points for Gauss-Hermite integration of the
+##' random effect.
+##' @param common If TRUE, \code{mu} and \code{shape} must both be either
+##' functions with, as argument, a vector of parameters having some or all
+##' elements in common between them so that indexing is in common between them
+##' or formulae with unknowns. All parameter estimates must be supplied in
+##' \code{pmu}. If FALSE, parameters are distinct between the two functions and
+##' indexing starts at one in each function.
+##' @param envir Environment in which model formulae are to be interpreted or a
+##' data object of class, \code{repeated}, \code{tccov}, or \code{tvcov}; the
+##' name of the response variable should be given in \code{y}. If \code{y} has
+##' class \code{repeated}, it is used as the environment.
+##' @param others Arguments controlling \code{\link{nlm}}.
+##' @return A list of class \code{gnlm} is returned that contains all of the
+##' relevant information calculated, including error codes.
+##' @author J.K. Lindsey
+##' @seealso \code{\link[rmutil]{finterp}}, \code{\link[gnlm]{fmr}},
+##' \code{\link{glm}}, \code{\link[repeated]{gnlmix}},
+##' \code{\link[repeated]{glmm}}, \code{\link[gnlm]{gnlr}},
+##' \code{\link[gnlm]{gnlr3}}, \code{\link[repeated]{hnlmix}},
+##' \code{\link{lm}}, \code{\link[gnlm]{nlr}}, \code{\link[nls]{nls}}.
+##' @keywords models
+##' @examples
+##' 
+##' library(gnlm)
+##' # data objects
+##' sex <- c(0,1,1)
+##' sx <- tcctomat(sex)
+##' dose <- matrix(rpois(30,10),nrow=3)
+##' dd <- tvctomat(dose)
+##' # vectors for functions
+##' dose <- as.vector(t(dose))
+##' sex <- c(rep(0,10),rep(1,20))
+##' nest <- rbind(rep(1,10),rep(2,10),rep(3,10))
+##' #y <- rgamma(30,2,scale=exp(0.2+0.1*dose+0.1*sex+rep(rnorm(3),rep(10,3)))/2)
+##' y <- c(0.6490851,0.9313931,0.4765569,0.4188045,2.8339637,2.8158090,
+##' 	2.6059975,2.9958184,2.7351583,3.2884980,1.1180961,0.9443986,1.7915571,
+##' 	9.0013379,2.3969570,3.4227356,0.5045518,0.7452521,1.8712467,3.6814198,
+##' 	0.1489849,1.0327552,0.6102406,1.1536620,2.9145237,9.2847798,5.6454605,
+##' 	1.9759672,1.5798008,5.1024496)
+##' y <- restovec(matrix(y, nrow=3), nest=nest, name="y")
+##' reps <- rmna(y, ccov=sx, tvcov=dd)
+##' #
+##' # log linear regression with gamma distribution
+##' mu <- function(p) exp(p[1]+p[2]*sex+p[3]*dose)
+##' print(z <- gnlr(y, dist="gamma", mu=mu, pmu=c(1,0,0), pshape=1))
+##' gnlmm(y, dist="gamma", mu=mu, nest=nest, pmu=z$coef[1:3],
+##' 	pshape=z$coef[4], psd=0.1, points=3)
+##' # or equivalently
+##' gnlmm(y, dist="gamma", mu=~exp(b0+b1*sex+b2*dose), nest=nest,
+##' 	pmu=z$coef[1:3], pshape=z$coef[4], psd=0.1, points=3, envir=reps)
+##' # or with identity link
+##' print(z <- gnlr(y, dist="gamma", mu=~sex+dose, pmu=c(0.1,0,0), pshape=1))
+##' gnlmm(y, dist="gamma", mu=~sex+dose, nest=nest, pmu=z$coef[1:3],
+##' 	pshape=z$coef[4], psd=0.1, points=3)
+##' # or
+##' gnlmm(y, dist="gamma", mu=~b0+b1*sex+b2*dose, nest=nest, pmu=z$coef[1:3],
+##' 	pshape=z$coef[4], psd=0.1, points=3, envir=reps)
+##' #
+##' # nonlinear regression with gamma distribution
+##' mu <- function(p) p[1]+exp(p[2]+p[3]*sex+p[4]*dose)
+##' print(z <- gnlr(y, dist="gamma", mu=mu, pmu=c(1,1,0,0), pshape=1))
+##' gnlmm(y, dist="gamma", mu=mu, nest=nest, pmu=z$coef[1:4],
+##' 	pshape=z$coef[5], psd=0.1, points=3)
+##' # or
+##' mu2 <- function(p, linear) p[1]+exp(linear)
+##' gnlmm(y, dist="gamma", mu=mu2, linear=~sex+dose, nest=nest,
+##' 	pmu=z$coef[1:4], pshape=1, psd=0.1, points=3)
+##' # or
+##' gnlmm(y, dist="gamma", mu=~a+exp(linear), linear=~sex+dose, nest=nest,
+##' 	pmu=z$coef[1:4], pshape=1, psd=0.1, points=3)
+##' # or
+##' gnlmm(y, dist="gamma", mu=~b4+exp(b0+b1*sex+b2*dose), nest=nest,
+##' 	pmu=z$coef[1:4], pshape=z$coef[5], psd=0.1,
+##' 	points=3, envir=reps)
+##' #
+##' # include regression for the shape parameter with same mu function
+##' shape <- function(p) p[1]+p[2]*sex
+##' print(z <- gnlr(y, dist="gamma", mu=mu, shape=shape, pmu=z$coef[1:4],
+##' 	pshape=rep(1,2)))
+##' gnlmm(y, dist="gamma", mu=mu, shape=shape, nest=nest,
+##' 	pmu=z$coef[1:4], pshape=z$coef[5:6], psd=0.1, points=3)
+##' # or
+##' gnlmm(y, dist="gamma", mu=mu, shape=shape, nest=nest, pmu=z$coef[1:4],
+##' 	pshape=z$coef[5:6], psd=0.1, points=3, envir=reps)
+##' # or
+##' gnlmm(y, dist="gamma", mu=~b4+exp(b0+b1*sex+b2*dose), shape=~a1+a2*sex,
+##' 	nest=nest, pmu=z$coef[1:4], pshape=z$coef[5:6], psd=0.1,
+##' 	points=3, envir=reps)
+##' 
+##' @export gnlmm
 gnlmm <- function(y=NULL, distribution="normal", mu=NULL, shape=NULL,
 	linear=NULL, nest=NULL, pmu=NULL, pshape=NULL, psd=NULL, exact=FALSE,
 	wt=1, delta=1, shfn=FALSE, scale=NULL, points=10, common=FALSE,

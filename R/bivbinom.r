@@ -27,6 +27,36 @@
 #
 #    A function to fit a marginal bivariate binomial regression
 
+
+
+##' Marginal Bivariate Binomial Regression Models
+##' 
+##' \code{biv.binom} fits (logit) linear regression models to a marginal
+##' bivariate binomial distribution. The covariates must be of length K, that
+##' is the number of 2x2 tables.
+##' 
+##' 
+##' @param freq A four-column matrix containing K 2x2 frequency tables.
+##' @param marg1 The model formula for the first margin.
+##' @param marg2 The model formula for the second margin.
+##' @param interaction The model formula for the interaction.
+##' @param pmarg1 Initial parameter estimates for the first margin regression.
+##' @param pmarg2 Initial parameter estimates for the second margin regression.
+##' @param pinteraction Initial parameter estimates for the interaction
+##' regression.
+##' @param other Arguments for nlm.
+##' @return A list of class \code{bivbinom} is returned.
+##' @author J.K. Lindsey
+##' @keywords models
+##' @examples
+##' 
+##' # 5 2x2 tables
+##' Freq <- matrix(rpois(20,10),ncol=4)
+##' x <- c(6,8,10,12,14)
+##' print(z <- biv.binom(Freq,marg1=~x,marg2=~x,inter=~x,pmarg1=c(-2,0.08),
+##' 	pmarg2=c(-2,0.1),pinter=c(3,0)))
+##' 
+##' @export biv.binom
 biv.binom <- function(freq, marg1=~1, marg2=~1, interaction=~1, pmarg1=1,
 	pmarg2=1,pinteraction=1, print.level=0, typsize=abs(p),
 	ndigit=10, gradtol=0.00001, stepmax=10*sqrt(p%*%p),

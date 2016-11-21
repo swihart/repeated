@@ -29,6 +29,68 @@
 #
 #    A function to fit binary or ordinal random effects models with dropouts.
 
+
+
+##' Ordinal Random Effects Models with Dropouts
+##' 
+##' \code{logitord} fits an longitudinal proportional odds model in discrete
+##' time to the ordinal outcomes and a logistic model to the probability of
+##' dropping out using a common random effect for the two.
+##' 
+##' 
+##' @param y A vector of binary or ordinal responses with levels 1 to k and 0
+##' indicating drop-out.
+##' @param id Identification number for each individual.
+##' @param out.ccov A vector, matrix, or model formula of time-constant
+##' covariates for the outcome regression, with variables having the same
+##' length as \code{y}.
+##' @param drop.ccov A vector, matrix, or model formula of time-constant
+##' covariates for the drop-out regression, with variables having the same
+##' length as \code{y}.
+##' @param tvcov One time-varying covariate vector.
+##' @param out.tvcov Include the time-varying covariate in the outcome
+##' regression.
+##' @param drop.tvcov Include the time-varying covariate in the drop-out
+##' regression.
+##' @param pout Initial estimates of the outcome regression coefficients, with
+##' length equal to the number of levels of the response plus the number of
+##' covariates minus one.
+##' @param pdrop Initial estimates of the drop-out regression coefficients,
+##' with length equal to one plus the number of covariates.
+##' @param prand.out Optional initial estimates of the outcome random
+##' parameters.
+##' @param prand.drop Optional initial estimates of the drop-out random
+##' parameters.
+##' @param random.out.int If TRUE, the outcome intercept is random.
+##' @param random.out.slope If TRUE, the slope of the time-varying covariate is
+##' random for the outcome regression (only possible if a time-varying
+##' covariate is supplied and if out.tvcov and random.out.int are TRUE).
+##' @param random.drop.int If TRUE, the drop-out intercept is random.
+##' @param random.drop.slope If TRUE, the slope of the time-varying covariate
+##' is random for the drop-out regression (only possible if a time-varying
+##' covariate is supplied and if drop.tvcov and random.drop.int are TRUE).
+##' @param binom.mix The total in the binomial distribution used to approximate
+##' the normal mixing distribution.
+##' @param fcalls Number of function calls allowed.
+##' @param eps Convergence criterion.
+##' @param print.level If 1, the iterations are printed out.
+##' @return A list of class \code{logitord} is returned.
+##' @author T.R. Ten Have and J.K. Lindsey
+##' @seealso \code{\link[gnlm]{nordr}}, \code{\link[gnlm]{ordglm}}.
+##' @references Ten Have, T.R., Kunselman, A.R., Pulkstenis, E.P. and Landis,
+##' J.R. (1998) Biometrics 54, 367-383, for the binary case.
+##' @keywords models
+##' @examples
+##' 
+##' y <- trunc(runif(20,max=4))
+##' id <- gl(4,5)
+##' age <- rpois(20,20)
+##' times <- rep(1:5,4)
+##' logitord(y, id=id, out.ccov=~age, drop.ccov=age, pout=c(1,0,0),
+##' 	pdrop=c(1,0))
+##' logitord(y, id, tvcov=times, pout=c(1,0,0), pdrop=c(1,0))
+##' 
+##' @export logitord
 logitord <- function(y, id, out.ccov=NULL, drop.ccov=NULL, tvcov=NULL,
 	out.tvcov=!is.null(tvcov), drop.tvcov=!is.null(tvcov),
 	pout, pdrop, prand.out, prand.drop,

@@ -28,6 +28,73 @@
 #  random effect
 
 # does not work: na.omit
+
+
+##' Generalized Linear Mixed Models
+##' 
+##' \code{glmm} fits a generalized linear mixed model with a random intercept
+##' using a normal mixing distribution computed by Gauss-Hermite integration.
+##' For the normal, gamma, and inverse Gaussian distributions, the deviances
+##' supplied are -2 log likelihood, not the usual \code{\link{glm}} deviance;
+##' the degrees of freedom take into account estimation of the dispersion
+##' parameter.
+##' 
+##' If weights and/or offset are to be used or the formula transforms some
+##' variables, all of the data must be supplied in a dataframe. Because the
+##' \code{\link{glm}} function is such a hack, if this is not done, weird error
+##' messages will result.
+##' 
+##' na.omit is not allowed.
+##' 
+##' 
+##' @param formula A symbolic description of the model to be fitted. If it
+##' contains transformations of the data, including cbind for binomial data, a
+##' dataframe must be supplied.
+##' @param family A description of the error distribution and link function to
+##' be used in the model; see \code{\link{family}} for details.
+##' @param data A dataframe containing the variables in the model, that is
+##' optional in simple cases, but required in certain situations as specified
+##' elsewhere in this help page.
+##' @param weights An optional weight vector. If this is used, data must be
+##' supplied in a data.frame.
+##' @param offset The known component in the linear predictor. If this is used,
+##' data must be supplied in a data.frame. An offset cannot be specified in the
+##' model formula.
+##' @param nest The variable classifying observations by the unit (cluster)
+##' upon which they were observed.
+##' @param delta If the response variable has been transformed, this is the
+##' Jacobian of that transformation, so that AICs are comparable.
+##' @param maxiter The maximum number of iterations of the outer loop for
+##' numerical integration.
+##' @param points The number of points for Gauss-Hermite integration of the
+##' random effect.
+##' @param print.level If set equal to 2, the log probabilities are printed out
+##' when the underflow error is given.
+##' @param control A list of parameters for controlling the fitting process.
+##' @return \code{glmm} returns a list of class \code{glmm}
+##' @author J.K. Lindsey
+##' @seealso \code{\link{family}}, \code{\link[gnlm]{fmr}}, \code{\link{glm}},
+##' \code{\link{glm.control}}, \code{\link[repeated]{gnlmix}},
+##' \code{\link[repeated]{gnlmm}}, \code{\link[gnlm]{gnlr}},
+##' \code{\link[gnlm]{gnlr3}}, \code{\link[repeated]{hnlmix}},
+##' \code{\link[nls]{nls}}.
+##' @keywords models
+##' @examples
+##' 
+##' # Poisson counts
+##' nest <- gl(5,4)
+##' y <- rpois(20,5+2*as.integer(nest))
+##' # overdispersion model
+##' glmm(y~1, family=poisson, nest=gl(20,1), points=3)
+##' # clustered model
+##' glmm(y~1, family=poisson, nest=nest, points=3)
+##' #
+##' # binomial data with model for overdispersion
+##' df <- data.frame(r=rbinom(10,10,0.5), n=rep(10,10), x=c(rep(0,5),
+##' 	rep(1,5)), nest=1:10)
+##' glmm(cbind(r,n-r)~x, family=binomial, nest=nest, data=df)
+##' 
+##' @export glmm
 glmm <- function(formula, family=gaussian, data=list(), weights=NULL,
 	offset=NULL, nest, delta=1, maxiter=20, points=10, print.level=0,
 	control=glm.control(epsilon=0.0001,maxit=10,trace=FALSE)){
