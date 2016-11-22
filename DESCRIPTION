@@ -7,6 +7,9 @@ Authors@R: c(
 Depends:
     R (>= 1.4),
     rmutil
+Imports:
+    stats,
+    graphics
 Description: Various functions to fit models for non-normal repeated
     measurements.
 License: GPL-2

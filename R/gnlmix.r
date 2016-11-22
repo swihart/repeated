@@ -153,6 +153,8 @@
 ##' 	pshape=1.24, pmix=2.5)
 ##' 
 ##' @export gnlmix
+##' @importFrom graphics par plot 
+##' @importFrom stats as.formula dbeta dbinom dcauchy dexp dgamma dlogis dnbinom dnorm dpois dt dweibull gaussian glm glm.control model.frame model.matrix na.fail nlm nobs pbeta pcauchy pexp pgamma pgeom plogis pnbinom pnorm ppois pt pweibull qnorm summary.glm terms uniroot update.formula
 gnlmix <- function(y=NULL, distribution="normal", mixture="normal",
 	random=NULL, nest=NULL, mu=NULL, shape=NULL, linear=NULL,
 	pmu=NULL, pshape=NULL, pmix=NULL, delta=1, common=FALSE,
