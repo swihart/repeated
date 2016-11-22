@@ -322,7 +322,7 @@ if(n==0)stop(paste(deparse(substitute(y)),"not found or of incorrect type"))
 #
 # check if a data object is being supplied
 #
-respenv <- exists(deparse(substitute(y)),env=parent.frame())&&
+respenv <- exists(deparse(substitute(y)),envir=parent.frame())&&
 	inherits(y,"repeated")&&!inherits(envir,"repeated")
 if(respenv){
 	if(dim(y$response$y)[2]>1)

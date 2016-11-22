@@ -580,7 +580,7 @@ if(!censor)fcn <- switch(distribution,
 	"gamma count"=function(m,p){
 		s <- exp(sh1(p))
 		u <- m*s
-		ifelse(y==0,pgamma(u,(y+1)*s,1,lower=FALSE,log=TRUE),
+		ifelse(y==0,pgamma(u,(y+1)*s,1,lower.tail=FALSE,log.p=TRUE),
 			log(pgamma(u,y*s+(y==0),1)-pgamma(u,(y+1)*s,1)))},
 	Consul=function(m,p){
 		s <- exp(sh1(p))

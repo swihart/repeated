@@ -581,7 +581,7 @@ if(!censor)fcn <- switch(distribution,
 		m <- mu1(p,r)
 		s <- exp(sh1(p))
 		u <- m*s
-		ifelse(y==0,pgamma(u,(y+1)*s,1,lower=FALSE),
+		ifelse(y==0,pgamma(u,(y+1)*s,1,lower.tail=FALSE),
 			pgamma(u,y*s+(y==0),1)-pgamma(u,(y+1)*s,1))},
 	Consul=function(p,r) {
 		m <- mu1(p,r)

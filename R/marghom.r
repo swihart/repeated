@@ -67,7 +67,7 @@ a <- matrix(0,ncol=n-1,nrow=length(freq))
 while(test){
 	pw <- ifelse(fit>0,1/fit,0)
 	for(i in 1:(n-1))a[,i] <- ((marg1==lev[i])-(marg2==lev[i]))*fit
-	z0 <- glm(freq~a-1,weight=pw)
+	z0 <- glm(freq~a-1,weights=pw)
 	fit <- freq-z0$fitted
 	test <- (dv-z0$dev)^2>0.0001
 	dv <- z0$dev}
