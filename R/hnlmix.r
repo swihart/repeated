@@ -681,11 +681,11 @@ mix <- switch(mixture,
         normal=function(r,ss)dnorm(r,0,sqrt(ss),log=TRUE),
 	logistic=function(r,ss)dlogis(r,0,sqrt(3*ss)/pi,log=TRUE),
 	Cauchy=function(r,ss){
-#		s <- ??
-		dcauchy(r,0,s,log=TRUE)},
+#		s <- ?? # bruce edit s to ss in dcauchy
+		dcauchy(r,0,ss,log=TRUE)},
         Laplace=function(r,ss){
-#		s <- ??
-		-abs(r)/s-log(s)-log(2)},
+#		s <- ?? # bruce edit s to ss in Laplace
+		-abs(r)/ss-log(ss)-log(2)},
 	gamma=function(r,ss)dgamma(r,1/ss,scale=ss,log=TRUE),
         "inverse gamma"=function(r,ss)dgamma(1/r,1/ss,scale=ss,log=TRUE)/r^2,
         "inverse Gauss"=function(r,ss)
