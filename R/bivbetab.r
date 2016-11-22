@@ -69,10 +69,10 @@ biv.betab <- function(freq, x=NULL, p, depend=TRUE, print.level=0,
 like <- function(p){
 	dll <- 0
 	for(kk in 1:n){
-		tt1 <- p[1]*(y[kk,2]+y[kk,3]+2*y[kk,4])
-		if(depend)tt1 <- tt1+p[2]*y[kk,4]
+		tt1 <- p[1]*(freq[kk,2]+freq[kk,3]+2*freq[kk,4])
+		if(depend)tt1 <- tt1+p[2]*freq[kk,4]
 		if(full)for(i in 1:np)
-			tt1 <- tt1+p[i+pn]*(x[kk,i]*(y[kk,2]+y[kk,4])+x[kk,i+np]*(y[kk,3]+y[kk,4]))
+			tt1 <- tt1+p[i+pn]*(x[kk,i]*(freq[kk,2]+freq[kk,4])+x[kk,i+np]*(freq[kk,3]+freq[kk,4]))
 		dll <- dll+tt1
 		tt2 <- 1
 		t1 <- t2 <- p[1]
@@ -84,23 +84,23 @@ like <- function(p){
 		if(depend)t1 <- t1+p[2]
 		if(full)for(i in 1:np)t1 <- t1+p[i+pn]*(x[kk,i]+x[kk,i+np])
 		tt2 <- tt2+exp(t1)
-		dll <- dll-(y[kk,1]+y[kk,2]+y[kk,3]+y[kk,4])*log(tt2)}
+		dll <- dll-(freq[kk,1]+freq[kk,2]+freq[kk,3]+freq[kk,4])*log(tt2)}
 	-dll}
 call <- sys.call()
 #
 # check that correct data were supplied
 #
-if(!is.matrix(y))stop("y must be a matrix")
-else n <- dim(y)[1]
+if(!is.matrix(freq))stop("freq must be a matrix")
+else n <- dim(freq)[1]
 if(missing(x))np <- 0
 else if(!is.matrix(x))stop("x must be a matrix")
 else  {
 	np <- dim(x)[2]/2
 	if(trunc(dim(x)[2]/2)!=np)
 		stop("x must contain an even number of columns")}
-if(!dim(y)[2]==4)stop("y must have four columns")
-if(!is.null(x)&&!dim(y)[1]==dim(x)[1])
-	stop("x and y must have the same number of rows")
+if(!dim(freq)[2]==4)stop("freq must have four columns")
+if(!is.null(x)&&!dim(freq)[1]==dim(x)[1])
+	stop("x and freq must have the same number of rows")
 full <- np>0
 if(length(p)!=np+1+depend)
 	stop(paste(np+1+depend,"parameter estimates must be supplied"))
