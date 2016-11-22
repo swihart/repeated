@@ -154,7 +154,7 @@
 ##' 
 ##' @export gnlmix
 ##' @importFrom graphics par plot 
-##' @importFrom stats as.formula dbeta dbinom dcauchy dexp dgamma dlogis dnbinom dnorm dpois dt dweibull gaussian glm glm.control model.frame model.matrix na.fail nlm nobs pbeta pcauchy pexp pgamma pgeom plogis pnbinom pnorm ppois pt pweibull qnorm print.glm summary.glm terms uniroot update.formula
+##' @importFrom stats as.formula dbeta dbinom dcauchy dexp dgamma dlogis dnbinom dnorm dpois dt dweibull gaussian glm glm.control model.frame model.matrix na.fail nlm nobs pbeta pcauchy pexp pgamma pgeom plogis pnbinom pnorm ppois pt pweibull qnorm summary.glm terms uniroot update.formula
 ##' @import rmutil
 gnlmix <- function(y=NULL, distribution="normal", mixture="normal",
 	random=NULL, nest=NULL, mu=NULL, shape=NULL, linear=NULL,

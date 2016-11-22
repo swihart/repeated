@@ -270,7 +270,9 @@ z}
 ### standard print methods
 ###
 print.glmm <- function(z,...){
-print.glm(z,...)
+#print.glm(z,...)
+  class(z) <- "glm"
+  print(z)
 if(!is.null(z$scale)){
 	cat("\nModel deviances are -2 log likelihood\n")
 	cat("Model dispersion:      ",z$scale,"\n")}
