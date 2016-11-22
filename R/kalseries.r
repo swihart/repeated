@@ -33,9 +33,9 @@
 #  distribution with serial dependence or gamma frailties using
 #  Kalman-type update for continuous longitudinal data.
 
-.First.lib <- function(lib, pkg)
-	library.dynam("repeated", pkg, lib)
-require(rmutil)
+# .First.lib <- function(lib, pkg)
+# 	library.dynam("repeated", pkg, lib)
+# require(rmutil)
 
 
 
