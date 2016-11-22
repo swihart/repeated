@@ -259,7 +259,9 @@ z <- .Fortran("logitord",
 	iter=integer(1),
 	ifun=integer(1),
 	like=double(1),
-	DUP=FALSE)
+	#DUP=FALSE,
+	PACKAGE="repeated"
+	)
 #
 # print warnings, if any
 #

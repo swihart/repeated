@@ -239,7 +239,7 @@ dimnames(corr) <- list(1:np,1:np)
 #
 # remove data from memory and return results
 #
-.C("PurgeSubjectData")
+.C("PurgeSubjectData", PACKAGE="repeated")
 z <- list(
 	call=call,
 	covariate=cov,
