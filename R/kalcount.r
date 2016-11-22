@@ -506,6 +506,8 @@ if(inherits(shape,"formula")){
 		else finterp(shape,.envir=envir,.name=envname)
 	npt2 <- length(attr(sh2,"parameters"))
 	# W&R formula
+	common <- FALSE
+	npl1 <- if(common&&!inherits(shape,"formula")) 1 else nlp+1
 	if(is.character(attr(sh2,"model"))){
 		if(length(attr(sh2,"model"))==1){
 			sh1 <- function(p) p[npl1]*rep(1,n)
