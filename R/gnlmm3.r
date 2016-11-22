@@ -274,7 +274,7 @@ pginvgauss <- function(y, m, s, f)
 		max=as.integer(16),
 		err=integer(1),
 		res=double(n),
-		DUP=FALSE,
+		#DUP=FALSE,
 		PACKAGE="rmutil")$res
 #
 # power exponential cdf
@@ -291,7 +291,7 @@ ppowexp <- function(y, m, s, f){
 		max=as.integer(16),
 		err=integer(1),
 		res=double(n),
-		DUP=FALSE,
+		#DUP=FALSE,
 		PACKAGE="rmutil")$res
 	ifelse(y-m>0,0.5+z,0.5-z)}
 #
@@ -306,7 +306,7 @@ dpvfpois <- function(y, m, s, f)
 		as.integer(length(y)),
 		as.double(rep(1,length(y))),
 		res=double(length(y)),
-		DUP=FALSE,
+		#DUP=FALSE,
 		PACKAGE="rmutil")$res
 #
 # skew Laplace cdf

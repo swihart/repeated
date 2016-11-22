@@ -252,7 +252,7 @@ plevy <- function(q, m=0, s=1){
 		max=as.integer(16),
 		err=integer(1),
 		res=double(len),
-		DUP=FALSE,
+		# DUP=FALSE,
 		PACKAGE="rmutil")
 	z$res}
 dlevy <- function(y, m=0, s=1){
@@ -304,7 +304,7 @@ gcopula <- function(theta){
 			tmp2=double(nld),
 			tmp3=double(nld),
 			warn=logical(1),
-			DUP=FALSE,
+			# DUP=FALSE,
 			PACKAGE="repeated")
 		if(z$warn)stop("Correlation matrix for some individuals not positive definite")}
 	switch(dst,

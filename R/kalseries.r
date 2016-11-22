@@ -323,7 +323,7 @@ series <- function(p){
 		sf=as.integer(sf),
 		vv=as.double(v),
 		like=double(1),
-		DUP=FALSE,
+		#DUP=FALSE,
 		PACKAGE="repeated")
 	z$like}
 #
@@ -358,7 +358,7 @@ serief <- function(p){
 		vv=as.double(v),
 		frser=as.integer(frser),
 		like=double(1),
-		DUP=FALSE,
+		#DUP=FALSE,
 		PACKAGE="repeated")
 	z$like}
 call <- sys.call()
@@ -813,7 +813,7 @@ else {
 			vv=as.double(v),
 			frser=as.integer(frser),
 			like=double(1),
-			DUP=FALSE,
+			#DUP=FALSE,
 			PACKAGE="repeated")}
 	else {
 		if(rf)b <- mu1(p)
@@ -845,7 +845,7 @@ else {
 			sf=as.integer(sf),
 			vv=as.double(v),
 			like=double(1),
-			DUP=FALSE,
+			#DUP=FALSE,
 			PACKAGE="repeated")}}
 if(rf&&tvc>0){
 	nccov <- tvc

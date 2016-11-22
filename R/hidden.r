@@ -237,7 +237,7 @@ likel <- function(p){
 		work=double(2*states),
 		work2=double(states),
 		like=double(1),
-		DUP=FALSE,
+		#DUP=FALSE,
 		PACKAGE="repeated")
 z$like}
 #
@@ -286,7 +286,7 @@ like <- function(p){
 		work=double(2*states),
 		work2=double(states),
 		like=double(1),
-		DUP=FALSE,
+		#DUP=FALSE,
 		PACKAGE="repeated")
 z}
 call <- sys.call()

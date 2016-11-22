@@ -289,7 +289,7 @@ likekal <- function(p){
 		rpred=double(n),
 		volatility=double(n),
 		like=double(1),
-		DUP=FALSE,
+		#DUP=FALSE,
 		PACKAGE="repeated")
 	z$like+jacob}
 call <- sys.call()
@@ -814,7 +814,7 @@ z <- .C("gar",
 	rpred=double(n),
 	volatility=double(n),
 	like=double(1),
-	DUP=FALSE,
+	#DUP=FALSE,
 	PACKAGE="repeated")
 if(archtype==0)z$volatility <- NULL
 #

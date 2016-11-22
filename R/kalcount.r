@@ -250,7 +250,7 @@ kcountb <- function(p){
 		sf=as.integer(sf),
 		vv=as.double(v),
 		like=double(1),
-		DUP=FALSE,
+		#DUP=FALSE,
 		PACKAGE="repeated")
 	z$like}
 #
@@ -281,7 +281,7 @@ countfb <- function(p){
 		vv=as.double(v),
 		frser=as.integer(frser),
 		like=double(1),
-		DUP=FALSE,
+		#DUP=FALSE,
 		PACKAGE="repeated")
 	z$like}
 call <- sys.call()
@@ -682,7 +682,7 @@ z <- if(depend=="frailty"){
 		vv=as.double(v),
 		frser=as.integer(frser),
         	like=double(1),
-		DUP=FALSE,
+		#DUP=FALSE,
 		PACKAGE="repeated")}
 else {
 	if(rf)b <- mu1(z0$estimate)
@@ -712,7 +712,7 @@ else {
 		sf=as.integer(sf),
 		vv=as.double(v),
 		like=double(1),
-		DUP=FALSE,
+		#DUP=FALSE,
 		PACKAGE="repeated")}
 #
 # return appropriate attributes on functions

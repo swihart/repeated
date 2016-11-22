@@ -239,7 +239,7 @@ likel <- function(p){
 		work2=double(states),
 		work3=double(states*states),
 		like=double(1),
-		DUP=FALSE,
+		#DUP=FALSE,
 		PACKAGE="repeated")
 z$like}
 #
@@ -293,7 +293,7 @@ like <- function(p){
 		work2=double(states),
 		work3=double(states*states),
 		like=double(1),
-		DUP=FALSE,
+		#DUP=FALSE,
 		PACKAGE="repeated")
 	z$gamma <- exp(p[1:nm])
 	z$gamma <- matrix(c(-z$gamma,z$gamma,0,0),byrow=TRUE,nrow=2)

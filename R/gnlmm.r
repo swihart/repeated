@@ -256,7 +256,7 @@ plevy <- function(y, m, s)
 		max=as.integer(16),
 		err=integer(1),
 		res=double(n),
-		DUP=FALSE,
+		#DUP=FALSE,
 		PACKAGE="rmutil")$res
 #
 # simplex cdf
@@ -273,7 +273,7 @@ psimplex <- function(y, m, s)
         	max=as.integer(16),
         	err=integer(1),
         	res=double(n),
-        	DUP=FALSE,
+        	#DUP=FALSE,
 		PACKAGE="rmutil")$res
 
 call <- sys.call()
@@ -777,14 +777,16 @@ if (!censor){
 			-.C("ddb",as.integer(y[,1]),as.integer(nn),
 				as.double(mu4(p)),as.double(exp(sh1(p))),
 				as.integer(n),as.double(wt),res=double(n),
-				DUP=FALSE,PACKAGE="rmutil")$res}
+				#DUP=FALSE,
+				PACKAGE="rmutil")$res}
 		const <- 0},
 	"mult binomial"={
 		fcn <- function(p) {
 			-.C("dmb",as.integer(y[,1]),as.integer(nn),
 				as.double(mu4(p)),as.double(exp(sh1(p))),
 				as.integer(n),as.double(wt),res=double(n),
-				DUP=FALSE,PACKAGE="rmutil")$res}
+				#DUP=FALSE,
+				PACKAGE="rmutil")$res}
 		const <- 0},
 	Poisson={
 		fcn <- function(p) {
@@ -804,7 +806,8 @@ if (!censor){
 			-.C("ddp",as.integer(y),as.integer(my),
 				as.double(mu4(p)),as.double(exp(sh1(p))),
 				as.integer(length(y)),as.double(wt),
-				res=double(length(y)),DUP=FALSE,
+				res=double(length(y)),
+				#DUP=FALSE,
 				PACKAGE="rmutil")$res}
 		const <- 0},
 	"mult Poisson"={
@@ -812,7 +815,8 @@ if (!censor){
 			-.C("dmp",as.integer(y),as.integer(my),
 				as.double(mu4(p)),as.double(exp(sh1(p))),
 				as.integer(length(y)),as.double(wt),
-				res=double(length(y)),DUP=FALSE,
+				res=double(length(y)),
+				#DUP=FALSE,
 				PACKAGE="rmutil")$res}
 		const <- 0},
 	"gamma count"={
