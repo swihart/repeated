@@ -253,7 +253,7 @@ plevy <- function(q, m=0, s=1){
 		err=integer(1),
 		res=double(len),
 		# DUP=FALSE,
-		PACKAGE="rmutil")
+		PACKAGE="repeated")
 	z$res}
 dlevy <- function(y, m=0, s=1){
 	if(any(y<=m))stop("some y <= m")

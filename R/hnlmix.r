@@ -556,13 +556,13 @@ if(!censor)fcn <- switch(distribution,
 			as.double(m),as.double(exp(sh1(p))),
 			as.integer(n),as.double(wt),res=double(n),
 			#DUP=FALSE,
-			PACKAGE="rmutil")$res,
+			PACKAGE="repeated")$res,
 	"mult binomial"=function(m,p)
 		.C("dmb",as.integer(y[,1]),as.integer(nn),
 			as.double(m),as.double(exp(sh1(p))),
 			as.integer(n),as.double(wt),res=double(n),
 			#DUP=FALSE,
-			PACKAGE="rmutil")$res,
+			PACKAGE="repeated")$res,
 	Poisson=function(m,p)dpois(y,m,TRUE),
 	"negative binomial"=function(m,p)dnbinom(y,exp(sh1(p)),mu=m,log=TRUE),
 	"double Poisson"=function(m,p)
@@ -570,13 +570,13 @@ if(!censor)fcn <- switch(distribution,
 			as.double(exp(sh1(p))),as.integer(n),as.double(wt),
 			res=double(n),
 			#DUP=FALSE,
-			PACKAGE="rmutil")$res,
+			PACKAGE="repeated")$res,
 	"mult Poisson"=function(m,p)
 		.C("dmp",as.integer(y),as.integer(my),
 			as.double(m),as.double(exp(sh1(p))),
 			as.integer(n),as.double(wt),res=double(n),
 			#DUP=FALSE,
-			PACKAGE="rmutil")$res,
+			PACKAGE="repeated")$res,
 	"gamma count"=function(m,p){
 		s <- exp(sh1(p))
 		u <- m*s

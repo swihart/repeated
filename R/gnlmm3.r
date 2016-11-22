@@ -275,7 +275,7 @@ pginvgauss <- function(y, m, s, f)
 		err=integer(1),
 		res=double(n),
 		#DUP=FALSE,
-		PACKAGE="rmutil")$res
+		PACKAGE="repeated")$res
 #
 # power exponential cdf
 #
@@ -292,7 +292,7 @@ ppowexp <- function(y, m, s, f){
 		err=integer(1),
 		res=double(n),
 		#DUP=FALSE,
-		PACKAGE="rmutil")$res
+		PACKAGE="repeated")$res
 	ifelse(y-m>0,0.5+z,0.5-z)}
 #
 # power variance function Poisson density
@@ -307,7 +307,7 @@ dpvfpois <- function(y, m, s, f)
 		as.double(rep(1,length(y))),
 		res=double(length(y)),
 		#DUP=FALSE,
-		PACKAGE="rmutil")$res
+		PACKAGE="repeated")$res
 #
 # skew Laplace cdf
 #

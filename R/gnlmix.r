@@ -174,7 +174,7 @@ int1 <- function(ff, aa, bb)
 		max=as.integer(steps),
 		err=integer(1),
 		res=double(nnest),
-		PACKAGE="rmutil")$res
+		PACKAGE="repeated")$res
 inta <- function(f){
 	ff <- function(x) f(1/x)/(x*x)
 	int1(ff,neg1,zero)+int1(f,neg1,pos1)+int1(ff,zero,pos1)}
@@ -556,13 +556,13 @@ if(!censor)fcn <- switch(distribution,
 			as.double(mu1(p,r)),as.double(exp(sh1(p))),
 			as.integer(n),as.double(wt),res=double(n),
 			#DUP=FALSE,
-			PACKAGE="rmutil")$res),
+			PACKAGE="repeated")$res),
 	"mult binomial"=function(p,r)
 		exp(.C("dmb",as.integer(y[,1]),as.integer(nn),
 			as.double(mu1(p,r)),as.double(exp(sh1(p))),
 			as.integer(n),as.double(wt),res=double(n),
 			#DUP=FALSE,
-			PACKAGE="rmutil")$res),
+			PACKAGE="repeated")$res),
 	Poisson=function(p,r)dpois(y,mu1(p,r)),
 	"negative binomial"=function(p,r)dnbinom(y,exp(sh1(p)),mu1(p,r)),
 	"double Poisson"=function(p,r)
@@ -570,13 +570,13 @@ if(!censor)fcn <- switch(distribution,
 			as.double(mu1(p,r)),as.double(exp(sh1(p))),
 			as.integer(n),as.double(wt),res=double(n),
 			#DUP=FALSE,
-			PACKAGE="rmutil")$res),
+			PACKAGE="repeated")$res),
 	"mult Poisson"=function(p,r)
 		exp(.C("dmp",as.integer(y),as.integer(my),
 			as.double(mu1(p,r)),as.double(exp(sh1(p))),
 			as.integer(n),as.double(wt),res=double(n),
 			#DUP=FALSE,
-			PACKAGE="rmutil")$res),
+			PACKAGE="repeated")$res),
 	"gamma count"=function(p,r) {
 		m <- mu1(p,r)
 		s <- exp(sh1(p))
