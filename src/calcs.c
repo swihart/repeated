@@ -121,12 +121,12 @@ CalcRecurse( RECURSE_PARAMS *pR, BRANCH_SUM *pBranches )
     long lH, lI, lJ, lK;
     RECURSE_PARAMS RParams;
     int i;
-
+/*
     if ( glNumSubjects == 0 ) {
         printf( "Please load a dataset first\n" );
         return;
     }
-
+*/
     if ( pR->lL == gaSubjects[pR->lSubjectID].lNumGaps ) {
         for ( i = 0; i < pR->iNumEqns; i++ ) {
             AddNode( pBranches + i, (*( pR->pfnEquation[i] ))( pR ));

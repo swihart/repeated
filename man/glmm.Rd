@@ -88,7 +88,7 @@ J.K. Lindsey
 \code{\link{glm.control}}, \code{\link[repeated]{gnlmix}},
 \code{\link[repeated]{gnlmm}}, \code{\link[gnlm]{gnlr}},
 \code{\link[gnlm]{gnlr3}}, \code{\link[repeated]{hnlmix}},
-\code{\link[nls]{nls}}.
+\code{\link[stats]{nls}}.
 }
 \keyword{models}
 

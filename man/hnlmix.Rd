@@ -93,7 +93,25 @@ data object of class, \code{repeated}, \code{tccov}, or \code{tvcov}; the
 name of the response variable should be given in \code{y}. If \code{y} has
 class \code{repeated}, it is used as the environment.}
 
-\item{others}{Arguments controlling \code{\link{nlm}}.}
+\item{print.level}{Arguments for nlm.}
+
+\item{typsize}{Arguments for nlm.}
+
+\item{ndigit}{Arguments for nlm.}
+
+\item{gradtol}{Arguments for nlm.}
+
+\item{stepmax}{Arguments for nlm.}
+
+\item{steptol}{Arguments for nlm.}
+
+\item{iterlim}{Arguments for nlm.}
+
+\item{fscale}{Arguments for nlm.}
+
+\item{eps}{Arguments for nlm.}
+
+\item{points}{Arguments for nlm.}
 }
 \value{
 A list of class \code{hnlmix} is returned that contains all of the
@@ -116,7 +134,7 @@ These nonlinear regression models must be supplied as formulae where
 parameters are unknowns. (See \code{\link[rmutil]{finterp}}.)
 }
 \examples{
-
+\dontrun{
 library(growth)
 dose <- c(9,12,4,9,11,10,2,11,12,9,9,9,4,9,11,9,14,7,9,8)
 #y <- rgamma(20,2+0.3*dose,scale=2)+rep(rnorm(4,0,4),rep(5,4))
@@ -148,7 +166,7 @@ hnlmix(reps, distribution="gamma", mixture="gamma",
 hnlmix(reps, distribution="gamma", mixture="gamma",
 	mu=~exp(a+b*dose)*rand, random="rand", pmu=c(2,0.04),
 	pshape=1.24, prandom=1)
-
+}
 }
 \author{
 J.K. Lindsey
@@ -158,7 +176,7 @@ J.K. Lindsey
 \code{\link[growth]{elliptic}}, \code{\link[repeated]{glmm}},
 \code{\link[repeated]{gnlmix}}, \code{\link[repeated]{gnlmm}},
 \code{\link[gnlm]{gnlr}}, \code{\link[repeated]{kalseries}},
-\code{\link[gnlm]{nlr}}, \code{\link[nls]{nls}}.
+\code{\link[gnlm]{nlr}}, \code{\link[stats]{nls}}.
 }
 \keyword{models}
 

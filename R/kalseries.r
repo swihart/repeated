@@ -164,7 +164,14 @@
 ##' data object of class, \code{repeated}, \code{tccov}, or \code{tvcov}; the
 ##' name of the response variable should be given in \code{response}. If
 ##' \code{response} has class \code{repeated}, it is used as the environment.
-##' @param others Arguments controlling \code{\link{nlm}}.
+##' @param print.level Arguments for nlm.
+##' @param typsize Arguments for nlm.
+##' @param ndigit Arguments for nlm.
+##' @param gradtol Arguments for nlm.
+##' @param stepmax Arguments for nlm.
+##' @param steptol Arguments for nlm.
+##' @param iterlim Arguments for nlm.
+##' @param fscale Arguments for nlm.
 ##' @return A list of classes \code{kalseries} and \code{recursive} is
 ##' returned.
 ##' @author J.K. Lindsey
@@ -178,7 +185,7 @@
 ##' \code{\link[rmutil]{tcctomat}}, \code{\link[rmutil]{tvctomat}}.
 ##' @keywords models
 ##' @examples
-##' 
+##' \dontrun{
 ##' treat <- c(0,0,1,1)
 ##' tr <- tcctomat(treat)
 ##' dose <- matrix(rpois(20,10), ncol=5)
@@ -280,7 +287,7 @@
 ##' 	ptvc=list(absorption=-1,elimination=-1.1,volume=-1),
 ##' 	shape=~exp(b1-b2)*times*dose*exp(-exp(b1)*times),
 ##' 	pshape=list(b1=-3,b2=0))
-##' 
+##' }
 ##' @export kalseries
 kalseries <- function(response=NULL, times=NULL, intensity="exponential",
 	depend="independence", mu=NULL, shape=NULL, density=FALSE, ccov=NULL,

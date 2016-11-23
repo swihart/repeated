@@ -33,7 +33,21 @@ of speed).}
 \item{hessian}{If TRUE, analytic hessian is used (with accompanying loss of
 speed).}
 
-\item{others}{Arguments controlling \code{\link{nlm}}.}
+\item{print.level}{Arguments for nlm.}
+
+\item{ndigit}{Arguments for nlm.}
+
+\item{gradtol}{Arguments for nlm.}
+
+\item{steptol}{Arguments for nlm.}
+
+\item{iterlim}{Arguments for nlm.}
+
+\item{fscale}{Arguments for nlm.}
+
+\item{typsize}{Arguments for nlm.}
+
+\item{stepmax}{Arguments for nlm.}
 }
 \value{
 A list of class \code{cmcre} is returned.

@@ -162,7 +162,14 @@
 ##' data object of class, \code{repeated}, \code{tccov}, or \code{tvcov}; the
 ##' name of the response variable should be given in \code{response}. If
 ##' \code{response} has class \code{repeated}, it is used as the environment.
-##' @param others Arguments controlling \code{\link{nlm}}.
+##' @param print.level Arguments for nlm.
+##' @param typsize Arguments for nlm.
+##' @param ndigit Arguments for nlm.
+##' @param gradtol Arguments for nlm.
+##' @param stepmax Arguments for nlm.
+##' @param steptol Arguments for nlm.
+##' @param iterlim Arguments for nlm.
+##' @param fscale Arguments for nlm.
 ##' @return A list of classes \code{gar} and \code{recursive} is returned that
 ##' contains all of the relevant information calculated, including error codes.
 ##' 
@@ -184,7 +191,7 @@
 ##' Lambert, P. (1996) Statistics in Medicine 15, 1695-1708
 ##' @keywords models
 ##' @examples
-##' 
+##' \dontrun{
 ##' # first-order one-compartment model
 ##' # data objects for formulae
 ##' dose <- c(2,5)
@@ -242,7 +249,7 @@
 ##' # or
 ##' gar(conc, dist="gamma", times=1:20, mu=mu, shape=~a+d*mu, shfn=TRUE,
 ##' 	preg=log(c(1,0.4,0.1)), pdepend=0.5, pshape=c(1,0))
-##' 
+##' }
 ##' @export gar
 gar <- function(response=NULL, distribution="normal", times=NULL, totals=NULL,
 	censor=NULL, delta=NULL, mu=NULL, shape=NULL, depend=NULL, shfn=FALSE,

@@ -48,7 +48,7 @@ void kserie(double p[],double y[],double t[],double x[],int *nind,int nobs[],
 	    double tvcov[],int *fit,double pred[],double rpred[],int *rf,
 	    double bb[],int *sf, double vv[], double *like){
   int i,j,k,k1,k2,nm;
-  double a,a1,b,b1,delta,lambda,omega,om,beta,bet,bt,h,kk,c,tmp,ly,
+  double a,a1,b,b1,delta,lambda,omega,om,beta,bet,bt,h,tmp,ly,
     plap,intercept,v,family;
 
   *like=0;
@@ -281,7 +281,7 @@ void krand(double p[],double y[],double t[],double x[],int *nind,int nobs[],
 	   int *fit,double pred[],double rpred[],int *rf,
 	   double bb[],int *sf, double vv[], int *frser, double *like){
   int i,j,k,k1,k2,nm,nn,pos;
-  double b1,delta,lambda,beta,bet,bt,l1,kk,tmp,ly,plap,intercept,
+  double b1,delta,lambda,beta,bet,bt,l1,tmp,ly,plap,intercept,
     H,btp,res,v;
 
   *like=0;

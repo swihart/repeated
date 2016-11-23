@@ -115,7 +115,21 @@ data object of class, \code{repeated}, \code{tccov}, or \code{tvcov}; the
 name of the response variable should be given in \code{y}. If \code{y} has
 class \code{repeated}, it is used as the environment.}
 
-\item{others}{Arguments controlling \code{\link{nlm}}.}
+\item{print.level}{Arguments for nlm.}
+
+\item{typsize}{Arguments for nlm.}
+
+\item{ndigit}{Arguments for nlm.}
+
+\item{gradtol}{Arguments for nlm.}
+
+\item{stepmax}{Arguments for nlm.}
+
+\item{steptol}{Arguments for nlm.}
+
+\item{iterlim}{Arguments for nlm.}
+
+\item{fscale}{Arguments for nlm.}
 }
 \value{
 A list of class \code{gnlm} is returned that contains all of the
@@ -145,7 +159,7 @@ corresponding AIC, the maximum likelihood estimates, standard errors, and
 correlations.
 }
 \examples{
-
+\dontrun{
 library(gnlm)
 # data objects
 sex <- c(0,1,1)
@@ -211,7 +225,7 @@ gnlmm(y, dist="gamma", mu=mu, shape=shape, nest=nest, pmu=z$coef[1:4],
 gnlmm(y, dist="gamma", mu=~b4+exp(b0+b1*sex+b2*dose), shape=~a1+a2*sex,
 	nest=nest, pmu=z$coef[1:4], pshape=z$coef[5:6], psd=0.1,
 	points=3, envir=reps)
-
+}
 }
 \author{
 J.K. Lindsey
@@ -221,7 +235,7 @@ J.K. Lindsey
 \code{\link{glm}}, \code{\link[repeated]{gnlmix}},
 \code{\link[repeated]{glmm}}, \code{\link[gnlm]{gnlr}},
 \code{\link[gnlm]{gnlr3}}, \code{\link[repeated]{hnlmix}},
-\code{\link{lm}}, \code{\link[gnlm]{nlr}}, \code{\link[nls]{nls}}.
+\code{\link{lm}}, \code{\link[gnlm]{nlr}}, \code{\link[stats]{nls}}.
 }
 \keyword{models}
 

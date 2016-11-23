@@ -231,8 +231,6 @@ dL3_dBeta0_dDelta( RECURSE_PARAMS *pR )
     double dEval1 = 1 + f3( pR, aiFactors[0] );
     double dEval2 = dPow( dEval1, 
                          -exp( -pR->dParams[P_DELTA] ) - 1 );
-    double dEval3 = dPow( dEval1, 
-                         -exp( -pR->dParams[P_DELTA] ) - 2 );
     return( pR->dPrdA * pR->dSumB *
             ( -dEval2 * log( dEval1 ) *
               f3( pR, aiFactors[1] ) -

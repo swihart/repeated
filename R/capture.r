@@ -69,7 +69,7 @@
 ##' @author J.K. Lindsey
 ##' @keywords models
 ##' @examples
-##' 
+##' \dontrun{
 ##' y <- c(0,1,0,0,0,1,0,1,0,0,0,1,0,0,0,14,1,1,0,2,1,2,1,16,0,2,0,11,
 ##' 	2,13,10,0)
 ##' n <- 5
@@ -88,7 +88,7 @@
 ##' print(z5 <- glm(y~p1+pbd+p5+d1+d2+d3+b2+b3+b4, family=poisson, weights=pw))
 ##' # print out estimates
 ##' capture(z5, n)
-##' 
+##' }
 ##' @export capture
 capture <- function(z,n){
 	aft <- bef <- rep(1,2^n-1)

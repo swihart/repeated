@@ -25,7 +25,21 @@ biv.binom(freq, marg1 = ~1, marg2 = ~1, interaction = ~1, pmarg1 = 1,
 \item{pinteraction}{Initial parameter estimates for the interaction
 regression.}
 
-\item{other}{Arguments for nlm.}
+\item{print.level}{Arguments for nlm.}
+
+\item{typsize}{Arguments for nlm.}
+
+\item{ndigit}{Arguments for nlm.}
+
+\item{gradtol}{Arguments for nlm.}
+
+\item{stepmax}{Arguments for nlm.}
+
+\item{steptol}{Arguments for nlm.}
+
+\item{iterlim}{Arguments for nlm.}
+
+\item{fscale}{Arguments for nlm.}
 }
 \value{
 A list of class \code{bivbinom} is returned.

@@ -142,7 +142,14 @@
 ##' data object of class, \code{repeated}, \code{tccov}, or \code{tvcov}; the
 ##' name of the response variable should be given in \code{y}. If \code{y} has
 ##' class \code{repeated}, it is used as the environment.
-##' @param others Arguments controlling \code{\link{nlm}}.
+##' @param print.level Arguments for nlm.
+##' @param typsize Arguments for nlm.
+##' @param ndigit Arguments for nlm.
+##' @param gradtol Arguments for nlm.
+##' @param stepmax Arguments for nlm.
+##' @param steptol Arguments for nlm.
+##' @param iterlim Arguments for nlm.
+##' @param fscale Arguments for nlm.
 ##' @return A list of class \code{gnlm} is returned that contains all of the
 ##' relevant information calculated, including error codes.
 ##' @author J.K. Lindsey
@@ -150,10 +157,10 @@
 ##' \code{\link{glm}}, \code{\link[repeated]{gnlmix}},
 ##' \code{\link[repeated]{glmm}}, \code{\link[gnlm]{gnlr}},
 ##' \code{\link[gnlm]{gnlr3}}, \code{\link[repeated]{hnlmix}},
-##' \code{\link{lm}}, \code{\link[gnlm]{nlr}}, \code{\link[nls]{nls}}.
+##' \code{\link{lm}}, \code{\link[gnlm]{nlr}}, \code{\link[stats]{nls}}.
 ##' @keywords models
 ##' @examples
-##' 
+##' \dontrun{
 ##' library(gnlm)
 ##' # data objects
 ##' sex <- c(0,1,1)
@@ -219,7 +226,7 @@
 ##' gnlmm(y, dist="gamma", mu=~b4+exp(b0+b1*sex+b2*dose), shape=~a1+a2*sex,
 ##' 	nest=nest, pmu=z$coef[1:4], pshape=z$coef[5:6], psd=0.1,
 ##' 	points=3, envir=reps)
-##' 
+##' }
 ##' @export gnlmm
 gnlmm <- function(y=NULL, distribution="normal", mu=NULL, shape=NULL,
 	linear=NULL, nest=NULL, pmu=NULL, pshape=NULL, psd=NULL, exact=FALSE,

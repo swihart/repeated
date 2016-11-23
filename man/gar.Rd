@@ -147,7 +147,21 @@ data object of class, \code{repeated}, \code{tccov}, or \code{tvcov}; the
 name of the response variable should be given in \code{response}. If
 \code{response} has class \code{repeated}, it is used as the environment.}
 
-\item{others}{Arguments controlling \code{\link{nlm}}.}
+\item{print.level}{Arguments for nlm.}
+
+\item{ndigit}{Arguments for nlm.}
+
+\item{gradtol}{Arguments for nlm.}
+
+\item{steptol}{Arguments for nlm.}
+
+\item{fscale}{Arguments for nlm.}
+
+\item{iterlim}{Arguments for nlm.}
+
+\item{typsize}{Arguments for nlm.}
+
+\item{stepmax}{Arguments for nlm.}
 }
 \value{
 A list of classes \code{gar} and \code{recursive} is returned that
@@ -174,7 +188,7 @@ When the dispersion parameter is not constant over time, \code{volatility}
 extracts the square root of the dispersion parameter for a fitted model.
 }
 \examples{
-
+\dontrun{
 # first-order one-compartment model
 # data objects for formulae
 dose <- c(2,5)
@@ -232,7 +246,7 @@ gar(conc, dist="gamma", times=1:20, mu=mu, shape=shape, shfn=TRUE,
 # or
 gar(conc, dist="gamma", times=1:20, mu=mu, shape=~a+d*mu, shfn=TRUE,
 	preg=log(c(1,0.4,0.1)), pdepend=0.5, pshape=c(1,0))
-
+}
 }
 \author{
 J.K. Lindsey

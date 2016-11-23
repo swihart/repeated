@@ -41,7 +41,14 @@
 ##' @param p Initial parameter estimates: intercept, dependence (if depend is
 ##' TRUE, and one for each pair of columns of x.
 ##' @param depend If FALSE, the independence (logistic) model is fitted.
-##' @param other Arguments for nlm.
+##' @param print.level Arguments for nlm.
+##' @param typsize Arguments for nlm.
+##' @param ndigit Arguments for nlm.
+##' @param gradtol Arguments for nlm.
+##' @param stepmax Arguments for nlm.
+##' @param steptol Arguments for nlm.
+##' @param iterlim Arguments for nlm.
+##' @param fscale Arguments for nlm.
 ##' @return A list of class \code{bivbetab} is returned.
 ##' @author J.K. Lindsey
 ##' @keywords models

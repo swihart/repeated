@@ -29,7 +29,21 @@ three.}
 \item{kalman}{If TRUE, fits the kalman update model, otherwise, a standard
 negative binomial distribution.}
 
-\item{others}{Arguments controlling \code{\link{nlm}}.}
+\item{print.level}{Arguments for nlm.}
+
+\item{ndigit}{Arguments for nlm.}
+
+\item{gradtol}{Arguments for nlm.}
+
+\item{steptol}{Arguments for nlm.}
+
+\item{fscale}{Arguments for nlm.}
+
+\item{iterlim}{Arguments for nlm.}
+
+\item{typsize}{Arguments for nlm.}
+
+\item{stepmax}{Arguments for nlm.}
 }
 \value{
 A list of classes \code{nbkal} and \code{recursive} is returned.
@@ -46,14 +60,14 @@ Marginal and individual profiles can be plotted using
 residuals with \code{\link[rmutil]{plot.residuals}}.
 }
 \examples{
-
+\dontrun{
 y <- matrix(rnbinom(20,5,0.5), ncol=5)
 times <- matrix(rep(seq(10,50,by=10),4), ncol=5, byrow=TRUE)
 y0 <- matrix(rep(rnbinom(5,5,0.5),4), ncol=5, byrow=TRUE)
 mu <- function(p) p[1]*log(y0)+(times<30)*p[2]*
 	(times-30)+(times>30)*p[3]*(times-30)
 nbkal(y, preg=c(1.3,0.008,-0.05), times=times, pdep=1.2, mu=mu)
-
+}
 }
 \author{
 P. Lambert and J.K. Lindsey

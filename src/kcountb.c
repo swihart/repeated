@@ -50,7 +50,7 @@ void kcountb(double p[],double y[],double *origin,int c[],double x[],
 	int *sf, double vv[], double *like){
   int i,j,j0,k,nm;
   double a,a1,b,b1,bb,bb0,sc,delta,lambda,omega,om,beta,bt,H,yy,yy0,
-    kk,tmp,ly,ly0,plap,intercept,family;
+    tmp,ly,ly0,plap,intercept,family;
   
   *like=0;
   nm=0;
@@ -277,7 +277,7 @@ void countfb(double p[],double y[],int c[], double x[],int *nind,
 	int *tvc,double tvcov[],int *fit,double pred[],double rpred[],int *rf,
 	double bbb[], int *sf, double vv[], int *frser, double *like){
   int i,j,k,nm;
-  double a,b,bb,bb0,delta,lambda,omega,om,beta,bt,H,yy,kk,tmp,ly,
+  double a,b,bb,bb0,delta,lambda,beta,bt,H,yy,tmp,ly,
     plap,intercept,res;
   
   *like=0;

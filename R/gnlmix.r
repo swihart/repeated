@@ -108,7 +108,14 @@
 ##' @param points For the Romberg integration, the number of extrapolation
 ##' points so that 2*points is the order of integration, by default set to 5;
 ##' points=2 is Simpson's rule.
-##' @param others Arguments controlling \code{\link{nlm}}.
+##' @param print.level Arguments for nlm.
+##' @param typsize Arguments for nlm.
+##' @param ndigit Arguments for nlm.
+##' @param gradtol Arguments for nlm.
+##' @param stepmax Arguments for nlm.
+##' @param steptol Arguments for nlm.
+##' @param iterlim Arguments for nlm.
+##' @param fscale Arguments for nlm.
 ##' @return A list of class \code{gnlm} is returned that contains all of the
 ##' relevant information calculated, including error codes.
 ##' @author J.K. Lindsey
@@ -116,10 +123,10 @@
 ##' \code{\link[growth]{elliptic}}, \code{\link[repeated]{glmm}},
 ##' \code{\link[repeated]{gnlmm}}, \code{\link[gnlm]{gnlr}},
 ##' \code{\link[repeated]{hnlmix}}, \code{\link[repeated]{kalseries}},
-##' \code{\link[gnlm]{nlr}}, \code{\link[nls]{nls}}.
+##' \code{\link[gnlm]{nlr}}, \code{\link[stats]{nls}}.
 ##' @keywords models
 ##' @examples
-##' 
+##' \dontrun{
 ##' library(growth)
 ##' dose <- c(9,12,4,9,11,10,2,11,12,9,9,9,4,9,11,9,14,7,9,8)
 ##' #y <- rgamma(20,shape=2+0.3*dose,scale=2)+rep(rnorm(4,0,4),rep(5,4))
@@ -151,11 +158,12 @@
 ##' gnlmix(reps, distribution="gamma", mixture="gamma",
 ##' 	mu=~exp(a+b*dose)*rand, random="rand", pmu=c(2,0.04),
 ##' 	pshape=1.24, pmix=2.5)
-##' 
+##' }
 ##' @export gnlmix
 ##' @importFrom graphics par plot 
 ##' @importFrom stats as.formula dbeta dbinom dcauchy dexp dgamma dlogis dnbinom dnorm dpois dt dweibull gaussian glm glm.control model.frame model.matrix na.fail nlm nobs pbeta pcauchy pexp pgamma pgeom plogis pnbinom pnorm ppois pt pweibull qnorm summary.glm terms uniroot update.formula
 ##' @import rmutil
+##' @useDynLib repeated
 gnlmix <- function(y=NULL, distribution="normal", mixture="normal",
 	random=NULL, nest=NULL, mu=NULL, shape=NULL, linear=NULL,
 	pmu=NULL, pshape=NULL, pmix=NULL, delta=1, common=FALSE,

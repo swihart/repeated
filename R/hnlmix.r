@@ -111,7 +111,16 @@
 ##' data object of class, \code{repeated}, \code{tccov}, or \code{tvcov}; the
 ##' name of the response variable should be given in \code{y}. If \code{y} has
 ##' class \code{repeated}, it is used as the environment.
-##' @param others Arguments controlling \code{\link{nlm}}.
+##' @param print.level Arguments for nlm.
+##' @param typsize Arguments for nlm.
+##' @param ndigit Arguments for nlm.
+##' @param gradtol Arguments for nlm.
+##' @param stepmax Arguments for nlm.
+##' @param steptol Arguments for nlm.
+##' @param iterlim Arguments for nlm.
+##' @param fscale Arguments for nlm.
+##' @param eps Arguments for nlm.
+##' @param points Arguments for nlm.
 ##' @return A list of class \code{hnlmix} is returned that contains all of the
 ##' relevant information calculated, including error codes.
 ##' 
@@ -122,10 +131,10 @@
 ##' \code{\link[growth]{elliptic}}, \code{\link[repeated]{glmm}},
 ##' \code{\link[repeated]{gnlmix}}, \code{\link[repeated]{gnlmm}},
 ##' \code{\link[gnlm]{gnlr}}, \code{\link[repeated]{kalseries}},
-##' \code{\link[gnlm]{nlr}}, \code{\link[nls]{nls}}.
+##' \code{\link[gnlm]{nlr}}, \code{\link[stats]{nls}}.
 ##' @keywords models
 ##' @examples
-##' 
+##' \dontrun{
 ##' library(growth)
 ##' dose <- c(9,12,4,9,11,10,2,11,12,9,9,9,4,9,11,9,14,7,9,8)
 ##' #y <- rgamma(20,2+0.3*dose,scale=2)+rep(rnorm(4,0,4),rep(5,4))
@@ -157,7 +166,7 @@
 ##' hnlmix(reps, distribution="gamma", mixture="gamma",
 ##' 	mu=~exp(a+b*dose)*rand, random="rand", pmu=c(2,0.04),
 ##' 	pshape=1.24, prandom=1)
-##' 
+##' }
 ##' @export hnlmix
 hnlmix <- function(y=NULL, distribution="normal", mixture="normal",
 	random=NULL, nest=NULL, mu=NULL, shape=NULL, linear=NULL,

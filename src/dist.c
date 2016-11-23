@@ -160,9 +160,9 @@ static double dbnc(int yy, int n, double m, double s){
   double r;
   r=0.;
   for(y=0;y<=yy;y++)
-	r+=exp(lchoose((double)n,(double)y)+((n-y)*s)*log(1.-m)
-	  +y*s*log(m)-n*(1-s)*log((double)n)+(y>0?y*(1-s)*log((double)y):0)
-	  +(y<n?(n-y)*(1-s)*log((double)(n-y)):0));
+    r+=exp(lchoose((double)n,(double)y)+n*(s-1)*log((double)n)
+	   +y*s*log(m)+((n-y)*s)*log(1.-m)-(y>0?y*(s-1)*log((double)y):0)
+	   -(y<n?(n-y)*(s-1)*log((double)(n-y)):0));
   return(r);}
 
 void pdb(int q[], int n[], double m[], double s[], int *nn, double res[]){
@@ -178,10 +178,10 @@ void ddb(int y[], int n[], double m[], double s[], int *nn,
       y2=n[i]-y[i];
       yy1=y[i]>0?y[i]:1;
       yy2=y2>0?y2:1;
-      res[i]=wt[i]*(s[i]*n[i]*log((double)n[i])+s[i]*y[i]*log(m[i]/yy1)
-		 +s[i]*y2*log((1.-m[i])/yy2)+lchoose((double)n[i],(double)y[i])
-		 +y[i]*log((double)yy1)+y2*log((double)yy2)-n[i]*log((double)n[i])
-		 -log(dbnc(n[i],n[i],m[i],s[i])));}
+      res[i]=wt[i]*(lchoose((double)n[i],(double)y[i])+
+		    (s[i]-1)*n[i]*log((double)n[i])+s[i]*y[i]*log(m[i])
+		    +s[i]*y2*log(1.-m[i])-(s[i]-1)*y[i]*log((double)yy1)
+		    -(s[i]-1)*y2*log((double)yy2)-log(dbnc(n[i],n[i],m[i],s[i])));}
     else res[i]=0;}}
 
 /* multiplicative binomial */
@@ -189,7 +189,7 @@ static double mbnc(int yy, int n, double m, double s){
   int y;
   double r;
   r=0.;
-  for(y=0;y<=yy;y++)r+=exp(lchoose((double)n,(double)y)+(n-y)*log(1.-m)+y*(log(m)+(n-y)*s));
+  for(y=0;y<=yy;y++)r+=exp(lchoose((double)n,(double)y)+(n-y)*log(1.-m)+y*(log(m)+(n-y)*y*s));
   return(r);}
 
 void pmb(int q[], int n[], double m[], double s[], int *nn, double res[]){
@@ -208,7 +208,7 @@ void dmb(int y[], int n[], double m[], double s[], int *nn,
       ss=log(s[i]);
       res[i]=wt[i]*(lchoose((double)(n[i]),(double)y[i])+y[i]*log(m[i])
 		 +(n[i]-y[i])*(log(1.-m[i])
-			       +y[i]*ss)-log(mbnc(n[i],n[i],m[i],ss)));}
+			       +(n[i]-y[i])*y[i]*ss)-log(mbnc(n[i],n[i],m[i],ss)));}
     else res[i]=0;}}
 
 /* romberg integration routines */

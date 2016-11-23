@@ -112,7 +112,21 @@ data object of class, \code{repeated}, \code{tccov}, or \code{tvcov}; the
 name of the response variable should be given in \code{response}. If
 \code{response} has class \code{repeated}, it is used as the environment.}
 
-\item{others}{Arguments controlling \code{\link{nlm}}.}
+\item{print.level}{Arguments for nlm.}
+
+\item{ndigit}{Arguments for nlm.}
+
+\item{gradtol}{Arguments for nlm.}
+
+\item{steptol}{Arguments for nlm.}
+
+\item{fscale}{Arguments for nlm.}
+
+\item{iterlim}{Arguments for nlm.}
+
+\item{typsize}{Arguments for nlm.}
+
+\item{stepmax}{Arguments for nlm.}
 }
 \value{
 A list of classes \code{hidden} and \code{recursive} (unless
@@ -148,7 +162,7 @@ plotted using \code{\link[rmutil]{mprofile}} and
 \code{\link[rmutil]{iprofile}}.
 }
 \examples{
-
+\dontrun{
 # model for one randomly-generated binary series
 y <- c(rbinom(10,1,0.1), rbinom(10,1,0.9))
 mu <- function(p) array(p, c(1,2))
@@ -169,7 +183,7 @@ print(z <- cphidden(y, times=(1:20)*2, dist="Bernoulli",
 mexp(z$gamma) \%*\% mexp(z$gamma)
 plot(z)
 plot(iprofile(z), lty=2)
-
+}
 }
 \author{
 J.K. Lindsey

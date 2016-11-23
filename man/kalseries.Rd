@@ -132,7 +132,21 @@ data object of class, \code{repeated}, \code{tccov}, or \code{tvcov}; the
 name of the response variable should be given in \code{response}. If
 \code{response} has class \code{repeated}, it is used as the environment.}
 
-\item{others}{Arguments controlling \code{\link{nlm}}.}
+\item{print.level}{Arguments for nlm.}
+
+\item{ndigit}{Arguments for nlm.}
+
+\item{gradtol}{Arguments for nlm.}
+
+\item{steptol}{Arguments for nlm.}
+
+\item{fscale}{Arguments for nlm.}
+
+\item{iterlim}{Arguments for nlm.}
+
+\item{typsize}{Arguments for nlm.}
+
+\item{stepmax}{Arguments for nlm.}
 }
 \value{
 A list of classes \code{kalseries} and \code{recursive} is
@@ -168,7 +182,7 @@ Marginal and individual profiles can be plotted using
 residuals with \code{\link[rmutil]{plot.residuals}}.
 }
 \examples{
-
+\dontrun{
 treat <- c(0,0,1,1)
 tr <- tcctomat(treat)
 dose <- matrix(rpois(20,10), ncol=5)
@@ -270,7 +284,7 @@ kalseries(reps, intensity="gamma", dep="serial", pdep=0.5,
 	ptvc=list(absorption=-1,elimination=-1.1,volume=-1),
 	shape=~exp(b1-b2)*times*dose*exp(-exp(b1)*times),
 	pshape=list(b1=-3,b2=0))
-
+}
 }
 \author{
 J.K. Lindsey

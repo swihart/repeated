@@ -20,7 +20,21 @@ TRUE, and one for each pair of columns of x.}
 
 \item{depend}{If FALSE, the independence (logistic) model is fitted.}
 
-\item{other}{Arguments for nlm.}
+\item{print.level}{Arguments for nlm.}
+
+\item{typsize}{Arguments for nlm.}
+
+\item{ndigit}{Arguments for nlm.}
+
+\item{gradtol}{Arguments for nlm.}
+
+\item{stepmax}{Arguments for nlm.}
+
+\item{steptol}{Arguments for nlm.}
+
+\item{iterlim}{Arguments for nlm.}
+
+\item{fscale}{Arguments for nlm.}
 }
 \value{
 A list of class \code{bivbetab} is returned.

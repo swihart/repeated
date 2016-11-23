@@ -55,7 +55,14 @@
 ##' three.
 ##' @param kalman If TRUE, fits the kalman update model, otherwise, a standard
 ##' negative binomial distribution.
-##' @param others Arguments controlling \code{\link{nlm}}.
+##' @param print.level Arguments for nlm.
+##' @param typsize Arguments for nlm.
+##' @param ndigit Arguments for nlm.
+##' @param gradtol Arguments for nlm.
+##' @param stepmax Arguments for nlm.
+##' @param steptol Arguments for nlm.
+##' @param iterlim Arguments for nlm.
+##' @param fscale Arguments for nlm.
 ##' @return A list of classes \code{nbkal} and \code{recursive} is returned.
 ##' @author P. Lambert and J.K. Lindsey
 ##' @seealso \code{\link[repeated]{gar}}, \code{\link[repeated]{gnlmm}},
@@ -69,14 +76,14 @@
 ##' Lambert, P. (1996) Biometrics 52, 50-55.
 ##' @keywords models
 ##' @examples
-##' 
+##' \dontrun{
 ##' y <- matrix(rnbinom(20,5,0.5), ncol=5)
 ##' times <- matrix(rep(seq(10,50,by=10),4), ncol=5, byrow=TRUE)
 ##' y0 <- matrix(rep(rnbinom(5,5,0.5),4), ncol=5, byrow=TRUE)
 ##' mu <- function(p) p[1]*log(y0)+(times<30)*p[2]*
 ##' 	(times-30)+(times>30)*p[3]*(times-30)
 ##' nbkal(y, preg=c(1.3,0.008,-0.05), times=times, pdep=1.2, mu=mu)
-##' 
+##' }
 ##' @export nbkal
 nbkal <- function(response, times, mu, preg, pdepend, kalman=TRUE,
 	print.level=0, ndigit=10, gradtol=0.00001, steptol=0.00001,

@@ -81,9 +81,21 @@ data object of class, \code{repeated}, \code{tccov}, or \code{tvcov}; the
 name of the response variable should be given in \code{response}. If
 \code{response} has class \code{repeated}, it is used as the environment.}
 
-\item{others}{Arguments controlling \code{\link{nlm}}.}
+\item{print.level}{Arguments for nlm.}
 
-\item{z}{An object of class, \code{gausscop}.}
+\item{ndigit}{Arguments for nlm.}
+
+\item{gradtol}{Arguments for nlm.}
+
+\item{steptol}{Arguments for nlm.}
+
+\item{iterlim}{Arguments for nlm.}
+
+\item{fscale}{Arguments for nlm.}
+
+\item{stepmax}{Arguments for nlm.}
+
+\item{typsize}{Arguments for nlm.}
 }
 \value{
 A list of class \code{gausscop} is returned that contains all of
@@ -112,7 +124,7 @@ are unknowns in which case factor variables cannot be used and parameters
 must be scalars. (See \code{\link[rmutil]{finterp}}.)
 }
 \examples{
-
+\dontrun{
 library(gnlm)
 # linear models
 y <- matrix(rgamma(40,1,1),ncol=5)+rep(rgamma(8,0.5,1),5)
@@ -198,7 +210,7 @@ gausscop(conc, mu=~absorption-volume+
 	shape=~d*log(abs(mu)), shfn=TRUE,
 	pmu=list(absorption=0,elimination=log(0.4),volume=log(0.1)),
 	par=0.5, pshape=list(d=1), envir=reps)
-
+}
 }
 \author{
 J.K. Lindsey

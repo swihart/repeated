@@ -143,7 +143,14 @@
 ##' data object of class, \code{repeated}, \code{tccov}, or \code{tvcov}; the
 ##' name of the response variable should be given in \code{response}. If
 ##' \code{response} has class \code{repeated}, it is used as the environment.
-##' @param others Arguments controlling \code{\link{nlm}}.
+##' @param print.level Arguments for nlm.
+##' @param typsize Arguments for nlm.
+##' @param ndigit Arguments for nlm.
+##' @param gradtol Arguments for nlm.
+##' @param stepmax Arguments for nlm.
+##' @param steptol Arguments for nlm.
+##' @param iterlim Arguments for nlm.
+##' @param fscale Arguments for nlm.
 ##' @return A list of classes \code{hidden} and \code{recursive} (unless
 ##' multinomial, proportional odds, or continuation ratio) is returned that
 ##' contains all of the relevant information calculated, including error codes.
@@ -156,7 +163,7 @@
 ##' \code{\link[rmutil]{restovec}}, \code{\link[rmutil]{rmna}}.
 ##' @keywords models
 ##' @examples
-##' 
+##' \dontrun{
 ##' # model for one randomly-generated binary series
 ##' y <- c(rbinom(10,1,0.1), rbinom(10,1,0.9))
 ##' mu <- function(p) array(p, c(1,2))
@@ -177,7 +184,7 @@
 ##' mexp(z$gamma) %*% mexp(z$gamma)
 ##' plot(z)
 ##' plot(iprofile(z), lty=2)
-##' 
+##' }
 ##' @export cphidden
 cphidden <- function(response=NULL, totals=NULL, times=NULL,
 	distribution="Bernoulli", mu=NULL, cmu=NULL, tvmu=NULL, pgamma,

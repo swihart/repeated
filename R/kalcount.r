@@ -149,7 +149,14 @@
 ##' data object of class, \code{repeated}, \code{tccov}, or \code{tvcov}; the
 ##' name of the response variable should be given in \code{response}. If
 ##' \code{response} has class \code{repeated}, it is used as the environment.
-##' @param others Arguments controlling \code{\link{nlm}}.
+##' @param print.level Arguments for nlm.
+##' @param typsize Arguments for nlm.
+##' @param ndigit Arguments for nlm.
+##' @param gradtol Arguments for nlm.
+##' @param stepmax Arguments for nlm.
+##' @param steptol Arguments for nlm.
+##' @param iterlim Arguments for nlm.
+##' @param fscale Arguments for nlm.
 ##' @return A list of classes \code{kalcount} and \code{recursive} is returned.
 ##' @author J.K. Lindsey
 ##' @seealso \code{\link[growth]{carma}}, \code{\link[growth]{elliptic}},
@@ -163,7 +170,7 @@
 ##' \code{\link[rmutil]{tvctomat}}.
 ##' @keywords models
 ##' @examples
-##' 
+##' \dontrun{
 ##' treat <- c(0,0,1,1)
 ##' tr <- tcctomat(treat)
 ##' dose <- # matrix(rpois(20,10),ncol=5)
@@ -210,7 +217,7 @@
 ##' kalcount(y, intensity="log normal", mu=~b0+b1*treat+b2*dose,
 ##' 	pinitial=0.001, psh=14, ptvc=c(5,-1,0.1), envir=reps,
 ##' 	pfamily=0.8)
-##' 
+##' }
 ##' @export kalcount
 kalcount <- function(response=NULL, times=NULL, origin=0,
 	intensity="exponential", depend="independence", update="Markov",

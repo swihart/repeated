@@ -111,8 +111,14 @@
 ##' data object of class, \code{repeated}, \code{tccov}, or \code{tvcov}; the
 ##' name of the response variable should be given in \code{response}. If
 ##' \code{response} has class \code{repeated}, it is used as the environment.
-##' @param others Arguments controlling \code{\link{nlm}}.
-##' @param z An object of class, \code{gausscop}.
+##' @param print.level Arguments for nlm.
+##' @param typsize Arguments for nlm.
+##' @param ndigit Arguments for nlm.
+##' @param gradtol Arguments for nlm.
+##' @param stepmax Arguments for nlm.
+##' @param steptol Arguments for nlm.
+##' @param iterlim Arguments for nlm.
+##' @param fscale Arguments for nlm.
 ##' @return A list of class \code{gausscop} is returned that contains all of
 ##' the relevant information calculated, including error codes.
 ##' @author J.K. Lindsey
@@ -129,7 +135,7 @@
 ##' from Gaussian copula. Scandinavian Journal of Statistics 27, 305-320.
 ##' @keywords models
 ##' @examples
-##' 
+##' \dontrun{
 ##' library(gnlm)
 ##' # linear models
 ##' y <- matrix(rgamma(40,1,1),ncol=5)+rep(rgamma(8,0.5,1),5)
@@ -215,7 +221,7 @@
 ##' 	shape=~d*log(abs(mu)), shfn=TRUE,
 ##' 	pmu=list(absorption=0,elimination=log(0.4),volume=log(0.1)),
 ##' 	par=0.5, pshape=list(d=1), envir=reps)
-##' 
+##' }
 ##' @export gausscop
 gausscop <- function(response=NULL, distribution="gamma", mu=NULL, shape=NULL,
 	autocorr="exponential", pmu=NULL, pshape=NULL, par=NULL,

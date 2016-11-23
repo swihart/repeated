@@ -113,11 +113,21 @@ data object of class, \code{repeated}, \code{tccov}, or \code{tvcov}; the
 name of the response variable should be given in \code{response}. If
 \code{response} has class \code{repeated}, it is used as the environment.}
 
-\item{nind}{For plotting: numbers of individuals to plot.}
+\item{print.level}{Arguments for nlm.}
 
-\item{state}{For plotting: states to plot.}
+\item{ndigit}{Arguments for nlm.}
 
-\item{others}{Arguments controlling \code{\link{nlm}}.}
+\item{gradtol}{Arguments for nlm.}
+
+\item{steptol}{Arguments for nlm.}
+
+\item{fscale}{Arguments for nlm.}
+
+\item{iterlim}{Arguments for nlm.}
+
+\item{typsize}{Arguments for nlm.}
+
+\item{stepmax}{Arguments for nlm.}
 }
 \value{
 A list of classes \code{hidden} and \code{recursive} (unless
@@ -153,7 +163,7 @@ See MacDonald, I.L. and Zucchini, W. (1997) Hidden Markov and Other Models
 for Discrete-valued Time Series. Chapman and Hall.
 }
 \examples{
-
+\dontrun{
 # generate two random Poisson sequences with change-points
 y <- rbind(c(rpois(5,1), rpois(15,5)), c(rpois(15,1), rpois(5,5)))
 print(z <- hidden(y,dist="Poisson", cmu=~1, pcmu=c(1,5),
@@ -163,6 +173,8 @@ mu <- function(p) array(rep(p[1:2],rep(2,2)), c(2,2))
 print(z <- hidden(y,dist="Poisson", cmu=mu, pcmu=c(1,5),
 	pgamma=matrix(c(0.9,0.2,0.1,0.8),ncol=2)))
 # or
+# param nind For plotting: numbers of individuals to plot.
+# param state For plotting: states to plot.
 print(z <- hidden(y,dist="Poisson", mu=~rep(a,40), pmu=c(1,5),
 	pgamma=matrix(c(0.9,0.2,0.1,0.8),ncol=2)))
 par(mfrow=c(3,2))
@@ -172,7 +184,7 @@ plot(iprofile(z), lty=2)
 plot(mprofile(z), add=TRUE)
 plot(iprofile(z), nind=2, lty=2)
 plot(mprofile(z), nind=2, add=TRUE)
-
+}
 }
 \author{
 J.K. Lindsey and P.J. Lindsey

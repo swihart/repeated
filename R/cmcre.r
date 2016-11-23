@@ -53,7 +53,14 @@
 ##' of speed).
 ##' @param hessian If TRUE, analytic hessian is used (with accompanying loss of
 ##' speed).
-##' @param others Arguments controlling \code{\link{nlm}}.
+##' @param print.level Arguments for nlm.
+##' @param typsize Arguments for nlm.
+##' @param ndigit Arguments for nlm.
+##' @param gradtol Arguments for nlm.
+##' @param stepmax Arguments for nlm.
+##' @param steptol Arguments for nlm.
+##' @param iterlim Arguments for nlm.
+##' @param fscale Arguments for nlm.
 ##' @return A list of class \code{cmcre} is returned.
 ##' @author R.J. Cook and J.K. Lindsey
 ##' @seealso \code{\link[repeated]{chidden}}, \code{\link[repeated]{hidden}}.

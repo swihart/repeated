@@ -1434,11 +1434,11 @@ c     Begin Subroutine INVERT
       DO I2 = 1,N
          MAX = A(I2,I2)
          IF (MAX .eq. 0) THEN
-            PRINT *,'MATRIX IS SINGULAR !' 
+C            PRINT *,'MATRIX IS SINGULAR !' 
             return
          END IF
          IF (DABS(MAX) .lt. 0.000000001) THEN 
-            PRINT *,'MATRIX IS NEAR SINGULAR !'
+C            PRINT *,'MATRIX IS NEAR SINGULAR !'
          END IF
          
          DO J = 1,N
@@ -1705,10 +1705,10 @@ c     Set ALPHA to nonrestart conjugate gadient
          END IF
          ALPHA = ALPHA * DG / DG1   	        
       ELSE
-         WRITE(IDEV,50)ITER,IFUN,FMIN,GSQ
+C         WRITE(IDEV,50)ITER,IFUN,FMIN,GSQ
  50      FORMAT(10H ITERATION,I5,20H      FUNCTION CALLS,I6/5H F = 
      &        ,D15.8,13H G-SQUARED = ,D15.8/)  
-         WRITE(IDEV,60)(X(I),I=1,total1+total2a+total2b)
+C         WRITE(IDEV,60)(X(I),I=1,total1+total2a+total2b)
  60      FORMAT(/8HINTER X./1H ,20D16.8)
       END IF
 
