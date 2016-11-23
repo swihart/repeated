@@ -6,9 +6,7 @@ Authors@R: c(
     person("Jim"  , "Lindsey", email="jlindsey@gen.unimaas.nl", role="aut", comment="Jim created this package, Bruce is maitaining the CRAN version"))
 Depends:
     R (>= 1.4),
-    rmutil,
-    stats,
-    graphics
+    rmutil
 Description: Various functions to fit models for non-normal repeated
     measurements.
 License: GPL-2
