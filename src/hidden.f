@@ -409,11 +409,18 @@ c      call dqrcf(gmod,m,rank,qraux,rhs,1,delta,info)
       double precision svec,pvec
 
       poispr = -pvec
-      do 1 j = 1, svec
+      do 1 j = 1, int(svec)
          poispr = poispr+dlog(pvec/dble(j))
  1    continue
       return
       end
+
+C      do 1 j = 1, 999999999
+C         if(j > svec) exit
+C         poispr = poispr+dlog(pvec/dble(j))
+C 1    continue
+C      return
+C      end
 
       double precision function multpr(svec,ismu,mu,cmu,tvmu,i,j,k,
      +     iq,m,l,mobs,nm,nn)
@@ -432,7 +439,7 @@ c      call dqrcf(gmod,m,rank,qraux,rhs,1,delta,info)
             denom=denom+dexp(mu(nm,j,n))
  1       continue
          if(svec.gt.0)then
-            multpr = mu(nm,j,svec)-dlog(denom)
+            multpr = mu(nm,j,int(svec))-dlog(denom)
          else
             multpr = -dlog(denom)
          endif
@@ -441,7 +448,7 @@ c      call dqrcf(gmod,m,rank,qraux,rhs,1,delta,info)
             denom=denom+dexp(cmu(i,j,n)+tvmu(k,j,n))
  2       continue
          if(svec.gt.0)then
-            multpr = cmu(i,j,svec)+tvmu(k,j,svec)-dlog(denom)
+            multpr = cmu(i,j,int(svec))+tvmu(k,j,int(svec))-dlog(denom)
          else
             multpr = -dlog(denom)
          endif
@@ -494,18 +501,18 @@ c      call dqrcf(gmod,m,rank,qraux,rhs,1,delta,info)
          if(svec.eq.0)then
             pi=1.
          else
-            pi=1./(1.+dexp(mu(nm,j,svec)))
+            pi=1./(1.+dexp(mu(nm,j,int(svec))))
          endif
-         do 2 n=svec+1,l
+         do 2 n=int(svec)+1,l
             pi=pi/(1.+dexp(-mu(nm,j,n)))
  2       continue
       else
          if(svec.eq.0)then
             pi=1.
          else
-            pi=1./(1.+dexp(cmu(i,j,svec)+tvmu(k,j,svec)))
+            pi=1./(1.+dexp(cmu(i,j,int(svec))+tvmu(k,j,int(svec))))
          endif
-         do 4 n=svec+1,l
+         do 4 n=int(svec)+1,l
             pi=pi/(1.+dexp(-cmu(i,j,n)-tvmu(k,j,n)))
  4       continue
       endif
@@ -531,7 +538,8 @@ c      call dqrcf(gmod,m,rank,qraux,rhs,1,delta,info)
          if(svec.eq.l)then
             pi=1./(1.+dexp(mu(nm,j,l)))
          else if(svec.gt.0)then
-            pi=1/(1.+dexp(-mu(nm,j,svec+1)))-1/(1.+dexp(-mu(nm,j,svec)))
+            pi=1/(1.+dexp(-mu(nm,j,int(svec+1))))
+     +           -1/(1.+dexp(-mu(nm,j,int(svec))))
          else
             pi=1/(1.+dexp(-mu(nm,j,1)))
          endif
@@ -539,8 +547,8 @@ c      call dqrcf(gmod,m,rank,qraux,rhs,1,delta,info)
          if(svec.eq.l)then
             pi=1./(1.+dexp(cmu(i,j,l)+tvmu(k,j,l)))
          else if(svec.gt.0)then
-            pi=1/(1.+dexp(-cmu(i,j,svec+1)-tvmu(k,j,svec+1)))
-     +           -1/(1.+dexp(-cmu(i,j,svec)-tvmu(k,j,svec)))
+            pi=1/(1.+dexp(-cmu(i,j,int(svec+1))-tvmu(k,j,int(svec+1))))
+     +           -1/(1.+dexp(-cmu(i,j,int(svec))-tvmu(k,j,int(svec))))
          else
             pi=1/(1.+dexp(-cmu(i,j,1)-tvmu(k,j,1)))
          endif
@@ -572,12 +580,12 @@ c      call dqrcf(gmod,m,rank,qraux,rhs,1,delta,info)
             tmp2=nvec+1.0
             if(svec.lt.nvec/2)then
                tmp=svec+1.0
-               do 1 j = 1, svec
+               do 1 j = 1, int(svec)
                   binpr=binpr*(tmp2-j)/(tmp-j)
  1             continue
             else
                tmp=nvec-svec+1.0
-               do 2 j = 1, nvec-svec
+               do 2 j = 1, int(nvec-svec)
                   binpr=binpr*(tmp2-j)/(tmp-j)
  2             continue
             endif
@@ -626,12 +634,12 @@ c      call dqrcf(gmod,m,rank,qraux,rhs,1,delta,info)
       tmp2=nvec+1.0
       if(svec.lt.nvec/2)then
          tmp3=svec+1.0
-         do 1 j = 1, svec
+         do 1 j = 1, int(svec)
             tmp=tmp*(tmp2-j)/(tmp3-j)
  1       continue
       else
          tmp3=nvec-svec+1.0
-         do 2 j = 1, nvec-svec
+         do 2 j = 1, int(nvec-svec)
             tmp=tmp*(tmp2-j)/(tmp3-j)
  2       continue
       endif
