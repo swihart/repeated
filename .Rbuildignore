@@ -1,0 +1,11 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+README.md
+QEE2.out
+^\.travis\.yml$
+cran-comments.md
+changes.txt
+\.fsrc$
+^.*\.o$
+\.so$
+\.dll$
