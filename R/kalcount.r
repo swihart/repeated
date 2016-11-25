@@ -159,15 +159,15 @@
 ##' @param fscale Arguments for nlm.
 ##' @return A list of classes \code{kalcount} and \code{recursive} is returned.
 ##' @author J.K. Lindsey
-##' @seealso \code{\link[growth]{carma}}, \code{\link[growth]{elliptic}},
-##' \code{\link[rmutil]{finterp}}, \code{\link[repeated]{gar}},
-##' \code{\link[rmutil]{gettvc}}, \code{\link[repeated]{gnlmm}},
-##' \code{\link[gnlm]{gnlr}}, \code{\link[rmutil]{iprofile}},
-##' \code{\link[repeated]{kalseries}}, \code{\link[event]{kalsurv}},
-##' \code{\link[rmutil]{mprofile}}, \code{\link[repeated]{nbkal}},
-##' \code{\link[rmutil]{read.list}}, \code{\link[rmutil]{restovec}},
-##' \code{\link[rmutil]{rmna}}, \code{\link[rmutil]{tcctomat}},
-##' \code{\link[rmutil]{tvctomat}}.
+### @seealso \code{\link[growth]{carma}}, \code{\link[growth]{elliptic}},
+### \code{\link[rmutil]{finterp}}, \code{\link[repeated]{gar}},
+### \code{\link[rmutil]{gettvc}}, \code{\link[repeated]{gnlmm}},
+### \code{\link[gnlm]{gnlr}}, \code{\link[rmutil]{iprofile}},
+### \code{\link[repeated]{kalseries}}, \code{\link[event]{kalsurv}},
+### \code{\link[rmutil]{mprofile}}, \code{\link[repeated]{nbkal}},
+### \code{\link[rmutil]{read.list}}, \code{\link[rmutil]{restovec}},
+### \code{\link[rmutil]{rmna}}, \code{\link[rmutil]{tcctomat}},
+### \code{\link[rmutil]{tvctomat}}.
 ##' @keywords models
 ##' @examples
 ##' \dontrun{
