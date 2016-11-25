@@ -177,14 +177,14 @@
 ##' models contains the square root of the dispersion parameter at each time
 ##' point.
 ##' @author J.K. Lindsey
-##' @seealso \code{\link[growth]{carma}}, \code{\link[growth]{elliptic}},
-##' \code{\link[rmutil]{finterp}}, \code{\link[repeated]{gnlmm}},
-##' \code{\link[gnlm]{gnlr}}, \code{\link[rmutil]{iprofile}},
-##' \code{\link[repeated]{kalcount}}, \code{\link[repeated]{kalseries}},
-##' \code{\link[event]{kalsurv}}, \code{\link[rmutil]{mprofile}},
-##' \code{\link[rmutil]{plot.residuals}}, \code{\link[rmutil]{read.list}},
-##' \code{\link[rmutil]{restovec}}, \code{\link[rmutil]{rmna}},
-##' \code{\link[rmutil]{tcctomat}}, \code{\link[rmutil]{tvctomat}}.
+### @seealso \code{\link[growth]{carma}}, \code{\link[growth]{elliptic}},
+### \code{\link[rmutil]{finterp}}, \code{\link[repeated]{gnlmm}},
+### \code{\link[gnlm]{gnlr}}, \code{\link[rmutil]{iprofile}},
+### \code{\link[repeated]{kalcount}}, \code{\link[repeated]{kalseries}},
+### \code{\link[event]{kalsurv}}, \code{\link[rmutil]{mprofile}},
+### \code{\link[rmutil]{plot.residuals}}, \code{\link[rmutil]{read.list}},
+### \code{\link[rmutil]{restovec}}, \code{\link[rmutil]{rmna}},
+### \code{\link[rmutil]{tcctomat}}, \code{\link[rmutil]{tvctomat}}.
 ##' @references Lindsey, J.K. (1997) Applying Generalized Linear Models.
 ##' Springer, pp.\ 93--101
 ##' 

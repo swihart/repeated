@@ -257,15 +257,5 @@ Springer, pp.\ 93--101
 
 Lambert, P. (1996) Statistics in Medicine 15, 1695-1708
 }
-\seealso{
-\code{\link[growth]{carma}}, \code{\link[growth]{elliptic}},
-\code{\link[rmutil]{finterp}}, \code{\link[repeated]{gnlmm}},
-\code{\link[gnlm]{gnlr}}, \code{\link[rmutil]{iprofile}},
-\code{\link[repeated]{kalcount}}, \code{\link[repeated]{kalseries}},
-\code{\link[event]{kalsurv}}, \code{\link[rmutil]{mprofile}},
-\code{\link[rmutil]{plot.residuals}}, \code{\link[rmutil]{read.list}},
-\code{\link[rmutil]{restovec}}, \code{\link[rmutil]{rmna}},
-\code{\link[rmutil]{tcctomat}}, \code{\link[rmutil]{tvctomat}}.
-}
 \keyword{models}
 
