@@ -230,12 +230,5 @@ gnlmm(y, dist="gamma", mu=~b4+exp(b0+b1*sex+b2*dose), shape=~a1+a2*sex,
 \author{
 J.K. Lindsey
 }
-\seealso{
-\code{\link[rmutil]{finterp}}, \code{\link[gnlm]{fmr}},
-\code{\link{glm}}, \code{\link[repeated]{gnlmix}},
-\code{\link[repeated]{glmm}}, \code{\link[gnlm]{gnlr}},
-\code{\link[gnlm]{gnlr3}}, \code{\link[repeated]{hnlmix}},
-\code{\link{lm}}, \code{\link[gnlm]{nlr}}, \code{\link[stats]{nls}}.
-}
 \keyword{models}
 

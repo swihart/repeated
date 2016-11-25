@@ -157,11 +157,11 @@
 ##' multinomial, proportional odds, or continuation ratio) is returned that
 ##' contains all of the relevant information calculated, including error codes.
 ##' @author J.K. Lindsey and P.J. Lindsey
-##' @seealso \code{\link[repeated]{chidden}}, \code{\link[repeated]{gar}},
-##' \code{\link[repeated]{gnlmm}}, \code{\link[rmutil]{iprofile}},
-##' \code{\link[repeated]{kalcount}}, \code{\link[rmutil]{mprofile}},
-##' \code{\link[repeated]{nbkal}}, \code{\link[rmutil]{read.list}},
-##' \code{\link[rmutil]{restovec}}, \code{\link[rmutil]{rmna}}.
+### @seealso \code{\link[repeated]{chidden}}, \code{\link[repeated]{gar}},
+### \code{\link[repeated]{gnlmm}}, \code{\link[rmutil]{iprofile}},
+### \code{\link[repeated]{kalcount}}, \code{\link[rmutil]{mprofile}},
+### \code{\link[repeated]{nbkal}}, \code{\link[rmutil]{read.list}},
+### \code{\link[rmutil]{restovec}}, \code{\link[rmutil]{rmna}}.
 ##' @references MacDonald, I.L. and Zucchini, W. (1997) Hidden Markov and other
 ##' Models for Discrete-valued Time Series. Chapman & Hall.
 ##' @keywords models

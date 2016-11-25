@@ -55,7 +55,7 @@
 ##' @return A matrix with the probabilities and their standard errors is
 ##' returned.
 ##' @author J.K. Lindsey
-##' @seealso \code{\link{glm}}, \code{\link[gnlm]{nordr}}
+### @seealso \code{\link{glm}}, \code{\link[gnlm]{nordr}}
 ##' @keywords models
 ##' @examples
 ##' 

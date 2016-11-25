@@ -54,8 +54,5 @@ catmiss(resp, y[1:26])
 \author{
 J.K. Lindsey
 }
-\seealso{
-\code{\link{glm}}, \code{\link[gnlm]{nordr}}
-}
 \keyword{models}
 

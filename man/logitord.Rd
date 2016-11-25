@@ -93,8 +93,5 @@ T.R. Ten Have and J.K. Lindsey
 Ten Have, T.R., Kunselman, A.R., Pulkstenis, E.P. and Landis,
 J.R. (1998) Biometrics 54, 367-383, for the binary case.
 }
-\seealso{
-\code{\link[gnlm]{nordr}}, \code{\link[gnlm]{ordglm}}.
-}
 \keyword{models}
 

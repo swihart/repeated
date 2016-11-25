@@ -155,12 +155,12 @@
 ##' multinomial, proportional odds, or continuation ratio) is returned that
 ##' contains all of the relevant information calculated, including error codes.
 ##' @author J.K. Lindsey
-##' @seealso \code{\link[repeated]{chidden}}, \code{\link[repeated]{gar}},
-##' \code{\link[repeated]{gnlmm}}, \code{\link[repeated]{hidden}},
-##' \code{\link[rmutil]{iprofile}}, \code{\link[repeated]{kalcount}},
-##' \code{\link[rmutil]{mexp}}, \code{\link[rmutil]{mprofile}},
-##' \code{\link[repeated]{nbkal}}, \code{\link[rmutil]{read.list}},
-##' \code{\link[rmutil]{restovec}}, \code{\link[rmutil]{rmna}}.
+### @seealso \code{\link[repeated]{chidden}}, \code{\link[repeated]{gar}},
+### \code{\link[repeated]{gnlmm}}, \code{\link[repeated]{hidden}},
+### \code{\link[rmutil]{iprofile}}, \code{\link[repeated]{kalcount}},
+### \code{\link[rmutil]{mexp}}, \code{\link[rmutil]{mprofile}},
+### \code{\link[repeated]{nbkal}}, \code{\link[rmutil]{read.list}},
+### \code{\link[rmutil]{restovec}}, \code{\link[rmutil]{rmna}}.
 ##' @keywords models
 ##' @examples
 ##' \dontrun{

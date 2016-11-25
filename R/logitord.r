@@ -76,7 +76,7 @@
 ##' @param print.level If 1, the iterations are printed out.
 ##' @return A list of class \code{logitord} is returned.
 ##' @author T.R. Ten Have and J.K. Lindsey
-##' @seealso \code{\link[gnlm]{nordr}}, \code{\link[gnlm]{ordglm}}.
+### @seealso \code{\link[gnlm]{nordr}}, \code{\link[gnlm]{ordglm}}.
 ##' @references Ten Have, T.R., Kunselman, A.R., Pulkstenis, E.P. and Landis,
 ##' J.R. (1998) Biometrics 54, 367-383, for the binary case.
 ##' @keywords models

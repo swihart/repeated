@@ -83,12 +83,5 @@ glmm(cbind(r,n-r)~x, family=binomial, nest=nest, data=df)
 \author{
 J.K. Lindsey
 }
-\seealso{
-\code{\link{family}}, \code{\link[gnlm]{fmr}}, \code{\link{glm}},
-\code{\link{glm.control}}, \code{\link[repeated]{gnlmix}},
-\code{\link[repeated]{gnlmm}}, \code{\link[gnlm]{gnlr}},
-\code{\link[gnlm]{gnlr3}}, \code{\link[repeated]{hnlmix}},
-\code{\link[stats]{nls}}.
-}
 \keyword{models}
 

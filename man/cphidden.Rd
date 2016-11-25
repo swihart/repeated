@@ -188,13 +188,5 @@ plot(iprofile(z), lty=2)
 \author{
 J.K. Lindsey
 }
-\seealso{
-\code{\link[repeated]{chidden}}, \code{\link[repeated]{gar}},
-\code{\link[repeated]{gnlmm}}, \code{\link[repeated]{hidden}},
-\code{\link[rmutil]{iprofile}}, \code{\link[repeated]{kalcount}},
-\code{\link[rmutil]{mexp}}, \code{\link[rmutil]{mprofile}},
-\code{\link[repeated]{nbkal}}, \code{\link[rmutil]{read.list}},
-\code{\link[rmutil]{restovec}}, \code{\link[rmutil]{rmna}}.
-}
 \keyword{models}
 

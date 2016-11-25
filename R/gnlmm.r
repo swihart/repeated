@@ -153,11 +153,11 @@
 ##' @return A list of class \code{gnlm} is returned that contains all of the
 ##' relevant information calculated, including error codes.
 ##' @author J.K. Lindsey
-##' @seealso \code{\link[rmutil]{finterp}}, \code{\link[gnlm]{fmr}},
-##' \code{\link{glm}}, \code{\link[repeated]{gnlmix}},
-##' \code{\link[repeated]{glmm}}, \code{\link[gnlm]{gnlr}},
-##' \code{\link[gnlm]{gnlr3}}, \code{\link[repeated]{hnlmix}},
-##' \code{\link{lm}}, \code{\link[gnlm]{nlr}}, \code{\link[stats]{nls}}.
+### @seealso \code{\link[rmutil]{finterp}}, \code{\link[gnlm]{fmr}},
+### \code{\link{glm}}, \code{\link[repeated]{gnlmix}},
+### \code{\link[repeated]{glmm}}, \code{\link[gnlm]{gnlr}},
+### \code{\link[gnlm]{gnlr3}}, \code{\link[repeated]{hnlmix}},
+### \code{\link{lm}}, \code{\link[gnlm]{nlr}}, \code{\link[stats]{nls}}.
 ##' @keywords models
 ##' @examples
 ##' \dontrun{

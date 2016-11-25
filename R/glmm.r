@@ -73,11 +73,11 @@
 ##' @param control A list of parameters for controlling the fitting process.
 ##' @return \code{glmm} returns a list of class \code{glmm}
 ##' @author J.K. Lindsey
-##' @seealso \code{\link{family}}, \code{\link[gnlm]{fmr}}, \code{\link{glm}},
-##' \code{\link{glm.control}}, \code{\link[repeated]{gnlmix}},
-##' \code{\link[repeated]{gnlmm}}, \code{\link[gnlm]{gnlr}},
-##' \code{\link[gnlm]{gnlr3}}, \code{\link[repeated]{hnlmix}},
-##' \code{\link[stats]{nls}}.
+### @seealso \code{\link{family}}, \code{\link[gnlm]{fmr}}, \code{\link{glm}},
+### \code{\link{glm.control}}, \code{\link[repeated]{gnlmix}},
+### \code{\link[repeated]{gnlmm}}, \code{\link[gnlm]{gnlr}},
+### \code{\link[gnlm]{gnlr3}}, \code{\link[repeated]{hnlmix}},
+### \code{\link[stats]{nls}}.
 ##' @keywords models
 ##' @examples
 ##' 

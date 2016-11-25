@@ -65,12 +65,12 @@
 ##' @param fscale Arguments for nlm.
 ##' @return A list of classes \code{nbkal} and \code{recursive} is returned.
 ##' @author P. Lambert and J.K. Lindsey
-##' @seealso \code{\link[repeated]{gar}}, \code{\link[repeated]{gnlmm}},
-##' \code{\link[gnlm]{gnlr}}, \code{\link[rmutil]{iprofile}}
-##' \code{\link[repeated]{kalcount}}, \code{\link[rmutil]{mprofile}},
-##' \code{\link[rmutil]{read.list}}, \code{\link[rmutil]{rmna}},
-##' \code{\link[rmutil]{restovec}}, \code{\link[rmutil]{tcctomat}},
-##' \code{\link[rmutil]{tvctomat}}.
+### @seealso \code{\link[repeated]{gar}}, \code{\link[repeated]{gnlmm}},
+### \code{\link[gnlm]{gnlr}}, \code{\link[rmutil]{iprofile}}
+### \code{\link[repeated]{kalcount}}, \code{\link[rmutil]{mprofile}},
+### \code{\link[rmutil]{read.list}}, \code{\link[rmutil]{rmna}},
+### \code{\link[rmutil]{restovec}}, \code{\link[rmutil]{tcctomat}},
+### \code{\link[rmutil]{tvctomat}}.
 ##' @references Lambert, P. (1996) Applied Statistics 45, 31-38.
 ##' 
 ##' Lambert, P. (1996) Biometrics 52, 50-55.
