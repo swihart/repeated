@@ -119,11 +119,11 @@
 ##' @return A list of class \code{gnlm} is returned that contains all of the
 ##' relevant information calculated, including error codes.
 ##' @author J.K. Lindsey
-##' @seealso \code{\link[growth]{carma}}, \code{\link[rmutil]{finterp}},
-##' \code{\link[growth]{elliptic}}, \code{\link[repeated]{glmm}},
-##' \code{\link[repeated]{gnlmm}}, \code{\link[gnlm]{gnlr}},
-##' \code{\link[repeated]{hnlmix}}, \code{\link[repeated]{kalseries}},
-##' \code{\link[gnlm]{nlr}}, \code{\link[stats]{nls}}.
+### @seealso \code{\link[growth]{carma}}, \code{\link[rmutil]{finterp}},
+### \code{\link[growth]{elliptic}}, \code{\link[repeated]{glmm}},
+### \code{\link[repeated]{gnlmm}}, \code{\link[gnlm]{gnlr}},
+### \code{\link[repeated]{hnlmix}}, \code{\link[repeated]{kalseries}},
+### \code{\link[gnlm]{nlr}}, \code{\link[stats]{nls}}.
 ##' @keywords models
 ##' @examples
 ##' \dontrun{

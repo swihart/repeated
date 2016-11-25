@@ -171,12 +171,5 @@ hnlmix(reps, distribution="gamma", mixture="gamma",
 \author{
 J.K. Lindsey
 }
-\seealso{
-\code{\link[growth]{carma}}, \code{\link[rmutil]{finterp}},
-\code{\link[growth]{elliptic}}, \code{\link[repeated]{glmm}},
-\code{\link[repeated]{gnlmix}}, \code{\link[repeated]{gnlmm}},
-\code{\link[gnlm]{gnlr}}, \code{\link[repeated]{kalseries}},
-\code{\link[gnlm]{nlr}}, \code{\link[stats]{nls}}.
-}
 \keyword{models}
 

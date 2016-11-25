@@ -219,16 +219,5 @@ J.K. Lindsey
 Song, P.X.K. (2000) Multivariate dispersion models generated
 from Gaussian copula. Scandinavian Journal of Statistics 27, 305-320.
 }
-\seealso{
-\code{\link[growth]{carma}}, \code{\link[growth]{elliptic}},
-\code{\link[rmutil]{finterp}}, \code{\link[repeated]{gar}},
-\code{\link[rmutil]{gettvc}}, \code{\link[repeated]{glmm}},
-\code{\link[repeated]{gnlmm}}, \code{\link[gnlm]{gnlr}},
-\code{\link[rmutil]{iprofile}}, \code{\link[repeated]{kalseries}},
-\code{\link[rmutil]{mprofile}}, \code{\link[growth]{potthoff}},
-\code{\link[rmutil]{read.list}}, \code{\link[rmutil]{restovec}},
-\code{\link[rmutil]{rmna}}, \code{\link[rmutil]{tcctomat}},
-\code{\link[rmutil]{tvctomat}}.
-}
 \keyword{models}
 

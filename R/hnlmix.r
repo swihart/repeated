@@ -127,11 +127,11 @@
 ##' The two variances and shrinkage estimates of the random effects are
 ##' provided.
 ##' @author J.K. Lindsey
-##' @seealso \code{\link[growth]{carma}}, \code{\link[rmutil]{finterp}},
-##' \code{\link[growth]{elliptic}}, \code{\link[repeated]{glmm}},
-##' \code{\link[repeated]{gnlmix}}, \code{\link[repeated]{gnlmm}},
-##' \code{\link[gnlm]{gnlr}}, \code{\link[repeated]{kalseries}},
-##' \code{\link[gnlm]{nlr}}, \code{\link[stats]{nls}}.
+### @seealso \code{\link[growth]{carma}}, \code{\link[rmutil]{finterp}},
+### \code{\link[growth]{elliptic}}, \code{\link[repeated]{glmm}},
+### \code{\link[repeated]{gnlmix}}, \code{\link[repeated]{gnlmm}},
+### \code{\link[gnlm]{gnlr}}, \code{\link[repeated]{kalseries}},
+### \code{\link[gnlm]{nlr}}, \code{\link[stats]{nls}}.
 ##' @keywords models
 ##' @examples
 ##' \dontrun{
