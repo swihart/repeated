@@ -289,15 +289,5 @@ kalseries(reps, intensity="gamma", dep="serial", pdep=0.5,
 \author{
 J.K. Lindsey
 }
-\seealso{
-\code{\link[growth]{carma}}, \code{\link[growth]{elliptic}},
-\code{\link[rmutil]{finterp}}, \code{\link[repeated]{gar}},
-\code{\link[rmutil]{gettvc}}, \code{\link[repeated]{gnlmm}},
-\code{\link[gnlm]{gnlr}}, \code{\link[rmutil]{iprofile}},
-\code{\link[repeated]{kalcount}}, \code{\link[event]{kalsurv}},
-\code{\link[rmutil]{mprofile}}, \code{\link[rmutil]{read.list}},
-\code{\link[rmutil]{restovec}}, \code{\link[rmutil]{rmna}},
-\code{\link[rmutil]{tcctomat}}, \code{\link[rmutil]{tvctomat}}.
-}
 \keyword{models}
 
