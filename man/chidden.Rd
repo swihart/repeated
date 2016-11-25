@@ -214,13 +214,5 @@ For time-discretized Poisson processes, see
 Davison, A.C. and Ramesh, N.I. (1996) Some models for discretized series of
 events. JASA 91: 601-609.
 }
-\seealso{
-\code{\link[repeated]{gar}}, \code{\link[repeated]{gnlmm}},
-\code{\link[repeated]{hidden}}, \code{\link[rmutil]{iprofile}},
-\code{\link[repeated]{kalcount}}, \code{\link[rmutil]{mexp}},
-\code{\link[rmutil]{mprofile}}, \code{\link[repeated]{nbkal}},
-\code{\link[rmutil]{read.list}}, \code{\link[rmutil]{restovec}},
-\code{\link[rmutil]{rmna}}.
-}
 \keyword{models}
 
