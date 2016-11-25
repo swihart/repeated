@@ -63,7 +63,7 @@
 ##' @param fscale Arguments for nlm.
 ##' @return A list of class \code{cmcre} is returned.
 ##' @author R.J. Cook and J.K. Lindsey
-##' @seealso \code{\link[repeated]{chidden}}, \code{\link[repeated]{hidden}}.
+### @seealso \code{\link[repeated]{chidden}}, \code{\link[repeated]{hidden}}.
 ##' @references Cook, R.J. (1999) A mixed model for two-state Markov processes
 ##' under panel observations. Biometrics 55, 915-920.
 ##' @keywords models

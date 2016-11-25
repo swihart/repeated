@@ -87,8 +87,5 @@ R.J. Cook and J.K. Lindsey
 Cook, R.J. (1999) A mixed model for two-state Markov processes
 under panel observations. Biometrics 55, 915-920.
 }
-\seealso{
-\code{\link[repeated]{chidden}}, \code{\link[repeated]{hidden}}.
-}
 \keyword{models}
 
