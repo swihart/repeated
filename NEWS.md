@@ -1,6 +1,6 @@
-------------------------------------------------------------------------------
-version 1.1.0
-------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#version 1.1.0
+#------------------------------------------------------------------------------
 
 ## Major changes ##
 
@@ -11,255 +11,416 @@ I'll try to document the changes henceforth here and at
 https://github.com/swihart/repeated/issues.
 
 
-------------------------------------------------------------------------------
-version 1.0
-------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+#version 1.0
+#------------------------------------------------------------------------------
+
 30.11.10 (growth)
-elliptic: twins option added for model using covfn with covariance matrix
+
+  * elliptic: twins option added for model using covfn with covariance matrix
 diagonal constant
+
 28.11.10
-elliptic: added an error check when covfn used
+
+  * elliptic: added an error check when covfn used
+  
 15.2.10 (rmutil)
-changed s<0 to s<=0 in qlaplace & rlaplace (thanks to Peter Ehlers)
+
+  * changed s<0 to s<=0 in qlaplace & rlaplace (thanks to Peter Ehlers)
+  
 18.11.09 (repeated)
-removed a redundant line in gausscop.r that now produced an error
+
+  * removed a redundant line in gausscop.r that now produced an error
 	(thanks to Patrick Lindsey)
+	
 7.4.09
-removed extra } in biv.binom.Rd (thanks to Christopher Marcum)
+
+  * removed extra } in biv.binom.Rd (thanks to Christopher Marcum)
+  
 20.10.08
-discrete q functions: changed trunc to round (thanks to Frederic Gosselin)
+
+  * discrete q functions: changed trunc to round (thanks to Frederic Gosselin)
+  
 3.7.08 (gnlm)
-fit.dist: corrected check for negative values with Laplace, Cauchy,
+
+  * fit.dist: corrected check for negative values with Laplace, Cauchy,
 	 and Student t plus error in counts (f -> ni) for Laplace
 	 (thanks to Michael Anyadike-Danes)
+	 
 24.10.07
-fnenvir: changed way "=" is handled in gsub() because of error since R2.5.0
+
+  * fnenvir: changed way "=" is handled in gsub() because of error since R2.5.0
+  
 8.10.07 (event, gnlm, growth, repeated)
-changed typsiz to typsize in nlm() throughout
+
+  * changed typsiz to typsize in nlm() throughout
+  
 11.7.07
-romberg.c: added missing R.h (thanks to Olivia Lau)
+
+  * romberg.c: added missing R.h (thanks to Olivia Lau)
+  
 8.2.07
-print out name of response variable in elliptic, bnlr, gnlr, gnlr3,
+
+  * print out name of response variable in elliptic, bnlr, gnlr, gnlr3,
 	 gnlmm, gnlmm3, and fmr (thanks to Patrick Lindsey)
-qsimplex: corrected search interval updates
+  * qsimplex: corrected search interval updates
+  
 27.9.06
-qhjorth, qinvgauss, qginvgauss, qboxcox: changed lower limit of search
+
+  * qhjorth, qinvgauss, qginvgauss, qboxcox: changed lower limit of search
 	 from 0.001 to .Machine$double.xmin (thanks to Franco Mendolia)
+	 
 8.12.05 (rmutil, repeated, event)
-minor modifications to Fortran for F95 compatibility (thanks to Jan de Leeuw)
+
+  * minor modifications to Fortran for F95 compatibility (thanks to Jan de Leeuw)
+  
 22.11.05
-finterp, objectrm: added na.action=NULL in calls to model.frame
+
+  * finterp, objectrm: added na.action=NULL in calls to model.frame
 	 (default is na.omit !!!!!) (thanks to Patrick Lindsey)
+	 
 30.9.05
-elliptic: corrected calculation of number of parameters for builtin
+
+  * elliptic: corrected calculation of number of parameters for builtin
 	  logistic function (thanks to Tom Van Dooren)
+	  
 1.8.05
-qbetabinom: changed trunc() to round() (thanks to Elias Krainski)
-mprofile, iprofile: added check that times are available (thanks to
+
+  * qbetabinom: changed trunc() to round() (thanks to Elias Krainski)
+  * mprofile, iprofile: added check that times are available (thanks to
 	Patrick Lindsey)
+
 6.7.05
-ksurvb, ksurvg, kcountb: added break; after default: in C code to
+
+  * ksurvb, ksurvg, kcountb: added break; after default: in C code to
 	satisfy some compilers (thanks to Patrick Lindsey)
+
 30.6.05
-finterp: correction for change in functioning of match()
-gnlm family: added coef.gnlm() and vcov.gnlm() (thanks to Bendix Carstensen)
+
+  * finterp: correction for change in functioning of match()
+  * gnlm family: added coef.gnlm() and vcov.gnlm() (thanks to Bendix Carstensen)
+  
 25.4.05 (stable)
-rstable: eliminate production of NAs (thanks to Zhu Wang)
+
+  * rstable: eliminate production of NAs (thanks to Zhu Wang)
+  
 26.1.05
-finterp: fixed a bug when >= or <= is used in a formula (thanks to
+
+  * finterp: fixed a bug when >= or <= is used in a formula (thanks to
 	 Eliot McIntire)
+
 1.11.04
-gnlmm3: generalized nonlinear mixed models for three-parameter distributions
+
+  * gnlmm3: generalized nonlinear mixed models for three-parameter distributions
+
 28.9.04
-catmiss: removed codes() from example in help (thanks to Kjetil Brinchmann)
+
+  * catmiss: removed codes() from example in help (thanks to Kjetil Brinchmann)
+
 21.9.04
-finterp: fixed if test to remove occasional warning (thanks to Ken Knoblauch)
+
+  * finterp: fixed if test to remove occasional warning (thanks to Ken Knoblauch)
+
 17.9.04
-gnlmix: removed erroneous printing that distribution is censored for
+
+  * gnlmix: removed erroneous printing that distribution is censored for
 	binomial (thanks to Ken Knoblauch)
+
 28.7.04
-gnlmix, hnlmix: fixed printing of results when nonlinear function
+
+  * gnlmix, hnlmix: fixed printing of results when nonlinear function
 	contains a linear part (thanks to Ken Knoblauch)
+
 2.7.04
-tvctomat: fixed warning message on removing tm (thanks to Patrick Lindsey)
+
+  * tvctomat: fixed warning message on removing tm (thanks to Patrick Lindsey)
+
 1.6.04
-glmm: changed print.summary.glmm to work under R1.9 (thanks to Spencer Graves)
+
+  * glmm: changed print.summary.glmm to work under R1.9 (thanks to Spencer Graves)
+
 5.4.04
-fnenvir: fixed obscure error when linear used in a function (thanks to
+
+  * fnenvir: fixed obscure error when linear used in a function (thanks to
 	Ken Knoblauch)
-help: corrected truncation of usage formula for certain functions
+  * help: corrected truncation of usage formula for certain functions
 	(thanks to Patrick Lindsey)
+
 9.1.04
-fitdist: fixed typo that stopped geometric distribution from working
+
+  * fitdist: fixed typo that stopped geometric distribution from working
+
 6.1.04
-ordglm: changed tapply to capply because of change to former (thanks
+
+  * ordglm: changed tapply to capply because of change to former (thanks
 	to Andrew Criswell)
+
 9.12.03
-corgram: start abscissa at 0 for PACF
-fnenvir: fixed grep for checking redundant parameters
-bnlr, fmr, gnlmm, gnlr, gnlr3, int, nlr, nordr, read.list, stable.mode:
+
+  * corgram: start abscissa at 0 for PACF
+  * fnenvir: fixed grep for checking redundant parameters
+  * bnlr, fmr, gnlmm, gnlr, gnlr3, int, nlr, nordr, read.list, stable.mode:
 	fixed if() on vector
+	
 14.11.03
-readdna, survkit, glmm, gnlmm, objectrm, readrm: removed obsolete
+
+  * readdna, survkit, glmm, gnlmm, objectrm, readrm: removed obsolete
 	codes() function (thanks to Ken Knoblauch)
-carma: give error when ccov=~1 used (thanks to Patrick Lindsey)
+  * carma: give error when ccov=~1 used (thanks to Patrick Lindsey)
+  
 21.8.03
-elliptic: corrected print function when the dispersion function depends
+
+  * elliptic: corrected print function when the dispersion function depends
 	on the location function (thanks to Gabrielle Kelly)
+
 31.7.03
-hnlmix: corrected options for dnbinom (thanks to Jagat Sheth)
+
+  * hnlmix: corrected options for dnbinom (thanks to Jagat Sheth)
+  
 30.6.03
-dftorep: corrected check for ordered times to allow for two levels of nesting
+
+  * dftorep: corrected check for ordered times to allow for two levels of nesting
+  
 25.5.03
-ordglm: added a data argument (thanks to Kosuke Imai)
+
+  * ordglm: added a data argument (thanks to Kosuke Imai)
+
 13.5.03
-ordglm: corrected order of printing of standard errors (thanks to Kosuke Imai)
+
+  * ordglm: corrected order of printing of standard errors (thanks to Kosuke Imai)
+
 25.4.03
-gnlr, gnlr3, gnlmm, fmr, nordr: changed test for environment because
+
+  * gnlr, gnlr3, gnlmm, fmr, nordr: changed test for environment because
 	the value returned by parent.frame() has a class in R1.7
+
 22.4.03
-cphidden: a function to locate a changepoint in continuous time using
+
+  * cphidden: a function to locate a changepoint in continuous time using
 	a two-state hidden Markov model
+	
 9.4.03
-biv.binom: corrected degrees of freedom printed (thanks to Goran Brostrom)
+
+  * biv.binom: corrected degrees of freedom printed (thanks to Goran Brostrom)
+  
 12.2.03
-restovec: fixed handling of delta when the response is a list
+
+  * restovec: fixed handling of delta when the response is a list
+  
 16.1.03
-kalsurv: fixed typo in print.kalsurv (thanks to Anthony Gichangi)
+
+  * kalsurv: fixed typo in print.kalsurv (thanks to Anthony Gichangi)
+  
 4.12.02
-int: changed eps
+
+  * int: changed eps
+  
 2.12.02
-fit.dist: added Laplace distribution
+
+  * fit.dist: added Laplace distribution
+  
 1.12.02
-glmm: added error message if (codes of) nesting variable not consecutively
+
+  * glmm: added error message if (codes of) nesting variable not consecutively
 	numbered (thanks to Renaud Lancelot)
+	
 27.11.02
-fit.dist: changed Weibull parametrisation so that mu refers to y and
+
+  * fit.dist: changed Weibull parametrisation so that mu refers to y and
 	not to y^alpha
+	
 22.11.02
-fit.dist: added Cauchy and Student t distributions
+
+  * fit.dist: added Cauchy and Student t distributions
 	use (log) density functions instead of writing formulae
+	
 18.11.02
-fit.dist: added beta-binomial distribution
+
+  * fit.dist: added beta-binomial distribution
+
 16.11.02
-fit.dist: corrected error in calculation of log likelihood when censor=T
+
+  * fit.dist: corrected error in calculation of log likelihood when censor=T
+  
 14.11.02
-fit.dist: corrected error in calculation of fitted values for zeta distribution
+
+  * fit.dist: corrected error in calculation of fitted values for zeta distribution
+  
 31.10.02
-int2: added default limits (thanks to Patrick Lindsey)
+
+  * int2: added default limits (thanks to Patrick Lindsey)
+  
 8.9.02 (repeated)
-gar: corrected recursive fitted values when binomial (thanks to
+
+  * gar: corrected recursive fitted values when binomial (thanks to
 	Patrick Lindsey)
+	
 4.9.02
-gausscop: exponential distribution now works (thanks to Patrick Lindsey)
+
+  * gausscop: exponential distribution now works (thanks to Patrick Lindsey)
+
 30.8.02
-restovec: modified checks for nesting in lists and allow nesting to be
+
+  * restovec: modified checks for nesting in lists and allow nesting to be
 	supplied separately when a list is given (thanks to Patrick Lindsey)
-gausscop: for positive-valued distributions, returned predicted values
+  * gausscop: for positive-valued distributions, returned predicted values
 	without transforming by log link function (thanks to Patrick Lindsey)
+	
 18.7.02
-ehr: addition checks of data supplied to this suite of functions
-rs3: fixed typo
-marg.hom: added checks on data
+
+  * ehr: addition checks of data supplied to this suite of functions
+  * rs3: fixed typo
+  * marg.hom: added checks on data
+  
 16.7.02
-chidden.r, hidden.r: corrected negative binomial check so that 0
+
+  * chidden.r, hidden.r: corrected negative binomial check so that 0
 	responses are allowed (thanks to Ben Cooper)
+	
 10.7.02
-modified man pages for changed arguments to rgamma function
-rmutil: created dist.h file
+
+  * modified man pages for changed arguments to rgamma function
+  * rmutil: created dist.h file
+  
 11.6.02
-hnlmix: corrected AIC for penalty constraint (was too large by one)
+
+  * hnlmix: corrected AIC for penalty constraint (was too large by one)
 	changed calculation of multiplicative random effects
+	
 23.5.02
-rmutil: added [pdqr]twosidedpower distribution
+
+  * rmutil: added [pdqr]twosidedpower distribution
 	added log option to all density (d) functions
-gar, gnlr, gnlmix, gnlmm, hnlmix: added two-sided power distribution
-gnlr: user-supplied likelihood function works again (thanks to Martin Liermann)
-finterp, fnenvir: added option to allow any response to be a covariate
+  * gar, gnlr, gnlmix, gnlmm, hnlmix: added two-sided power distribution
+  * gnlr: user-supplied likelihood function works again (thanks to Martin Liermann)
+  * finterp, fnenvir: added option to allow any response to be a covariate
+
 9.5.02
-hnlmix: recursive fitted values available
-ordglm: fixed error that PearsRes not defined when individual data are
+
+  * hnlmix: recursive fitted values available
+  * ordglm: fixed error that PearsRes not defined when individual data are
 	supplied (thanks to Kamal Desai)
+
 6.5.02
-gnlmix, hnlmix: added inverse gamma mixture distribution
-gnlmix: handles censored data
-gnlmm: finds nesting variable when repeated environment is specified
+
+  * gnlmix, hnlmix: added inverse gamma mixture distribution
+  * gnlmix: handles censored data
+  * gnlmm: finds nesting variable when repeated environment is specified
+
 5.5.02
-finterp: modified so that as.factor(times) works
+
+  * finterp: modified so that as.factor(times) works
+  
 30.4.02
-hnlmix: nonlinear random effects models using a modified Lee and
+
+  * hnlmix: nonlinear random effects models using a modified Lee and
 	Nelder h-likelihood
-gnlr: modified check on location parameters for Levy distribution
+  * gnlr: modified check on location parameters for Levy distribution
       added check that double Poisson, multiplicative Poisson, gamma
       count, and logarithmic data are not censored
-------------------------------------------------------------------------------
-version 0.9
-------------------------------------------------------------------------------
+      
+#------------------------------------------------------------------------------
+#version 0.9
+#------------------------------------------------------------------------------
+
 28.4.02
-gnlmix: corrected typo in negative binomial distribution
+
+  * gnlmix: corrected typo in negative binomial distribution
+
 23.4.02
-carma, chidden, elliptic, hidden, kalseries: give error if censored
+
+  * carma, chidden, elliptic, hidden, kalseries: give error if censored
 	data supplied (thanks to Troels Ring)
+
 22.4.02
-elliptic: when two levels of nesting, calculate correctly first
+
+  * elliptic: when two levels of nesting, calculate correctly first
 	recursive fitted value in each cluster (was plotted correctly
 	using iprofile) plus corresponding simplification of
 	plot.iprofile (thanks to Troels Ring)
-17.4.02 (all libraries)
-gnlmix: corrected typo in inverse Gauss mixing distribution
-print model methods: added option not to print correlations
+	
+17.4.02 (all packages)
+  * gnlmix: corrected typo in inverse Gauss mixing distribution
+  * print model methods: added option not to print correlations
+  
 15.3.02
-restovec, tcctomat, tvctomat: added optional description slot to response,
+  * restovec, tcctomat, tvctomat: added optional description slot to response,
 	tccov, and tvcov objects
+	
 13.3.02
-glmm: convert repeated object to dataframe if supplied as data
+  * glmm: convert repeated object to dataframe if supplied as data
 tcctomat, tvctomat: corrected to detect contrast options when dataframe=F
+
 12.3.02
-tvctomat: corrected problem for list of factors when dataframe=F
+  * tvctomat: corrected problem for list of factors when dataframe=F
 	(thanks to Patrick Lindsey)
-finterp.default: give error if members of dataframe named using $
+  * finterp.default: give error if members of dataframe named using $
 	(thanks to Christof Bigler)
+
 28.2.02
-chidden, hidden: added check for correct number of initial estimates
+  * chidden, hidden: added check for correct number of initial estimates
 	when list of functions supplied (thanks to Patrick Lindsey)
+
 22.2.02
-corgram: added option for PACF
+  * corgram: added option for PACF
+  
 19.2.02
-fmr: modified some discrete distributions to avoid overflow with large counts
+  * fmr: modified some discrete distributions to avoid overflow with large counts
+  
 17.2.02
-elliptic: added as.double for y in call to C code because of change in
+
+  * elliptic: added as.double for y in call to C code because of change in
 	  read.table
+
 12.2.02
-finterp: give error if offset used in W&R formula
+  * finterp: give error if offset used in W&R formula
+  
 31.1.02
-%^%: power of a matrix
-elliptic: corrected problem when common parameters in mean and
+
+  * %^%: power of a matrix
+  * elliptic: corrected problem when common parameters in mean and
 	variance functions
+	
 20.1.02
-plot.repeated: added selection of profiles to be plotted by using ccov
+  * plot.repeated: added selection of profiles to be plotted by using ccov
+  
 14.1.02
-gar: added absolute value arch (names of others changed: additive -> square,
-	multiplicative -> exponential)
-     volatility method for extracting values of nonconstant dispersion
+
+  * gar: added absolute value arch (names of others changed: additive -> square, multiplicative -> exponential)
+  * volatility method for extracting values of nonconstant dispersion
 	parameter
-Makefiles: removed . for SHLIB_EXT for R1.4.0
-dist.c, kcountb.c, romberg.c, stable.c: changed malloc to R_alloc
+  * Makefiles: removed . for SHLIB_EXT for R1.4.0
+  * dist.c, kcountb.c, romberg.c, stable.c: changed malloc to R_alloc
+
 10.1.02
-(dhpqr)ggamma, fmr, gausscop, gnlmix, gnlmm, gnlr, gnlr3, hgamma:
+
+  * (dhpqr)ggamma, fmr, gausscop, gnlmix, gnlmm, gnlr, gnlr3, hgamma:
 	changed argument of (dpqr)gamma for compatibility with R1.4.0
 modified help to work with R1.4.0
+
 18.12.01
-contr.mean: provides correct labels on mean constraints (corrects contr.sum)
+
+  * contr.mean: provides correct labels on mean constraints (corrects
+  contr.sum)
+  
 4.12.01
-chidden, hidden: corrected printing out family parameter with AR when
+
+  * chidden, hidden: corrected printing out family parameter with AR when
 	there is not one
+
 28.11.01
-qstable: corrected bug when tail<1 and skew=1 (thanks to Alec Stephenson)
+
+  * qstable: corrected bug when tail<1 and skew=1 (thanks to Alec Stephenson)
+
 23.11.01
-corgram: handles NAs in the series
+
+  * corgram: handles NAs in the series
+
 19.11.01
-cprocess: fixed error in checking for list of events (thanks to Troels Ring)
-stablereg: changed alpha to allow parameter to be (0,2) instead of (1,2)
+
+  * cprocess: fixed error in checking for list of events (thanks to Troels Ring)
+  * stablereg: changed alpha to allow parameter to be (0,2) instead of (1,2)
+  
 18.11.01
 chidden: added time-discretized Poisson process
 17.11.01
@@ -543,9 +704,11 @@ gnlr3.r: corrected typo in normal and inverse Gauss distributions
 19.10.00
 gausscop: multivariate Gaussian copula with arbitrary marginals
 elliptic.r: several typing errors corrected
-------------------------------------------------------------------------------
-version 0.8
-------------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+#version 0.8
+#------------------------------------------------------------------------------
+
 17.10.00
 carma, elliptic, kalseries: handles NULL delta correctly with
 	multivariate response in repeated object
@@ -676,9 +839,11 @@ read.rep: read a rectangular data set from a file and create a
 logitord.f: reformatted to remove tabs for HP compilers (thanks to
 	    Osman Buyukisk)
 restovec: responses can have more than one type class
-------------------------------------------------------------------------------
-version 0.7
-------------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+#version 0.7
+#------------------------------------------------------------------------------
+
 3.1.2000
 residuals.elliptic: corrected error in calculation of raw residuals
 31.12.99
@@ -801,9 +966,11 @@ finterp, fnenvir: fixed conflict of names by beginning all names with a dot
 elliptic.r: changed option and title from elliptic to power exponential
 30.9.99
 ordglm.r: generalized linear ordinal regression
-------------------------------------------------------------------------------
-version 0.6
-------------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+#version 0.6
+#------------------------------------------------------------------------------
+
 21.9.99
 pkpd.r: changed mu2.1o1cfp to ensure ked>0
 20.9.99
@@ -828,9 +995,11 @@ hidden.r, chidden.r: corrected one error message
 14.7.99
 binnest.f: modified comments to compile with standard Fortran (thanks
 	to Martin Maechler)
-------------------------------------------------------------------------------
-version 0.5
-------------------------------------------------------------------------------
+	
+#------------------------------------------------------------------------------
+#version 0.5
+#------------------------------------------------------------------------------
+
 29.6.99
 plot.response: remove NAs when calculating default ylim
 28.6.99
@@ -908,9 +1077,11 @@ nordr.r: n changed to nrows
 13.4.99
 carma.r: corrected predicted values when response is transformed
 gar.r, kalseries.r: changed handling of transformed responses
-------------------------------------------------------------------------------
-version 0.4
-------------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+#version 0.4
+#------------------------------------------------------------------------------
+
 12.4.99
 added dependency on rmutil to DESCRIPTION
 11.4.99
@@ -1024,9 +1195,11 @@ gnlr.r, gnlr3.r, fmr.r, gnlmm.r: removed -delta/2 in right censoring
 dist.r, gnlr3.r, gar.c, hidden.f: changed parametrization of Burr to
 	agree with kalsurv.r
 elliptic.r: use var(y) to get initial estimate of variance
-------------------------------------------------------------------------------
-version 0.3
-------------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+#version 0.3
+#------------------------------------------------------------------------------
+
 14.1.99
 kalsurv.r: corrected printing of number of subjects and observations
 2.1.99
@@ -1080,9 +1253,11 @@ hidden: added multinomial distribution
 hidden.f: corrected Poisson and binomial calculations
 5.11.98
 carmasub.f and survkit.f: changes for compatibility with g77
-------------------------------------------------------------------------------
-version 0.2
-------------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+#version 0.2
+#------------------------------------------------------------------------------
+
 2.11.98
 ehr.r: corrected printing coefficients with linear and other parameters
 1.11.98
@@ -1126,76 +1301,114 @@ kalsurv: added serial update
 inthaz.c: put back ihlogis (disappeared with nmath)
 renamed wr.r as util.r
 moved det and %**% from repeated and growth to rmutil/R/util.r
+
 5.10.98
-corrected check in carma, elliptic, gar, and kalseries for nonpositive
+
+  * corrected check in carma, elliptic, gar, and kalseries for nonpositive
 	transformed values
+
 4.10.98
-glmm.r: corrected two errors
+
+  * glmm.r: corrected two errors
+
 1.10.98
-extended residual plots to all of class recursive
-kalcount, kalseries, kalsurv: return mean profiles in z$pred
-plot.profile: accepts z$pred as well as a mean function
-nbkal.r: corrections
-corrected and updated a lot of docs
+
+  * extended residual plots to all of class recursive
+  * kalcount, kalseries, kalsurv: return mean profiles in z$pred
+  * plot.profile: accepts z$pred as well as a mean function
+  * nbkal.r: corrections
+  * corrected and updated a lot of docs
+
 30.9.98
-moved kalsurv to event library
-renamed rmtools as rmutil
-inthaz.c: corrected error from change to nmath
+
+  * moved kalsurv to event library
+  * renamed rmtools as rmutil
+  * inthaz.c: corrected error from change to nmath
+
 29.8.98
-kalsurv.r: added recursive fitted values
-kalseries.r: added recursive fitted values
-updated plot.residuals for recursive class
+
+  * kalsurv.r: added recursive fitted values
+  * kalseries.r: added recursive fitted values
+  * updated plot.residuals for recursive class
+
 27.9.98
-corrected docs for plot.profile, plot.iprofile
-added covind.default
-plot.iprofile: corrected default settings
+
+  * corrected docs for plot.profile, plot.iprofile
+  * added covind.default
+  * plot.iprofile: corrected default settings
+
 24.9.98
-gettvc.r: allow an option for ties
-bessel.r: only calculate one kind of function
+
+  * gettvc.r: allow an option for ties
+  * bessel.r: only calculate one kind of function
+
 20.9.98
-gettvc.r: allow NAs in time-varying covariate
+
+  * gettvc.r: allow NAs in time-varying covariate
 	  corrected for ties between response and covariate
-tvctomat: allow tvcov to already have class, "tvcov"
-added as.double in all Fortran and C calls
+  * tvctomat: allow tvcov to already have class, "tvcov"
+  * added as.double in all Fortran and C calls
+
 18.9.98
-plotrm.r: corrected bug in plot.iprofile due to new covind()
+
+  * plotrm.r: corrected bug in plot.iprofile due to new covind()
+
 16.9.98
-pkpd.r: corrected mu2.0o2c and added mu2.0o2cfp
+
+  * pkpd.r: corrected mu2.0o2c and added mu2.0o2cfp
+
 15.9.98
-replaced Bessel, Gauss-Hermite, and integration routines
+
+  * replaced Bessel, Gauss-Hermite, and integration routines
 bessel.r: added docs
+
 14.9.98
-moved wr to rmtools and added docs
-added covind function to rmtools
+
+  * moved wr to rmtools and added docs
+  * added covind function to rmtools
+
 12.9.98
-kalserie.r: added delta option
-tcctomat.Rd: corrected alias
-created new library, rmtools
+
+  * kalserie.r: added delta option
+  * tcctomat.Rd: corrected alias
+  * created new library, rmtools
+
 11.9.98
-dist.r: added beta binomial
-dist.c: simplified calls to overdispersion functions
-autocor.r: corrected pergram
-kalserie.r: corrected error in printing parameters with torder>0
-kserieb.c: corrected error when mu function used
+
+  * dist.r: added beta binomial
+  * dist.c: simplified calls to overdispersion functions
+  * autocor.r: corrected pergram
+  * kalserie.r: corrected error in printing parameters with torder>0
+  * kserieb.c: corrected error when mu function used
+
 10.9.98
-readlist.r: corrected binomial totals for lists in restovec
-fmr.r: removed unnecessary code
-gar.r: added overdispersed binomial data
-dist.r: allow dispersion to be a scalar when mean is a vector
+
+  * readlist.r: corrected binomial totals for lists in restovec
+  * fmr.r: removed unnecessary code
+  * gar.r: added overdispersed binomial data
+  * dist.r: allow dispersion to be a scalar when mean is a vector
 	created documentation for p and d functions
+
 9.9.98
-nordr.r: corrected weights for adjacent categories model
+
+  * nordr.r: corrected weights for adjacent categories model
 	 test for p>1 in proportional odds
-gar.r: added checks on times and mu arguments
+  * gar.r: added checks on times and mu arguments
        added binomial data
-corrected docs for elliptic, gar, kalcount, kalseries, kalsurv, nbkal
+  * corrected docs for elliptic, gar, kalcount, kalseries, kalsurv, nbkal
 	  for z$index
-clarified docs for rmna, restovec, tcctomat, and tvctomat
+  * clarified docs for rmna, restovec, tcctomat, and tvctomat
+
 8.9.98
-removed backslash at end of Makefiles for event, gnlm, growth
-moved integer declarations to the beginning in carmasub.f,
+
+  * removed backslash at end of Makefiles for event, gnlm, growth
+  * moved integer declarations to the beginning in carmasub.f,
       elliptic.f, gettvc.f, survkit.f so that g77 should work
+
 5.9.98
-gar.r Corrected predictions for transformed responses
-------------------------------------------------------------------------------
-version 0.1
+
+  * gar.r Corrected predictions for transformed responses
+
+#------------------------------------------------------------------------------
+#version 0.1
+#------------------------------------------------------------------------------
