@@ -1396,8 +1396,8 @@ c     Begin Subroutine INVERT
       PARAMETER (maxbet=25)
       
       integer n,i,j,i2,n2,i3
-      REAL*8 A(n,n),AINV(n,n)
-      REAL*8 MAX,TEMP,fact
+      real(8) A(n,n),AINV(n,n)
+      real(8) MAX,TEMP,fact
       
       DO I = 1,N
          DO J = 1,N
