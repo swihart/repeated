@@ -93,7 +93,7 @@ The variance components at the two levels can only depend on the covariates
 if \code{response} has class, \code{repeated}.
 }
 \examples{
-\dontrun{
+
 #y <- rbind(matrix(rbinom(20,1,0.6), ncol=4),
 #	matrix(rbinom(20,1,0.4), ncol=4))
 y <- matrix(c(1,1,0,1,1,1,1,0,1,1,1,1,1,1,1,1,0,1,1,0,0,1,0,1,1,0,1,0,
@@ -107,7 +107,7 @@ binnest(reps, mu=~treatment, preg=c(1,0), pre1=1, pre2=1)
 binnest(reps, mu=~treatment, preg=c(1,-1), pre1=1)
 # second level random effect only
 binnest(reps, mu=~treatment, preg=c(1,-1), pre2=1)
-}
+
 }
 \author{
 T.R. Ten Have and J.K. Lindsey
