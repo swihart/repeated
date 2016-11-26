@@ -1,6 +1,6 @@
 Package: repeated
 Version: 1.1.0
-Title: Non-normal Repeated Measurements Models
+Title: Non-Normal Repeated Measurements Models
 Authors@R: c(
     person("Bruce", "Swihart", email="bruce.swihart@gmail.com", role=c("cre", "aut")),
     person("Jim"  , "Lindsey", email="jlindsey@gen.unimaas.nl", role="aut", comment="Jim created this package, Bruce is maintaining the CRAN version"))

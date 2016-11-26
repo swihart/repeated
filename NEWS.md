@@ -422,86 +422,139 @@ modified help to work with R1.4.0
   * stablereg: changed alpha to allow parameter to be (0,2) instead of (1,2)
   
 18.11.01
-chidden: added time-discretized Poisson process
+
+  * chidden: added time-discretized Poisson process
+  
 17.11.01
-chidden, hidden: added Student t distribution
+
+  * chidden, hidden: added Student t distribution
 		 changed Cauchy shape parameter to scale instead of scale^2
+		 
 15.11.01
-gar: added Student t distribution
+
+  * gar: added Student t distribution
      added ARCH models
-elliptic: when AR, take log of determinant returned by dpodi
+  * elliptic: when AR, take log of determinant returned by dpodi
 	(thanks to Gabrielle Kelly)
+	
 13.11.01
-elliptic: when series of independent observations, calculate covariance
+
+  * elliptic: when series of independent observations, calculate covariance
 	determinant as sum of log variances instead of log of product
 	(thanks to Gabrielle Kelly)
+	
 8.11.01
-cmcre: corrected problems when a covariate is used (thanks to Anthony Gichangi)
+
+  * cmcre: corrected problems when a covariate is used (thanks to Anthony Gichangi)
+  
 6.11.01
-print.response: do not print mean if nominal (but not binary) or ordinal
+
+  * print.response: do not print mean if nominal (but not binary) or ordinal
 	(thanks to Patrick Lindsey)
+
 25.10.01
-hidden.r: corrected check for fixed zeros in transition matrix
-	  relaxed check for rows of transition matrix summing to one
-chidden.r: relaxed check for rows of transition matrix summing to zero
+
+  * hidden.r: corrected check for fixed zeros in transition matrix
+    * relaxed check for rows of transition matrix summing to one
+  * chidden.r: relaxed check for rows of transition matrix summing to zero
 	(all thanks to Patrick Lindsey)
+
 24.10.01
-restovec: weights can be logical
+
+  * restovec: weights can be logical
+  
 14.10.01
-gar: fixed output printing when shape is a function of location parameter
+
+  * gar: fixed output printing when shape is a function of location parameter
 	use dnbinom function
-	changed negative binomial shape parameter to be same as in gnlr
+	* changed negative binomial shape parameter to be same as in gnlr
+	
 10.10.01
-carma, chidden, gar, hidden, kalcount, kalseries: check for two levels of
+
+  * carma, chidden, gar, hidden, kalcount, kalseries: check for two levels of
 	nesting when serial dependence fitted
+	
 9.10.01
-kalseries: corrected error when torder used with tvcov
+
+  * kalseries: corrected error when torder used with tvcov
+  
 8.10.01
-hidden, chidden: added observed AR(1)
-gnlr, gnlmm, gnlmix: changed parametrization of the shape parameter for the
+
+  * hidden, chidden: added observed AR(1)
+  * gnlr, gnlmm, gnlmix: changed parametrization of the shape parameter for the
 	beta distribution (thanks to Goran Arnoldsson)
-binnest: duplicate variables in Fortran call
-model functions using envir: check that response specified is one in
+  * binnest: duplicate variables in Fortran call
+  * model functions using envir: check that response specified is one in
 	envir when only one present
+	
 3.10.01 
-plevy, qlevy: use pnorm and qnorm instead of integrating
+
+  * plevy, qlevy: use pnorm and qnorm instead of integrating
+  
 26.9.01
-elliptic: added second form of asymmetric multivariate Laplace
+
+  * elliptic: added second form of asymmetric multivariate Laplace
 	distribution with constant asymmetry parameter
+	
 25.9.01
-elliptic: added asymmetric multivariate Laplace distribution
+
+  * elliptic: added asymmetric multivariate Laplace distribution
+  
 24.9.01
-carma.r: removed unnecessary check that envir is a repeated object
+
+  * carma.r: removed unnecessary check that envir is a repeated object
 	(thanks to Troels Ring)
+	
 11.9.01
-fit.dist: added checks that grouped frequency data are supplied
+
+  * fit.dist: added checks that grouped frequency data are supplied
+  
 10.9.01
-kalsurv: corrected output errors when environment is supplied
-gar: use log option in dbinom, dpois
-kalcount: set first recursive prediction in series to marginal prediction
+
+  * kalsurv: corrected output errors when environment is supplied
+  * gar: use log option in dbinom, dpois
+  * kalcount: set first recursive prediction in series to marginal prediction
+  
 6.9.01
+
 gar: added loglog link for binomial data (corrected cloglog which was,
 	in fact, loglog)
+	
 20.8.01
-gnlmix: set undefined sh3 to NULL for one parameter distributions
+
+  * gnlmix: set undefined sh3 to NULL for one parameter distributions
+  
 1.8.01
-chidden, gar, gnlr3, hidden: added skew Laplace distribution
+
+  * chidden, gar, gnlr3, hidden: added skew Laplace distribution
+  
 27.7.01
-corgram: improved presentation of correlogram
+
+  * corgram: improved presentation of correlogram
+  
 25.7.01
-d,h,p,q,rskewlaplace: probability functions for the skew Laplace distribution
+
+  * d,h,p,q,rskewlaplace: probability functions for the skew Laplace distribution
+
 24.7.01
-autointensity.r: plots autointensity function of a point process
+
+  * autointensity.r: plots autointensity function of a point process
+  
 12.7.01
-plot.repeated: fixed error of unknown type when plotted time-varying covariate
-	(thanks to Patrick Lindsey)
-carma: clearer error message when incorrect environment supplied
+
+  * plot.repeated: fixed error of unknown type when plotted time-varying covariate (thanks to Patrick Lindsey)
+  * carma: clearer error message when incorrect environment supplied
+  
 10.7.01
-carma: will handle data objects with (one of) multivariate responses
-chidden, hidden: handle Jacobian correctly with (one of) multivariate
+
+  * carma: will handle data objects with (one of) multivariate responses
+  * chidden, hidden: handle Jacobian correctly with (one of) multivariate
 	responses
+	
 6.7.01
-cprocess.r: recognizes data objects for events and not just for times
+
+  * cprocess.r: recognizes data objects for events and not just for times
+  
 5.7.01
 f2c.h included in library for toms614.c (missing in R1.3.0)
 27.6.01
@@ -972,28 +1025,43 @@ ordglm.r: generalized linear ordinal regression
 #------------------------------------------------------------------------------
 
 21.9.99
-pkpd.r: changed mu2.1o1cfp to ensure ked>0
+
+  * pkpd.r: changed mu2.1o1cfp to ensure ked>0
+
 20.9.99
-resid.f: correction to work with MS-Windows
+
+  * resid.f: correction to work with MS-Windows
+
 7.9.99
-binnest.r, survkit.r: changed NULLs for Fortran to work with R0.65
+
+  * binnest.r, survkit.r: changed NULLs for Fortran to work with R0.65
+
 6.9.99
-ehr.r, kalsurv.r, fmr.r, gnlr.r, gnlr3.r, nlr.r, nordr.r, elliptic.r,
+
+  * ehr.r, kalsurv.r, fmr.r, gnlr.r, gnlr3.r, nlr.r, nordr.r, elliptic.r,
 	gar.r, gnlmm.r, kalcount.r, kalseries.r: changed attributes to
 	work with R0.65
-finterp, fnenvir: variables can be logical as well as numeric
+  * finterp, fnenvir: variables can be logical as well as numeric
+
 3.9.99
-Makefiles:  moved $(FLIBS) to end of line
+
+  * Makefiles:  moved $(FLIBS) to end of line
+
 14.8.99
-print.gnlr: corrected errors in printing fmr, gnlr3, and gnlmm output
-fnenvir.tvcov: corrected error for undefined ex1a (-> ex2a)
-Pareto, gnlmm, hstudent, kalcount, kalseries, pkpd, read.list, read.surv,
+
+  * print.gnlr: corrected errors in printing fmr, gnlr3, and gnlmm output
+  * fnenvir.tvcov: corrected error for undefined ex1a (-> ex2a)
+  * Pareto, gnlmm, hstudent, kalcount, kalseries, pkpd, read.list, read.surv,
 	tvctomat: corrected examples
+
 18.7.99
-hidden.r, chidden.r: corrected one error message
+
+  * hidden.r, chidden.r: corrected one error message
 		     added printout of degrees of freedom
+
 14.7.99
-binnest.f: modified comments to compile with standard Fortran (thanks
+
+  * binnest.f: modified comments to compile with standard Fortran (thanks
 	to Martin Maechler)
 	
 #------------------------------------------------------------------------------
@@ -1201,106 +1269,172 @@ elliptic.r: use var(y) to get initial estimate of variance
 #------------------------------------------------------------------------------
 
 14.1.99
-kalsurv.r: corrected printing of number of subjects and observations
+
+  * kalsurv.r: corrected printing of number of subjects and observations
+
 2.1.99
-cprocess.r: allow event counts with unequal times
-added mode="double" to is.vector
+
+  * cprocess.r: allow event counts with unequal times
+  * added mode="double" to is.vector
+
 29.12.98
-corrected minor bugs in fmr
+
+  * corrected minor bugs in fmr
+
 28.12.98
-corrected abs bug for Laplace in kalman C functions
+
+  * corrected abs bug for Laplace in kalman C functions
+
 27.12.98
-restovec: corrected binary totals when given as a vector
-gar: added Levy, Pareto, generalized inverse Gauss, and
+
+  * restovec: corrected binary totals when given as a vector
+  * gar: added Levy, Pareto, generalized inverse Gauss, and
      power exponential distributions
-hidden and chidden: added various overdispersed and continuous distributions
+  * hidden and chidden: added various overdispersed and continuous distributions
+
 22.12.98
-hidden and chidden: added filter calculation and plots
+
+  * hidden and chidden: added filter calculation and plots
+
 21.12.98
-moved Student t from gnlr to gnlr3
-renamed beta as Pareto in kalcount, kalseries, and kalsurv
-corrected various minor errors in fmr and gnlr3
+
+  * moved Student t from gnlr to gnlr3
+  * renamed beta as Pareto in kalcount, kalseries, and kalsurv
+  * corrected various minor errors in fmr and gnlr3
+
 20.12.98
-dist.r, gnlr.r, fmr.r: added gamma count and Pareto distributions
+
+  * dist.r, gnlr.r, fmr.r: added gamma count and Pareto distributions
+
 18.12.98
-chidden: continuous-time hidden Markov chain models
+
+  * chidden: continuous-time hidden Markov chain models
+
 7.12.98
-dist.r, gnlr.r, fmr.r: added Levy distribution
-removed .so from Makefiles and library.dynam 
+
+  * dist.r, gnlr.r, fmr.r: added Levy distribution
+  * removed .so from Makefiles and library.dynam 
+
 6.12.98
-util.r: added spectral decomposition to mexp
+
+  * util.r: added spectral decomposition to mexp
+
 5.12.98
-rmutil: added several p and d functions
-gnlr3.r: added censored generalized inverse Gaussian and power
+
+  * rmutil: added several p and d functions
+  * gnlr3.r: added censored generalized inverse Gaussian and power
 	 exponential distributions
+
 2.12.98
-int.r: vectorized Romberg integration
+
+  * int.r: vectorized Romberg integration
+
 1.12.98
-int.r: added option for Romberg integration
+
+  * int.r: added option for Romberg integration
+
 30.11.98
-updated libraries with Brian Ripley's corrections
+
+  * updated libraries with Brian Ripley's corrections
+
 25.11.98
-hidden:	allow values in the transition matrix to be fixed at 0 or 1
+
+  * hidden:	allow values in the transition matrix to be fixed at 0 or 1
+
 24.11.98
-hidden: added independence model
+
+  * hidden: added independence model
+
 23.11.98
-inthaz.c: changed header include
-bessel: removed function
-gnlr3.r: changed to internal bessel function
+
+  * inthaz.c: changed header include
+  * bessel: removed function
+  * gnlr3.r: changed to internal bessel function
+
 14.11.98
-hidden: added multinomial distribution
+
+  * hidden: added multinomial distribution
+
 12.11.98
-hidden.f: corrected Poisson and binomial calculations
+
+  * hidden.f: corrected Poisson and binomial calculations
+
 5.11.98
-carmasub.f and survkit.f: changes for compatibility with g77
+
+  * carmasub.f and survkit.f: changes for compatibility with g77
 
 #------------------------------------------------------------------------------
 #version 0.2
 #------------------------------------------------------------------------------
 
 2.11.98
-ehr.r: corrected printing coefficients with linear and other parameters
+
+  * ehr.r: corrected printing coefficients with linear and other parameters
+
 1.11.98
-km.r: corrected NaNs in log
+
+  * km.r: corrected NaNs in log
+
 29.10.98
-carma.r: corrected printout of mean time
-km.r: corrected ylab for cdf
+
+  * carma.r: corrected printout of mean time
+  * km.r: corrected ylab for cdf
+
 26.10.98
-rmna: handles NAs in time-constant covariates properly
-carma.r and elliptic.r: accept ccov of class, tccov
-cprocess.r: added plots from counts of events
+
+  * rmna: handles NAs in time-constant covariates properly
+  * carma.r and elliptic.r: accept ccov of class, tccov
+  * cprocess.r: added plots from counts of events
+
 19.10.98
-changed to inherits() throughout
-rationalized printing of gnlr, gnlr3, fmr, gnlmm and moved to rmutil
-added delta option to carma and elliptic
+
+  * changed to inherits() throughout
+  * rationalized printing of gnlr, gnlr3, fmr, gnlmm and moved to rmutil
+  * added delta option to carma and elliptic
+
 18.10.98
-carma.r and elliptic.r: added handling of delta when y has class, response
+
+  * carma.r and elliptic.r: added handling of delta when y has class, response
+
 17.10.98
-gar.r: added cloglog link
+
+  * gar.r: added cloglog link
+
 12.10.98
-gnlmm.r: corrected handling of delta when y has class, response
+
+  * gnlmm.r: corrected handling of delta when y has class, response
+
 11.10.98
-replaced tapply() with collapse() in bivbinom, catmiss, glmm, gnlmm, ehr, coxre
+
+  * replaced tapply() with collapse() in bivbinom, catmiss, glmm, gnlmm, ehr, coxre
+
 10.10.98
-ehr.r check for singular covariance matrix
+
+  * ehr.r check for singular covariance matrix
       print names of variables for coefficients when language
+
 8.10.98
-kcountb.c: corrected dplogis call
-gnlmm.r: corrected calls to ddp, dmp, ddb, and dmb
-coxre.r: removed as.is=T in data.frame
-corrected printing shape parameters when language used in gnlr, gnlr3,
+
+  * kcountb.c: corrected dplogis call
+  * gnlmm.r: corrected calls to ddp, dmp, ddb, and dmb
+  * coxre.r: removed as.is=T in data.frame
+  * corrected printing shape parameters when language used in gnlr, gnlr3,
 	fmr, gnlmm
+
 7.10.98
-rs.r: put in check that all covariates are positive
-gnlmm.r: set censor to F for binomial data
-dist.c: changed ddp, dmp, ddb, and dmb to log and introduced weights
+
+  * rs.r: put in check that all covariates are positive
+  * gnlmm.r: set censor to F for binomial data
+  * dist.c: changed ddp, dmp, ddb, and dmb to log and introduced weights
+
 6.10.98
-kseries.c: corrected error in serial update
-kalseries.r: correcting printing error when there is an interaction
-kalsurv: added serial update
-inthaz.c: put back ihlogis (disappeared with nmath)
-renamed wr.r as util.r
-moved det and %**% from repeated and growth to rmutil/R/util.r
+
+  * kseries.c: corrected error in serial update
+  * kalseries.r: correcting printing error when there is an interaction
+  * kalsurv: added serial update
+  * inthaz.c: put back ihlogis (disappeared with nmath)
+  * renamed wr.r as util.r
+  * moved det and %**% from repeated and growth to rmutil/R/util.r
 
 5.10.98
 

@@ -2,6 +2,9 @@
 Bruce Swihart  
 November 2016  
 
+## Resubmission 1
+Hi, this is a resubmission.  I fixed Title case in DESCRIPTION.  Thanks!
+
 ## Test environments
 * local OS X install: R version 3.3.2 (2016-10-31)
 * ubuntu 12.04 (on travis-ci): R version 3.3.1 (2016-06-21)
