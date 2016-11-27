@@ -1286,33 +1286,33 @@ c     1		      (1-q2)**(UpH2 - lowh2) * A_tmp
 		    End do
 		 End do
 	      End do
-
-	      do jj=1,case1(i)
-		 do kk=1,t1
-		    do kkk=1,t1
-		       HABB(j,k,kk) = 0.0
-		    enddo
-		    do kkk=1,t2
-		       HABS1(j,k,kk) = 0.0
-		    enddo
-		    do kkk=1,t3
-		       HABS2(j,k,kk) = 0.0
-		    enddo
-		 enddo
-		 do kk=1,t2
-		    do kkk=1,t2
-		       HAS1S1(j,k,kk) = 0.0
-		    enddo
-		    do kkk=1,t3
-		       HAS1S2(j,k,kk) = 0.0
-		    enddo
-		 enddo
-		 do kk=1,t3
-		    do kkk=1,t3
-		       HAS2S2(j,k,kk) = 0.0
-		    enddo
-		 enddo
-	      enddo
+C Bruce changes first index from `j` to `jj` given J loop ends line 1257
+C	      do jj=1,case1(i)
+C		 do kk=1,t1
+C		    do kkk=1,t1
+C		       HABB(jj,k,kk) = 0.0
+C		    enddo
+C		    do kkk=1,t2
+C		       HABS1(jj,k,kk) = 0.0
+C		    enddo
+C		    do kkk=1,t3
+C		       HABS2(jj,k,kk) = 0.0
+C		    enddo
+C		 enddo
+C		 do kk=1,t2
+C		    do kkk=1,t2
+C		       HAS1S1(jj,k,kk) = 0.0
+C		    enddo
+C		    do kkk=1,t3
+C		       HAS1S2(jj,k,kk) = 0.0
+C		    enddo
+C		 enddo
+C		 do kk=1,t3
+C		    do kkk=1,t3
+C		       HAS2S2(jj,k,kk) = 0.0
+C		    enddo
+C		 enddo
+C	      enddo
 
 	      Do jj = 1, Case1(i) 
 		 Do jjj = 1, Case1(i)
