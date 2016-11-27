@@ -1103,7 +1103,7 @@ c      Allocate(G2S2S2(Case1(i),Case1(i),t3,t3))
 	   enddo
 
 	   Do  LowH1 = 0, UpH1	! Loop to do the Summation of lowh1 to UpH1
-	      Do j = 1, 4 ! Loop to do the Product of J     
+	      Do j = 1, Case1(i) ! Loop to do the Product of J     
 		 Do lowh2 = 0, uph2 ! Loop to do the Summation of lowh2 to UpH2
 		    Do k = 1, Mother(j)	! Loop to do the Product of K
 c  lines added JKL
