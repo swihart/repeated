@@ -111,11 +111,13 @@
 ##' resp <- restovec(y, nest=1:4, times=FALSE)
 ##' ccov <- tcctomat(c(rep(0,5),rep(1,5)), name="treatment")
 ##' reps <- rmna(resp, ccov=ccov)
+##' \dontrun{
 ##' # two random effects
 ##' binnest(reps, mu=~treatment, preg=c(1,0), pre1=1, pre2=1)
-##' \dontrun{
+##' }
 ##' # first level random effect only
 ##' binnest(reps, mu=~treatment, preg=c(1,-1), pre1=1)
+##' \dontrun{
 ##' # second level random effect only
 ##' binnest(reps, mu=~treatment, preg=c(1,-1), pre2=1)
 ##' }
