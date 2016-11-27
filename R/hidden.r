@@ -188,7 +188,8 @@
 ##' plot(iprofile(z), nind=2, lty=2)
 ##' plot(mprofile(z), nind=2, add=TRUE)
 ##' }
-##' @export hidden
+##' 
+##' @export
 hidden <- function(response=NULL, totals=NULL, distribution="Bernoulli",
 	mu=NULL, cmu=NULL, tvmu=NULL, pgamma, pmu=NULL, pcmu=NULL, ptvmu=NULL,
 	pshape=NULL, pfamily=NULL, par=NULL, pintercept=NULL, delta=NULL,
@@ -1110,7 +1111,9 @@ z1 <- list(
 class(z1) <- if(is.null(rpred))"hidden" else c("hidden","recursive")
 z1}
 
-print.hidden <- function(z,digits=max(3,.Options$digits-3),correlation=FALSE){
+##' @export 
+print.hidden <- function(x,digits=max(3,.Options$digits-3),correlation=FALSE, ...){
+  z <- x
 ord <- z$distribution=="continuation ratio"||
 	z$distribution=="proportional odds"
 m <- z$states
@@ -1359,8 +1362,10 @@ if(correlation){
 	print.default(z$corr,digits=digits)}}
 
 # plot probability of being in each state at each time point
-plot.hidden <- function(z, nind=1, state=NULL, smooth=FALSE, main=NULL,
+##' @export
+plot.hidden <- function(x, nind=1, state=NULL, smooth=FALSE, main=NULL,
 ylab=NULL, xlab="Time", xlim=NULL, ...){
+  z <- x
 if(max(nind)>length(nobs(z)))stop("no such individual")
 ns <- length(nind)
 ii <- covind(z$response)

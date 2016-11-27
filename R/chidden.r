@@ -180,7 +180,7 @@
 ##' events. JASA 91: 601-609.
 ##' @keywords models
 ##' @examples
-##' \dontrun{
+##' 
 ##' # model for one randomly-generated binary series
 ##' y <- c(rbinom(10,1,0.1), rbinom(10,1,0.9))
 ##' mu <- function(p) array(p, c(1,2))
@@ -207,7 +207,7 @@
 ##' plot(z)
 ##' plot(iprofile(z), lty=2)
 ##' plot(mprofile(z), add=TRUE)
-##' }
+##' 
 ##' @export chidden
 chidden <- function(response=NULL, totals=NULL, times=NULL,
 	distribution="Bernoulli", mu=NULL, cmu=NULL, tvmu=NULL, pgamma,

@@ -185,6 +185,7 @@ plot(mprofile(z), add=TRUE)
 plot(iprofile(z), nind=2, lty=2)
 plot(mprofile(z), nind=2, add=TRUE)
 }
+
 }
 \author{
 J.K. Lindsey and P.J. Lindsey
