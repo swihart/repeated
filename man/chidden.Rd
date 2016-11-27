@@ -190,6 +190,7 @@ print(z <- chidden(y, times=1:20, dist="Bernoulli",
 	mu=~rep(a,20), pmu=c(-2,2)))
 mexp(z$gamma)
 par(mfcol=c(2,2))
+\dontrun{
 plot(z)
 plot(iprofile(z), lty=2)
 plot(mprofile(z), add=TRUE)
@@ -200,7 +201,7 @@ mexp(z$gamma) \%*\% mexp(z$gamma)
 plot(z)
 plot(iprofile(z), lty=2)
 plot(mprofile(z), add=TRUE)
-
+}
 }
 \author{
 J.K. Lindsey

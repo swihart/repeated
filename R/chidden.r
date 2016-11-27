@@ -197,6 +197,7 @@
 ##' 	mu=~rep(a,20), pmu=c(-2,2)))
 ##' mexp(z$gamma)
 ##' par(mfcol=c(2,2))
+##' \dontrun{
 ##' plot(z)
 ##' plot(iprofile(z), lty=2)
 ##' plot(mprofile(z), add=TRUE)
@@ -207,7 +208,7 @@
 ##' plot(z)
 ##' plot(iprofile(z), lty=2)
 ##' plot(mprofile(z), add=TRUE)
-##' 
+##' }
 ##' @export chidden
 chidden <- function(response=NULL, totals=NULL, times=NULL,
 	distribution="Bernoulli", mu=NULL, cmu=NULL, tvmu=NULL, pgamma,

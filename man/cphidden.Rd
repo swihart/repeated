@@ -175,6 +175,7 @@ print(z <- cphidden(y, times=1:20, dist="Bernoulli",
 print(z <- cphidden(y, times=1:20, dist="Bernoulli",
 	pgamma=0.2,mu=~rep(a,20), pmu=c(-2,2)))
 mexp(z$gamma)
+\dontrun{
 par(mfcol=c(2,2))
 plot(z)
 plot(iprofile(z), lty=2)
@@ -183,7 +184,7 @@ print(z <- cphidden(y, times=(1:20)*2, dist="Bernoulli",
 mexp(z$gamma) \%*\% mexp(z$gamma)
 plot(z)
 plot(iprofile(z), lty=2)
-
+}
 }
 \author{
 J.K. Lindsey
