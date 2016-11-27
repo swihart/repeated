@@ -325,7 +325,7 @@ z0 <- .Fortran("binnest",
 	f2s1s1=double(maxmother*maxmother*t2*t2),
 	f2s1s2=double(maxmother*maxmother*t2*t3),
 	g2s2s2=double(maxmother*maxmother*t3*t3),
-	#DUP=TRUE,
+	DUP=TRUE,
 	PACKAGE="repeated")
 #
 # warnings if convergence problems

@@ -107,12 +107,8 @@ c	Program Logit_bin_nest
 c	Integer, allocatable :: Case1(:)
 c	Integer, allocatable :: Case2(:)
 
-c	Integer Case1(Num_Case1)
-c	Integer Case2(Num_Case2)
-
-	Integer Case1(*)
-	Integer Case2(*)
-
+	Integer Case1(Num_Case1)
+	Integer Case2(Num_Case2)
 
 	Integer Max_kid, Max_mother, Dim_W
 
