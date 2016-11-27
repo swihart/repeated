@@ -121,7 +121,7 @@ capture <- function(z,n){
 
 ### produce the required variables for the number of periods, n, specified
 ### 
-##' @export setup
+##' @export
 setup <- expression({
 	p1 <- as.numeric(gl(2,1,2^n))-1
 	pbd <- p2 <- as.numeric(gl(2,2,2^n))-1
