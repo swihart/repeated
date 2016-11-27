@@ -162,7 +162,7 @@ plotted using \code{\link[rmutil]{mprofile}} and
 \code{\link[rmutil]{iprofile}}.
 }
 \examples{
-
+\dontrun{
 # model for one randomly-generated binary series
 y <- c(rbinom(10,1,0.1), rbinom(10,1,0.9))
 mu <- function(p) array(p, c(1,2))
@@ -183,7 +183,7 @@ print(z <- cphidden(y, times=(1:20)*2, dist="Bernoulli",
 mexp(z$gamma) \%*\% mexp(z$gamma)
 plot(z)
 plot(iprofile(z), lty=2)
-
+}
 }
 \author{
 J.K. Lindsey
