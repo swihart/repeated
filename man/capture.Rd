@@ -50,7 +50,7 @@ constant in \code{(s-1, s)}.  \code{b[s-1]} is correct only if \code{n[s]}
 and \code{phi[s-1]} both are.
 }
 \examples{
-\dontrun{
+
 y <- c(0,1,0,0,0,1,0,1,0,0,0,1,0,0,0,14,1,1,0,2,1,2,1,16,0,2,0,11,
 	2,13,10,0)
 n <- 5
@@ -69,7 +69,7 @@ print(z4 <- update(z3, .~.+i2+i3))
 print(z5 <- glm(y~p1+pbd+p5+d1+d2+d3+b2+b3+b4, family=poisson, weights=pw))
 # print out estimates
 capture(z5, n)
-}
+
 }
 \author{
 J.K. Lindsey
