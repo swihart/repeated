@@ -135,14 +135,13 @@
 ##' from Gaussian copula. Scandinavian Journal of Statistics 27, 305-320.
 ##' @keywords models
 ##' @examples
-##' \dontrun{
-##' library(gnlm)
+##' 
 ##' # linear models
 ##' y <- matrix(rgamma(40,1,1),ncol=5)+rep(rgamma(8,0.5,1),5)
 ##' x1 <- c(rep(0,4),rep(1,4))
 ##' reps <- rmna(restovec(y),ccov=tcctomat(x1))
 ##' # independence with default gamma marginals
-##' gnlr(y, pmu=1, psh=0, dist="gamma", env=reps)
+##' ## compare to gnlm::gnlr(y, pmu=1, psh=0, dist="gamma", env=reps)
 ##' gausscop(y, pmu=1, pshape=0, env=reps)
 ##' gausscop(y, mu=~x1, pmu=c(1,0), pshape=0, env=reps)
 ##' # AR(1)
@@ -221,7 +220,7 @@
 ##' 	shape=~d*log(abs(mu)), shfn=TRUE,
 ##' 	pmu=list(absorption=0,elimination=log(0.4),volume=log(0.1)),
 ##' 	par=0.5, pshape=list(d=1), envir=reps)
-##' }
+##' 
 ##' @export gausscop
 gausscop <- function(response=NULL, distribution="gamma", mu=NULL, shape=NULL,
 	autocorr="exponential", pmu=NULL, pshape=NULL, par=NULL,
