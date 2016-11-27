@@ -107,10 +107,10 @@ binnest(reps, mu=~treatment, preg=c(1,0), pre1=1, pre2=1)
 }
 # first level random effect only
 binnest(reps, mu=~treatment, preg=c(1,-1), pre1=1)
-\dontrun{
+
 # second level random effect only
 binnest(reps, mu=~treatment, preg=c(1,-1), pre2=1)
-}
+
 }
 \author{
 T.R. Ten Have and J.K. Lindsey

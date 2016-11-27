@@ -117,10 +117,10 @@
 ##' }
 ##' # first level random effect only
 ##' binnest(reps, mu=~treatment, preg=c(1,-1), pre1=1)
-##' \dontrun{
+##' 
 ##' # second level random effect only
 ##' binnest(reps, mu=~treatment, preg=c(1,-1), pre2=1)
-##' }
+##' 
 ##' @export binnest
 binnest <- function(response, totals=NULL, nest=NULL, ccov=NULL, tvcov=NULL,
 	mu=~1, re1=~1, re2=~1, preg=NULL, pre1=NULL, pre2=NULL,
