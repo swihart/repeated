@@ -405,7 +405,7 @@ C     Initialize variables for the main loop.
 	Case2_count2 = 1
    
 C     Begin main loop
-	Do i = 1, Num_F
+	Do i = 1, 4
 
 C       Allocate beta and sigma and initialize to zero
 c      Allocate(betakk(Case1(i),Max_K))
