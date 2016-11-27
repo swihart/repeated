@@ -103,7 +103,7 @@
 ##' in Medicine 18, 947-960.
 ##' @keywords models
 ##' @examples
-##' \dontrun{
+##' 
 ##' #y <- rbind(matrix(rbinom(20,1,0.6), ncol=4),
 ##' #	matrix(rbinom(20,1,0.4), ncol=4))
 ##' y <- matrix(c(1,1,0,1,1,1,1,0,1,1,1,1,1,1,1,1,0,1,1,0,0,1,0,1,1,0,1,0,
@@ -113,6 +113,7 @@
 ##' reps <- rmna(resp, ccov=ccov)
 ##' # two random effects
 ##' binnest(reps, mu=~treatment, preg=c(1,0), pre1=1, pre2=1)
+##' \dontrun{
 ##' # first level random effect only
 ##' binnest(reps, mu=~treatment, preg=c(1,-1), pre1=1)
 ##' # second level random effect only
