@@ -126,8 +126,7 @@
 ### \code{\link[gnlm]{nlr}}, \code{\link[stats]{nls}}.
 ##' @keywords models
 ##' @examples
-##' \dontrun{
-##' library(growth)
+##' 
 ##' dose <- c(9,12,4,9,11,10,2,11,12,9,9,9,4,9,11,9,14,7,9,8)
 ##' #y <- rgamma(20,shape=2+0.3*dose,scale=2)+rep(rnorm(4,0,4),rep(5,4))
 ##' y <- c(8.674419, 11.506066, 11.386742, 27.414532, 12.135699,  4.359469,
@@ -138,7 +137,7 @@
 ##' reps <- rmna(resp, tvcov=tvctomat(matrix(dose, nrow=4, byrow=TRUE), name="dose"))
 ##' 
 ##' # same linear normal model with random normal intercept fitted four ways
-##' elliptic(reps, model=~dose, preg=c(0,0.6), pre=4)
+##' # compare with growth::elliptic(reps, model=~dose, preg=c(0,0.6), pre=4)
 ##' glmm(y~dose, nest=individuals, data=reps)
 ##' gnlmm(reps, mu=~dose, pmu=c(8.7,0.25), psh=3.5, psd=3)
 ##' gnlmix(reps, mu=~a+b*dose+rand, random="rand", pmu=c(8.7,0.25),
@@ -158,7 +157,7 @@
 ##' gnlmix(reps, distribution="gamma", mixture="gamma",
 ##' 	mu=~exp(a+b*dose)*rand, random="rand", pmu=c(2,0.04),
 ##' 	pshape=1.24, pmix=2.5)
-##' }
+##' 
 ##' @export gnlmix
 ##' @importFrom graphics par plot 
 ##' @importFrom stats as.formula dbeta dbinom dcauchy dexp dgamma dlogis dnbinom dnorm dpois dt dweibull gaussian glm glm.control model.frame model.matrix na.fail nlm pbeta pcauchy pexp pgamma pgeom plogis pnbinom pnorm ppois pt pweibull qnorm summary.glm terms uniroot update.formula
