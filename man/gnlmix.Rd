@@ -142,7 +142,7 @@ glmm(y~dose, nest=individuals, data=reps)
 gnlmm(reps, mu=~dose, pmu=c(8.7,0.25), psh=3.5, psd=3)
 gnlmix(reps, mu=~a+b*dose+rand, random="rand", pmu=c(8.7,0.25),
 	pshape=3.44, pmix=2.3)
-
+\dontrun{
 # gamma model with log link and random normal intercept fitted three ways
 glmm(y~dose, family=Gamma(link=log), nest=individuals, data=reps, points=8)
 gnlmm(reps, distribution="gamma", mu=~exp(a+b*dose), pmu=c(2,0.03),
@@ -157,7 +157,7 @@ gnlmix(reps, distribution="gamma", mixture="gamma",
 gnlmix(reps, distribution="gamma", mixture="gamma",
 	mu=~exp(a+b*dose)*rand, random="rand", pmu=c(2,0.04),
 	pshape=1.24, pmix=2.5)
-
+}
 }
 \author{
 J.K. Lindsey
