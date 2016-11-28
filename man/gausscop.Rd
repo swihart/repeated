@@ -135,6 +135,7 @@ reps <- rmna(restovec(y),ccov=tcctomat(x1))
 # compare with gnlm::gnlr(y, pmu=1, psh=0, dist="gamma", env=reps)
 gausscop(y, pmu=1, pshape=0, env=reps)
 gausscop(y, mu=~x1, pmu=c(1,0), pshape=0, env=reps)
+\dontrun{
 # AR(1)
 gausscop(y, pmu=1, pshape=0, par=0.1, env=reps)
 # random effect
@@ -211,7 +212,7 @@ gausscop(conc, mu=~absorption-volume+
 	shape=~d*log(abs(mu)), shfn=TRUE,
 	pmu=list(absorption=0,elimination=log(0.4),volume=log(0.1)),
 	par=0.5, pshape=list(d=1), envir=reps)
-
+}
 }
 \author{
 J.K. Lindsey
