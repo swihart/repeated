@@ -160,8 +160,7 @@
 ### \code{\link{lm}}, \code{\link[gnlm]{nlr}}, \code{\link[stats]{nls}}.
 ##' @keywords models
 ##' @examples
-##' \dontrun{
-##' library(gnlm)
+##' 
 ##' # data objects
 ##' sex <- c(0,1,1)
 ##' sx <- tcctomat(sex)
@@ -182,14 +181,16 @@
 ##' #
 ##' # log linear regression with gamma distribution
 ##' mu <- function(p) exp(p[1]+p[2]*sex+p[3]*dose)
-##' print(z <- gnlr(y, dist="gamma", mu=mu, pmu=c(1,0,0), pshape=1))
-##' gnlmm(y, dist="gamma", mu=mu, nest=nest, pmu=z$coef[1:3],
-##' 	pshape=z$coef[4], psd=0.1, points=3)
+##' ## print(z <- gnlm::gnlr(y, dist="gamma", mu=mu, pmu=c(1,0,0), pshape=1))
+##' ## starting values for pmu and pshape from z$coef[1:3] and z$coef[4] respectively
+##' gnlmm(y, dist="gamma", mu=mu, nest=nest, pmu=c(1.101,0.326,-0.045),
+##'      pshape=0.391, psd=0.1, points=3)
 ##' # or equivalently
 ##' gnlmm(y, dist="gamma", mu=~exp(b0+b1*sex+b2*dose), nest=nest,
-##' 	pmu=z$coef[1:3], pshape=z$coef[4], psd=0.1, points=3, envir=reps)
+##'      pmu=c(1.101,0.326,-0.045), pshape=0.391, psd=0.1, points=3, envir=reps)
+##' \dontrun{
 ##' # or with identity link
-##' print(z <- gnlr(y, dist="gamma", mu=~sex+dose, pmu=c(0.1,0,0), pshape=1))
+##' print(z <- gnlm::gnlr(y, dist="gamma", mu=~sex+dose, pmu=c(0.1,0,0), pshape=1))
 ##' gnlmm(y, dist="gamma", mu=~sex+dose, nest=nest, pmu=z$coef[1:3],
 ##' 	pshape=z$coef[4], psd=0.1, points=3)
 ##' # or
@@ -198,7 +199,7 @@
 ##' #
 ##' # nonlinear regression with gamma distribution
 ##' mu <- function(p) p[1]+exp(p[2]+p[3]*sex+p[4]*dose)
-##' print(z <- gnlr(y, dist="gamma", mu=mu, pmu=c(1,1,0,0), pshape=1))
+##' print(z <- gnlm::gnlr(y, dist="gamma", mu=mu, pmu=c(1,1,0,0), pshape=1))
 ##' gnlmm(y, dist="gamma", mu=mu, nest=nest, pmu=z$coef[1:4],
 ##' 	pshape=z$coef[5], psd=0.1, points=3)
 ##' # or
@@ -215,7 +216,7 @@
 ##' #
 ##' # include regression for the shape parameter with same mu function
 ##' shape <- function(p) p[1]+p[2]*sex
-##' print(z <- gnlr(y, dist="gamma", mu=mu, shape=shape, pmu=z$coef[1:4],
+##' print(z <- gnlm::gnlr(y, dist="gamma", mu=mu, shape=shape, pmu=z$coef[1:4],
 ##' 	pshape=rep(1,2)))
 ##' gnlmm(y, dist="gamma", mu=mu, shape=shape, nest=nest,
 ##' 	pmu=z$coef[1:4], pshape=z$coef[5:6], psd=0.1, points=3)
