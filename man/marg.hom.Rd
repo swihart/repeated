@@ -2,6 +2,7 @@
 % Please edit documentation in R/marghom.r
 \name{marg.hom}
 \alias{marg.hom}
+\alias{print.marginal}
 \title{Marginal Homogeneity Models}
 \usage{
 marg.hom(freq, marg1, marg2)

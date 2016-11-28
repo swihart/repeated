@@ -48,6 +48,7 @@
 ##' Right <- gl(4,4,32)
 ##' marg.hom(Freq, Left, Right)
 ##' }
+##' @aliases marg.hom print.marginal
 ##' @export marg.hom
 marg.hom <- function(freq,marg1,marg2){
 call <- sys.call()
@@ -83,7 +84,9 @@ return(z)}
 
 ### print method
 ###
-print.marginal <- function(z){
+##' @export
+print.marginal <- function(x, ...){
+  z <- x
 cat("Marginal homogeneity model\n")
 cat("\nCall:",deparse(z$call),sep="\n")
 cat("\n")

@@ -84,6 +84,7 @@
 ##' 	(times-30)+(times>30)*p[3]*(times-30)
 ##' nbkal(y, preg=c(1.3,0.008,-0.05), times=times, pdep=1.2, mu=mu)
 ##' }
+##' @aliases nbkal print.nbkal
 ##' @export nbkal
 nbkal <- function(response, times, mu, preg, pdepend, kalman=TRUE,
 	print.level=0, ndigit=10, gradtol=0.00001, steptol=0.00001,
@@ -215,17 +216,19 @@ return(z)}
 
 ### standard methods
 ###
-
-deviance.nbkal <- function(z) 2*z$maxlike
-
-fitted.nbkal <- function(z, recursive=TRUE) if(recursive) z$rpred else z$pred
-
-residuals.nbkal <- function(z, recursive=TRUE)
-	if(recursive) z$response$y-z$rpred else z$response$y-z$pred
+##' @export
+deviance.nbkal <- function(object, ...) 2*object$maxlike
+##' @export
+fitted.nbkal <- function(object, recursive=TRUE, ...) if(recursive) object$rpred else object$pred
+##' @export
+residuals.nbkal <- function(object, recursive=TRUE, ...)
+	if(recursive) object$response$y-object$rpred else object$response$y-object$pred
 
 ### print method
 ###
-print.nbkal <- function(z, digits=max(3,.Options$digits-3)){
+##' @export
+print.nbkal <- function(x, digits=max(3,.Options$digits-3), ...){
+  z<-x
 np1 <- ifelse(z$full&z$kalman,3,1)
 cat("\nCall:",deparse(z$call),sep="\n")
 cat("\n")

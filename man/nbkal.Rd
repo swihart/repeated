@@ -2,6 +2,7 @@
 % Please edit documentation in R/nbkal.r
 \name{nbkal}
 \alias{nbkal}
+\alias{print.nbkal}
 \title{Negative Binomial Models with Kalman Update}
 \usage{
 nbkal(response, times, mu, preg, pdepend, kalman = TRUE, print.level = 0,
