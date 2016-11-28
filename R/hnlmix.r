@@ -133,9 +133,9 @@
 ### \code{\link[gnlm]{gnlr}}, \code{\link[repeated]{kalseries}},
 ### \code{\link[gnlm]{nlr}}, \code{\link[stats]{nls}}.
 ##' @keywords models
+##' @aliases hnlmix deviance.hnlm residuals.hnlm fitted.hnlm print.hnlm 
 ##' @examples
-##' \dontrun{
-##' library(growth)
+##' 
 ##' dose <- c(9,12,4,9,11,10,2,11,12,9,9,9,4,9,11,9,14,7,9,8)
 ##' #y <- rgamma(20,2+0.3*dose,scale=2)+rep(rnorm(4,0,4),rep(5,4))
 ##' y <- c(8.674419, 11.506066, 11.386742, 27.414532, 12.135699,  4.359469,
@@ -146,7 +146,7 @@
 ##' reps <- rmna(resp, tvcov=tvctomat(matrix(dose, nrow=4, byrow=TRUE), name="dose"))
 ##' 
 ##' # same linear normal model with random normal intercept fitted four ways
-##' elliptic(reps, model=~dose, preg=c(0,0.6), pre=4)
+##' # compare with growth::elliptic(reps, model=~dose, preg=c(0,0.6), pre=4)
 ##' glmm(y~dose, nest=individuals, data=reps)
 ##' gnlmm(reps, mu=~dose, pmu=c(8.7,0.25), psh=3.5, psd=3)
 ##' hnlmix(reps, mu=~a+b*dose+rand, random="rand", pmu=c(8.7,0.25),
@@ -166,7 +166,7 @@
 ##' hnlmix(reps, distribution="gamma", mixture="gamma",
 ##' 	mu=~exp(a+b*dose)*rand, random="rand", pmu=c(2,0.04),
 ##' 	pshape=1.24, prandom=1)
-##' }
+##' 
 ##' @export hnlmix
 hnlmix <- function(y=NULL, distribution="normal", mixture="normal",
 	random=NULL, nest=NULL, mu=NULL, shape=NULL, linear=NULL,
@@ -842,17 +842,19 @@ return(z1)}
 
 ### standard methods
 ###
-
-deviance.hnlm <- function(z) 2*z$maxlike
-
-fitted.hnlm <- function(z, recursive=TRUE) if(recursive) z$rpred else z$pred
-
-residuals.hnlm <- function(z, recursive=TRUE)
-	if(recursive) z$response$y-z$rpred else z$response$y-z$pred
+##' @export
+deviance.hnlm <- function(object, ...) 2*object$maxlike
+##' @export
+fitted.hnlm <- function(object, recursive=TRUE, ...) if(recursive) object$rpred else object$pred
+##' @export
+residuals.hnlm <- function(object, recursive=TRUE, ...)
+	if(recursive) object$response$y-object$rpred else object$response$y-object$pred
 
 ### print method
-###
-print.hnlm <- function(z, correlation=TRUE) {
+### 
+##' @export
+print.hnlm <- function(x, correlation=TRUE, ...) {
+  z<-x
 sht <- z$nps>0||!is.null(z$shape)
 npl <- z$npl
 np1 <- z$npl+1
