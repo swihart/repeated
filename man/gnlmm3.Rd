@@ -166,8 +166,7 @@ corresponding AIC, the maximum likelihood estimates, standard errors, and
 correlations.
 }
 \examples{
-\dontrun{
-library(gnlm)
+
 # data objects
 sex <- c(0,1,1)
 sx <- tcctomat(sex)
@@ -191,15 +190,18 @@ reps <- rmna(y, ccov=sx, tvcov=dd)
 #
 # log linear regression with Student t distribution
 mu <- function(p) exp(p[1]+p[2]*sex+p[3]*dose)
-print(z <- gnlr3(y, dist="Student", mu=mu, pmu=c(0,0,0), pshape=1, pfamily=1))
-gnlmm3(y, dist="Student", mu=mu, nest=nest, pmu=z$coef[1:3],
-	pshape=z$coef[4], pfamily=z$coef[5], psd=50, points=3)
+## print(z <- gnlm::gnlr3(y, dist="Student", mu=mu, pmu=c(0,0,0), pshape=1, pfamily=1))
+## starting values for pmu and pshape from z$coef[1:3] and z$coef[4] respectively
+## starting value for pfamily in z$coef[5]
+gnlmm3(y, dist="Student", mu=mu, nest=nest, pmu=c(3.69,-1.19, 0.039),
+	pshape=4.94, pfamily=-0.6887259, psd=50, points=3)
 # or equivalently
 gnlmm3(y, dist="Student", mu=~exp(b0+b1*sex+b2*dose), nest=nest,
-	pmu=z$coef[1:3], pshape=z$coef[4], pfamily=z$coef[5], psd=50,
+	pmu=c(3.69,-1.19, 0.039), pshape=4.94, pfamily=-0.6887259, psd=50,
 	points=3, envir=reps)
+\dontrun{
 # or with identity link
-print(z <- gnlr3(y, dist="Student", mu=~sex+dose, pmu=c(0.1,0,0), pshape=1,
+print(z <- gnlm::gnlr3(y, dist="Student", mu=~sex+dose, pmu=c(0.1,0,0), pshape=1,
 	pfamily=1))
 gnlmm3(y, dist="Student", mu=~sex+dose, nest=nest, pmu=z$coef[1:3],
 	pshape=z$coef[4], pfamily=z$coef[5], psd=50, points=3)
@@ -209,7 +211,7 @@ gnlmm3(y, dist="Student", mu=~b0+b1*sex+b2*dose, nest=nest, pmu=z$coef[1:3],
 #
 # nonlinear regression with Student t distribution
 mu <- function(p) p[1]+exp(p[2]+p[3]*sex+p[4]*dose)
-print(z <- gnlr3(y, dist="Student", mu=mu, pmu=c(1,1,0,0), pshape=1,
+print(z <- gnlm::gnlr3(y, dist="Student", mu=mu, pmu=c(1,1,0,0), pshape=1,
 	pfamily=1))
 gnlmm3(y, dist="Student", mu=mu, nest=nest, pmu=z$coef[1:4],
 	pshape=z$coef[5], pfamily=z$coef[6], psd=50, points=3)
@@ -229,7 +231,7 @@ gnlmm3(y, dist="Student", mu=~b4+exp(b0+b1*sex+b2*dose), nest=nest,
 #
 # include regression for the shape parameter with same mu function
 shape <- function(p) p[1]+p[2]*sex
-print(z <- gnlr3(y, dist="Student", mu=mu, shape=shape, pmu=z$coef[1:4],
+print(z <- gnlm::gnlr3(y, dist="Student", mu=mu, shape=shape, pmu=z$coef[1:4],
 	pshape=c(z$coef[5],0), pfamily=z$coef[6]))
 gnlmm3(y, dist="Student", mu=mu, shape=shape, nest=nest,
 	pmu=z$coef[1:4], pshape=z$coef[5:6], pfamily=z$coef[7],
