@@ -56,7 +56,7 @@
 ##' must be scalars. (See \code{\link[rmutil]{finterp}}.)
 ##' 
 ##' 
-##' @aliases gausscop fitted.gausscop residuals.gausscop
+##' @aliases gausscop fitted.gausscop residuals.gausscop deviance.gausscop print.gausscop
 ##' @param response A list of two or three column matrices with response
 ##' values, times, and possibly nesting categories, for each individual, one
 ##' matrix or dataframe of response values, or an object of class,
@@ -671,16 +671,18 @@ return(z)}
 
 ### standard methods
 ###
-
-deviance.gausscop <- function(z) 2*z$maxlike
-
-fitted.gausscop <- function(z) z$pred
-
-residuals.gausscop <- function(z) z$response$y-z$pred
+#' @export
+deviance.gausscop <- function(object, ...) 2*object$maxlike
+#' @export
+fitted.gausscop <- function(object, ...) object$pred
+#' @export
+residuals.gausscop <- function(object, ...) object$response$y-object$pred
 
 ### print method
 ###
-print.gausscop <- function(z,digits=max(3,.Options$digits-3),correlation=TRUE){
+#' @export
+print.gausscop <- function(x,digits=max(3,.Options$digits-3),correlation=TRUE,...){
+  z <- x
 cat("\nMultivariate normal copula with",z$distribution,"marginals\n")
 cat("\nCall:",deparse(z$call),sep="\n")
 cat("\n")
