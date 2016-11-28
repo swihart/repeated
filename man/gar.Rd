@@ -193,7 +193,7 @@ When the dispersion parameter is not constant over time, \code{volatility}
 extracts the square root of the dispersion parameter for a fitted model.
 }
 \examples{
-\dontrun{
+
 # first-order one-compartment model
 # data objects for formulae
 dose <- c(2,5)
@@ -251,7 +251,7 @@ gar(conc, dist="gamma", times=1:20, mu=mu, shape=shape, shfn=TRUE,
 # or
 gar(conc, dist="gamma", times=1:20, mu=mu, shape=~a+d*mu, shfn=TRUE,
 	preg=log(c(1,0.4,0.1)), pdepend=0.5, pshape=c(1,0))
-}
+
 }
 \author{
 J.K. Lindsey
