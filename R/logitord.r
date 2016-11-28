@@ -90,6 +90,7 @@
 ##' 	pdrop=c(1,0))
 ##' logitord(y, id, tvcov=times, pout=c(1,0,0), pdrop=c(1,0))
 ##' }
+##' @aliases logitord logitord.print
 ##' @export logitord
 logitord <- function(y, id, out.ccov=NULL, drop.ccov=NULL, tvcov=NULL,
 	out.tvcov=!is.null(tvcov), drop.tvcov=!is.null(tvcov),
@@ -298,7 +299,9 @@ z}
 
 ### print method
 ###
-print.logitord <- function(z){
+##' @export
+print.logitord <- function(x, ...){
+  z <- x
 np <- z$total1+z$total2a+z$total2b
 cat("\nLogit ordinal dropout model\n")
 cat("\nCall:",deparse(z$call),sep="\n")

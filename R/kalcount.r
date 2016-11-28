@@ -218,6 +218,7 @@
 ##' 	pinitial=0.001, psh=14, ptvc=c(5,-1,0.1), envir=reps,
 ##' 	pfamily=0.8)
 ##' }
+##' @aliases kalcount deviance.kalcount residuals.kalcount fitted.kalcount print.kalcount 
 ##' @export kalcount
 kalcount <- function(response=NULL, times=NULL, origin=0,
 	intensity="exponential", depend="independence", update="Markov",
@@ -763,19 +764,21 @@ return(z)}
 
 ### standard methods
 ###
+##' @export
+deviance.kalcount <- function(object, ...) 2*object$maxlike
+##' @export
+fitted.kalcount <- function(object, recursive=TRUE, ...)
+if(recursive) object$rpred else object$pred
 
-deviance.kalcount <- function(z) 2*z$maxlike
-
-fitted.kalcount <- function(z, recursive=TRUE)
-if(recursive) z$rpred else z$pred
-
-residuals.kalcount <- function(z, type = "response", recursive=TRUE){
-if(type=="response") z$response$y-z$rpred
-else (z$response$y-z$rpred)/sqrt(z$rpred)}
+##' @export
+residuals.kalcount <- function(object, type = "response", recursive=TRUE, ...){
+if(type=="response") object$response$y-object$rpred
+else (object$response$y-object$rpred)/sqrt(object$rpred)}
 
 ### print method
-###
-print.kalcount <- function(z,digits=max(3,.Options$digits-3),correlation=TRUE){
+##' @export
+print.kalcount <- function(x,digits=max(3,.Options$digits-3),correlation=TRUE,...){
+  z<-x
 if(!is.null(z$ccov))nccov <- dim(z$ccov$ccov)[2]
 else nccov <- 0
 expm <- z$intensity!="exponential"&&!is.function(z$shape)

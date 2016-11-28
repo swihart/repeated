@@ -288,6 +288,7 @@
 ##' 	shape=~exp(b1-b2)*times*dose*exp(-exp(b1)*times),
 ##' 	pshape=list(b1=-3,b2=0))
 ##' }
+##' @aliases kalseries deviance.kalseries residuals.kalseries fitted.kalseries print.kalseries 
 ##' @export kalseries
 kalseries <- function(response=NULL, times=NULL, intensity="exponential",
 	depend="independence", mu=NULL, shape=NULL, density=FALSE, ccov=NULL,
@@ -902,24 +903,26 @@ return(z)}
 
 ### standard methods
 ###
-
-deviance.kalseries <- function(z) 2*z$maxlike
-
-fitted.kalseries <- function(z, recursive=TRUE)
-if(recursive) z$rpred else z$pred
-
-residuals.kalseries <- function(z, recursive=TRUE){
-if(z$transform=="exp")z$response$y <- exp(z$response$y)
-else if(z$transform=="square")z$response$y  <- z$response$y^2
-else if(z$transform=="sqrt")z$response$y <- sqrt(z$response$y)
-else if(z$transform=="log")z$response$y <- log(z$response$y)
-res <- if(recursive)z$response$y-z$rpred else z$response$y-z$pred
+##' @export
+deviance.kalseries <- function(object, ...) 2*object$maxlike
+##' @export
+fitted.kalseries <- function(object, recursive=TRUE, ...)
+if(recursive) object$rpred else object$pred
+##' @export
+residuals.kalseries <- function(object, recursive=TRUE, ...){
+if(object$transform=="exp")object$response$y <- exp(object$response$y)
+else if(object$transform=="square")object$response$y  <- object$response$y^2
+else if(object$transform=="sqrt")object$response$y <- sqrt(object$response$y)
+else if(object$transform=="log")object$response$y <- log(object$response$y)
+res <- if(recursive)object$response$y-object$rpred else object$response$y-object$pred
 class(res) <- "residuals"
 res}
 
 ### print method
 ###
-print.kalseries <- function(z,digits=max(3,.Options$digits-3),correlation=TRUE){
+##' @export
+print.kalseries <- function(x,digits=max(3,.Options$digits-3),correlation=TRUE, ...){
+  z<-x
 if(!is.null(z$ccov))nccov <- dim(z$ccov$ccov)[2]
 else nccov <- 0
 expm <- z$intensity!="exponential"&&!is.function(z$shape)
