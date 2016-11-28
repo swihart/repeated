@@ -50,7 +50,7 @@
 ##' extracts the square root of the dispersion parameter for a fitted model.
 ##' 
 ##' 
-##' @aliases gar volatility.gar
+##' @aliases gar volatility volatility.gar deviance.gar fitted.gar print.gar residuals.gar volatility.gar
 ##' @param response A list of two or three column matrices with responses,
 ##' corresponding times, and possibly a censor indicator, for each individual,
 ##' one matrix or dataframe of responses, or an object of class,
@@ -872,12 +872,13 @@ return(z)}
 
 ### standard methods
 ###
-
-deviance.gar <- function(z) 2*z$maxlike
-
-fitted.gar <- function(z, recursive=TRUE) if(recursive) z$rpred else z$pred
-
-residuals.gar <- function(z, recursive=TRUE){
+#' @export
+deviance.gar <- function(object, ...) 2*object$maxlike
+#' @export
+fitted.gar <- function(object, recursive=TRUE, ...) if(recursive) object$rpred else object$pred
+#' @export
+residuals.gar <- function(object, recursive=TRUE, ...){
+  z <- object
 if(z$transform=="exp")z$response$y <- exp(z$response$y)
 else if(z$transform=="square")z$response$y  <- z$response$y^2
 else if(z$transform=="sqrt")z$response$y <- sqrt(z$response$y)
@@ -886,7 +887,9 @@ if(recursive) z$response$y-z$rpred else z$response$y-z$pred}
 
 ### print method
 ###
-print.gar <- function(z,digits=max(3,.Options$digits-3),correlation=TRUE){
+#' @export
+print.gar <- function(x,digits=max(3,.Options$digits-3),correlation=TRUE, ...){
+  z <- x
 np1 <- if(z$distribution=="binomial"||z$distribution=="exponential"
 		||z$distribution=="Poisson") 0
 	else if(z$distribution=="gen gamma"
@@ -1027,9 +1030,10 @@ if(correlation){
 
 ### volatility method
 ###
+#' @export
 volatility <- function(z, ...) UseMethod("volatility")
-
-volatility.gar <- function(z, nind=NULL){
+#' @export 
+volatility.gar <- function(z, nind=NULL, ...){
 if(is.null(nind))nind <- 1:dim(z$response$y)[1]
 else if(length(nind)>length(nobs(z))||any(nind>length(nobs(z))))
 	stop("Individual not found")
