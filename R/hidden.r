@@ -166,7 +166,7 @@
 ##' Models for Discrete-valued Time Series. Chapman & Hall.
 ##' @keywords models
 ##' @examples
-##' 
+##' \dontrun{
 ##' # generate two random Poisson sequences with change-points
 ##' y <- rbind(c(rpois(5,1), rpois(15,5)), c(rpois(15,1), rpois(5,5)))
 ##' print(z <- hidden(y,dist="Poisson", cmu=~1, pcmu=c(1,5),
@@ -187,7 +187,7 @@
 ##' plot(mprofile(z), add=TRUE)
 ##' plot(iprofile(z), nind=2, lty=2)
 ##' plot(mprofile(z), nind=2, add=TRUE)
-##' 
+##' }
 ##' 
 ##' @export
 hidden <- function(response=NULL, totals=NULL, distribution="Bernoulli",
