@@ -45,13 +45,13 @@ c
 *                                      November, 2001                   *
 *************************************************************************
       implicit none
-      integer n(1),m,iq,i,j,k,l,model,nobs(1),mobs,ii,nm,nn,pivot(m)
+      integer n(*),m,iq,i,j,k,l,model,nobs(*),mobs,ii,nm,nn,pivot(m)
       logical cf,ismu,ppar
-      double precision like,s(1),pi,sflog,av,tt,pshape(m),pgamma(m,m),
+      double precision like,s(*),pi,sflog,av,tt,pshape(m),pgamma(m,m),
      +     gmod(m,m),rhs(m),qraux(m),mu(nn,m,l),cmu(iq,m,l),par,
-     +     tvmu(mobs,m,l),ll,x(1),gamma(m,m),delta(m),a(m),b(m,m),
-     +     c(m),val(m),vec(m,m),invec(m,m),times(1),filter(m,nn),pfam,
-     +     tmp,tmp2,tmp3,lgam(1),work(2*m),work2(m),work3(m,m),
+     +     tvmu(mobs,m,l),ll,x(*),gamma(m,m),delta(m),a(m),b(m,m),
+     +     c(m),val(m),vec(m,m),invec(m,m),times(*),filter(m,nn),pfam,
+     +     tmp,tmp2,tmp3,lgam(*),work(2*m),work2(m),work3(m,m),
      +     gamma2(m,m)
       double precision bernpr,poispr,multpr,cmultpr,contpr,proppr,binpr,
      +     exppr,bbinpr,nbinpr,normpr,invgpr,logispr,cauchpr,laplpr,
@@ -409,7 +409,7 @@ c transform back to original values
 *******************************************************************
       implicit none
       integer m,i,ii,j
-      double precision sum,gamma(m,m),pgamma(m,m),x(1)
+      double precision sum,gamma(m,m),pgamma(m,m),x(*)
 
       ii=0
       do 30 i = 1, m

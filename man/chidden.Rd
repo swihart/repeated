@@ -173,7 +173,7 @@ plotted using \code{\link[rmutil]{mprofile}} and
 \code{\link[rmutil]{iprofile}}.
 }
 \examples{
-\dontrun{
+
 # model for one randomly-generated binary series
 y <- c(rbinom(10,1,0.1), rbinom(10,1,0.9))
 mu <- function(p) array(p, c(1,2))
@@ -200,7 +200,7 @@ mexp(z$gamma) \%*\% mexp(z$gamma)
 plot(z)
 plot(iprofile(z), lty=2)
 plot(mprofile(z), add=TRUE)
-}
+
 }
 \author{
 J.K. Lindsey
