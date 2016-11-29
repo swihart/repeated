@@ -3,7 +3,14 @@ Version: 1.1.0
 Title: Non-Normal Repeated Measurements Models
 Authors@R: c(
     person("Bruce", "Swihart", email="bruce.swihart@gmail.com", role=c("cre", "aut")),
-    person("Jim"  , "Lindsey", email="jlindsey@gen.unimaas.nl", role="aut", comment="Jim created this package, Bruce is maintaining the CRAN version"))
+    person("Jim"  , "Lindsey", email="jlindsey@gen.unimaas.nl", role="aut", comment="Jim created this package, Bruce is maintaining the CRAN version"),
+    person("T.R.", "Ten Have", role=c("ctb", "cph"), comment="Wrote Logit_bin_nest.f90 (in binnest.f)."),
+    person("Richard", "Cook", role=c("ctb", "cph"), comment="Wrote calcs.c, calcs.h,  calcs1.c, calcs1.h,  calcs2.c, calcs2.h,  calcs3.c, calcs3.h,  calcs4.c, calcs4.h; defs.h; gaps.c, gaps.h."),
+    person("Iain", "MacDonald", role=c("ctb", "cph"), comment="Wrote chidden.f, cphidden.f, hidden.f."),
+    person("Walter", "Zucchini", role=c("ctb", "cph"), comment="Wrote chidden.f, cphidden.f, hidden.f."),
+    person("Burton", "Garbow", role=c("ctb", "cph"), comment="Wrote eigen.f."),
+    person("Euginia", "Zharichenko", role=c("ctb", "cph"), comment="Wrote logitord.f.")
+    )
 Depends:
     R (>= 1.4),
     rmutil
