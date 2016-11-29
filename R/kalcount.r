@@ -170,7 +170,7 @@
 ### \code{\link[rmutil]{tvctomat}}.
 ##' @keywords models
 ##' @examples
-##' \dontrun{
+##' 
 ##' treat <- c(0,0,1,1)
 ##' tr <- tcctomat(treat)
 ##' dose <- # matrix(rpois(20,10),ncol=5)
@@ -217,7 +217,7 @@
 ##' kalcount(y, intensity="log normal", mu=~b0+b1*treat+b2*dose,
 ##' 	pinitial=0.001, psh=14, ptvc=c(5,-1,0.1), envir=reps,
 ##' 	pfamily=0.8)
-##' }
+##' 
 ##' @aliases kalcount deviance.kalcount residuals.kalcount fitted.kalcount print.kalcount 
 ##' @export kalcount
 kalcount <- function(response=NULL, times=NULL, origin=0,
