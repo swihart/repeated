@@ -2,6 +2,9 @@
 Bruce Swihart  
 November 2016  
 
+## Resubmission 2
+Every .R/.Rd file has at least one example and the DESCRIPTION now lists all aut, ctb, cph.  Thanks!
+
 ## Resubmission 1
 Hi, this is a resubmission.  I fixed Title case in DESCRIPTION.  Thanks!
 
