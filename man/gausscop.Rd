@@ -135,9 +135,9 @@ reps <- rmna(restovec(y),ccov=tcctomat(x1))
 # compare with gnlm::gnlr(y, pmu=1, psh=0, dist="gamma", env=reps)
 gausscop(y, pmu=1, pshape=0, env=reps)
 gausscop(y, mu=~x1, pmu=c(1,0), pshape=0, env=reps)
-\dontrun{
 # AR(1)
 gausscop(y, pmu=1, pshape=0, par=0.1, env=reps)
+\dontrun{
 # random effect
 gausscop(y, pmu=1, pshape=0, pre=0.1, env=reps)
 # try other marginal distributions

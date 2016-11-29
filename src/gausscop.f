@@ -36,8 +36,8 @@ c including both autoregression and (nested) random effects
 c
       implicit none
       integer nind,i,j,k,ar,lnest,nm,npre,npar,nld
-      integer nobs(nind),nest(1)
-      double precision x(1),y(1),like,theta(1),v(nld,nld),
+      integer nobs(nind),nest(*)
+      double precision x(*),y(*),like,theta(*),v(nld,nld),
      +     tausq(2),rho,ldet,det(2),tmp1(nld),tmp2(nld),tmp3(nld)
       logical warn
       warn=.false.
@@ -96,9 +96,9 @@ c
 c compute the correlation matrix for the unit
 c
       implicit none
-      integer nobs,i,j,k,nm,nest(1),lnest,nn1,nn2,k1,j1,
+      integer nobs,i,j,k,nm,nest(*),lnest,nn1,nn2,k1,j1,
      +     nind,nld,info,npre,npar,ar,ierr
-      double precision x(1),v(nld,nld),det(2),tausq(2),
+      double precision x(*),v(nld,nld),det(2),tausq(2),
      +     rho,ldet,tmp,tmp1(nld),tmp2(nld),tmp3(nld)
       logical warn
 c
