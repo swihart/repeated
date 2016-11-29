@@ -81,7 +81,7 @@
 ##' J.R. (1998) Biometrics 54, 367-383, for the binary case.
 ##' @keywords models
 ##' @examples
-##' \dontrun{
+##' 
 ##' y <- trunc(runif(20,max=4))
 ##' id <- gl(4,5)
 ##' age <- rpois(20,20)
@@ -89,7 +89,7 @@
 ##' logitord(y, id=id, out.ccov=~age, drop.ccov=age, pout=c(1,0,0),
 ##' 	pdrop=c(1,0))
 ##' logitord(y, id, tvcov=times, pout=c(1,0,0), pdrop=c(1,0))
-##' }
+##' 
 ##' @aliases logitord logitord.print
 ##' @export logitord
 logitord <- function(y, id, out.ccov=NULL, drop.ccov=NULL, tvcov=NULL,
