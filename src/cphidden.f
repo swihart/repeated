@@ -45,13 +45,13 @@ c
 *                                      November, 2001, April, 2003      *
 *************************************************************************
       implicit none
-      integer n(1),m,iq,i,j,k,l,model,nobs(1),mobs,ii,nm,nn,pivot(2)
+      integer n(*),m,iq,i,j,k,l,model,nobs(*),mobs,ii,nm,nn,pivot(2)
       logical cf,ismu,ppar
-      double precision like,s(1),pi,sflog,av,tt,pshape(2),pgamma(2,2),
+      double precision like,s(*),pi,sflog,av,tt,pshape(2),pgamma(2,2),
      +     gmod(2,2),rhs(2),qraux(2),mu(nn,2,l),cmu(iq,2,l),par,
-     +     tvmu(mobs,2,l),ll,x(1),gamma(2,2),delta(2),a(2),b(2,2),
-     +     c(2),val(2),vec(2,2),invec(2,2),times(1),filter(2,nn),pfam,
-     +     tmp,tmp2,tmp3,lgam(1),work(4),work2(2),work3(2,2),
+     +     tvmu(mobs,2,l),ll,x(*),gamma(2,2),delta(2),a(2),b(2,2),
+     +     c(2),val(2),vec(2,2),invec(2,2),times(*),filter(2,nn),pfam,
+     +     tmp,tmp2,tmp3,lgam(*),work(4),work2(2),work3(2,2),
      +     gamma2(2,2)
       double precision bernpr,poispr,multpr,cmultpr,contpr,proppr,binpr,
      +     exppr,bbinpr,nbinpr,normpr,invgpr,logispr,cauchpr,laplpr,

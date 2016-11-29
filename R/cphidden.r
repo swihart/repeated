@@ -163,7 +163,7 @@
 ### \code{\link[rmutil]{restovec}}, \code{\link[rmutil]{rmna}}.
 ##' @keywords models
 ##' @examples
-##' \dontrun{
+##' 
 ##' # model for one randomly-generated binary series
 ##' y <- c(rbinom(10,1,0.1), rbinom(10,1,0.9))
 ##' mu <- function(p) array(p, c(1,2))
@@ -184,7 +184,7 @@
 ##' mexp(z$gamma) %*% mexp(z$gamma)
 ##' plot(z)
 ##' plot(iprofile(z), lty=2)
-##' }
+##' 
 ##' @export cphidden
 cphidden <- function(response=NULL, totals=NULL, times=NULL,
 	distribution="Bernoulli", mu=NULL, cmu=NULL, tvmu=NULL, pgamma,
