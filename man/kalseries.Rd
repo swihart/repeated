@@ -186,7 +186,7 @@ Marginal and individual profiles can be plotted using
 residuals with \code{\link[rmutil]{plot.residuals}}.
 }
 \examples{
-\dontrun{
+
 treat <- c(0,0,1,1)
 tr <- tcctomat(treat)
 dose <- matrix(rpois(20,10), ncol=5)
@@ -196,6 +196,7 @@ reps <- rmna(y, ccov=tr, tvcov=dd)
 #
 # normal intensity, independence model
 kalseries(y, intensity="normal", dep="independence", preg=1, pshape=5)
+\dontrun{
 # random effect
 kalseries(y, intensity="normal", dep="frailty", preg=1, pinitial=1, psh=5)
 # serial dependence

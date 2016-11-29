@@ -185,7 +185,7 @@
 ### \code{\link[rmutil]{tcctomat}}, \code{\link[rmutil]{tvctomat}}.
 ##' @keywords models
 ##' @examples
-##' \dontrun{
+##' 
 ##' treat <- c(0,0,1,1)
 ##' tr <- tcctomat(treat)
 ##' dose <- matrix(rpois(20,10), ncol=5)
@@ -195,6 +195,7 @@
 ##' #
 ##' # normal intensity, independence model
 ##' kalseries(y, intensity="normal", dep="independence", preg=1, pshape=5)
+##' \dontrun{
 ##' # random effect
 ##' kalseries(y, intensity="normal", dep="frailty", preg=1, pinitial=1, psh=5)
 ##' # serial dependence
@@ -322,7 +323,7 @@ series <- function(p){
 		torder=as.integer(torder),
 		inter=as.integer(interaction),
 		tvc=as.integer(tvc),
-		tvcov=resp$tvcov$tvcov,
+		tvcov=as.double(resp$tvcov$tvcov),
 		fit=as.integer(0),
 		pred=double(n),
 		rpred=double(n),
@@ -356,7 +357,7 @@ serief <- function(p){
 		torder=as.integer(torder),
 		inter=as.integer(interaction),
 		tvc=as.integer(tvc),
-		tvcov=resp$tvcov$tvcov,
+		tvcov=as.double(resp$tvcov$tvcov),
 		fit=as.integer(0),
 		pred=double(n),
 		rpred=double(n),
@@ -813,7 +814,7 @@ else {
 			torder=as.integer(torder),
 			inter=as.integer(interaction),
 			tvc=as.integer(tvc),
-			tvcov=resp$tvcov$tvcov,
+			tvcov=as.double(resp$tvcov$tvcov),
 			fit=as.integer(1),
 			pred=double(n),
 			rpred=double(n),
@@ -846,7 +847,7 @@ else {
 			torder=as.integer(torder),
 			inter=as.integer(interaction),
 			tvc=as.integer(tvc),
-			tvcov=resp$tvcov$tvcov,
+			tvcov=as.double(resp$tvcov$tvcov),
 			fit=as.integer(1),
 			pred=double(n),
 			rpred=double(n),

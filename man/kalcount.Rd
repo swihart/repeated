@@ -172,7 +172,7 @@ Marginal and individual profiles can be plotted using
 residuals with \code{\link[rmutil]{plot.residuals}}.
 }
 \examples{
-\dontrun{
+
 treat <- c(0,0,1,1)
 tr <- tcctomat(treat)
 dose <- # matrix(rpois(20,10),ncol=5)
@@ -219,7 +219,7 @@ kalcount(y, intensity="log normal", mu=~b0+b1*treat+b2*dose,
 kalcount(y, intensity="log normal", mu=~b0+b1*treat+b2*dose,
 	pinitial=0.001, psh=14, ptvc=c(5,-1,0.1), envir=reps,
 	pfamily=0.8)
-}
+
 }
 \author{
 J.K. Lindsey
