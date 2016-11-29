@@ -42,13 +42,13 @@ c
 *     and by P.J. Lindsey for ordinal responses, December, 1999         *
 *************************************************************************
       implicit none
-      integer n(1),m,iq,i,j,k,l,model,nobs(1),mobs,ii,nm,pos(m),nn,
+      integer n(*),m,iq,i,j,k,l,model,nobs(*),mobs,ii,nm,pos(m),nn,
      +     pivot(m)
       logical cf,ismu,ppar
-      double precision like,s(1),pi,sflog,av,pshape(m),par,
+      double precision like,s(*),pi,sflog,av,pshape(m),par,
      +     gmod(m,m),rhs(m),qraux(m),mu(nn,m,l),cmu(iq,m,l),
-     +     tvmu(mobs,m,l),ll,x(1),gamma(m,m),delta(m),a(m),b(m,m),
-     +     c(m),pgamma(m,m),filter(m,nn),pfam,tmp,tmp2,tmp3,lgam(1),
+     +     tvmu(mobs,m,l),ll,x(*),gamma(m,m),delta(m),a(m),b(m,m),
+     +     c(m),pgamma(m,m),filter(m,nn),pfam,tmp,tmp2,tmp3,lgam(*),
      +     work(2*m),work2(m)
       double precision bernpr,poispr,multpr,cmultpr,contpr,proppr,binpr,
      +     exppr,bbinpr,nbinpr,normpr,invgpr,logispr,cauchpr,laplpr,
@@ -329,7 +329,7 @@ c transform back to original values
 ***************************************************************************
       implicit none
       integer m,i,ii,j,pos(m)
-      double precision sum,gamma(m,m),x(1),pgamma(m,m)
+      double precision sum,gamma(m,m),x(*),pgamma(m,m)
 
       ii=0
       do 30 i = 1, m
@@ -358,9 +358,9 @@ c transform back to original values
 * Computes stationary distribution of Markov chain *
 ****************************************************
       implicit none
-      integer m,i,j,rank,info,pivot(1)
-      double precision qraux(1),work(1),dummy,
-     +     gamma(m,m),delta(1),gmod(m,m),rhs(1)
+      integer m,i,j,rank,info,pivot(*)
+      double precision qraux(*),work(*),dummy,
+     +     gamma(m,m),delta(*),gmod(m,m),rhs(*)
 
       do 20 i = 2, m
          do 10 j = 1, m
@@ -464,7 +464,7 @@ C      end
       implicit none
       integer i,j,k,iq,m,l,mobs,n,nn,nm
       double precision mu(nn,m,l),cmu(iq,m,l),tvmu(mobs,m,l),
-     +     svec(1),lgam(1),pi,denom,sum
+     +     svec(*),lgam(*),pi,denom,sum
       logical ismu
 
       denom=1.
