@@ -10,3 +10,5 @@ changes.txt
 \.so$
 \.dll$
 ^\.gitignore$
+cmcre.r
+cmcre.Rd

@@ -2,6 +2,9 @@
 Bruce Swihart  
 November 2016  
 
+## Resubmission 3
+Removed cmcre.R/.Rd.  
+
 ## Resubmission 2
 Every .R/.Rd file has at least one example and the DESCRIPTION now lists all aut, ctb, cph.  Thanks!
 
