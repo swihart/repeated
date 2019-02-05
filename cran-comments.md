@@ -1,5 +1,29 @@
 # repeated R package
 Bruce Swihart  
+Feb 2019
+
+## Re-Submission 1
+
+  * https://github.com/swihart/repeated/issues/14
+  * Found no calls to: ‘R_registerRoutines’, ‘R_useDynamicSymbols’) Fixed Note
+  * abs --> fabs in gar.c
+  * comment out plevy .C calls because we just import from rmutil all along
+  * Corrected failure: length > 1 in coercion to logical errors
+  
+## Test environments
+* local OS X install: R version 3.5.2 (2018-12-20) -- "Eggshell Igloo"
+* Ubuntu 14.04.5 LTS (on travis-ci): R version 3.5.2 (2017-01-27)
+* win-builder: R Under development (unstable) (2019-01-31 r76038)
+
+## R CMD check results
+There were no ERRORs or WARNINGs or NOTEs.
+
+
+## Downstream dependencies
+There are currently no downstream dependencies for this package.
+
+# repeated R package
+Bruce Swihart  
 November 2016  
 
 ## Resubmission 3
