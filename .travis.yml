@@ -1,5 +1,32 @@
-# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+# Sample .travis.yml for R projects
 
-language: R
-sudo: false
-cache: packages
+language: r
+warnings_are_errors: true
+sudo: required
+
+
+matrix:
+  include:
+    - os: linux
+      compiler: gcc
+      r: release
+      r_check_args: --as-cran --use-valgrind
+      addons:
+        apt:
+          sources: ['ubuntu-toolchain-r-test']
+          packages:
+          - valgrind
+          - ['g++-9']
+      env:
+        - COMPILER=g++-9
+        - CC=gcc=9
+        - CXX=g++-9
+
+env:
+ global:
+   - CRAN: http://cran.rstudio.com
+   
+notifications:
+  email:
+    on_success: change
+    on_failure: change
