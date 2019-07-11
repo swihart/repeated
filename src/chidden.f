@@ -432,8 +432,8 @@ c transform back to original values
 *    Obtain eigenvalues and vectors and inverse of former *
 ***********************************************************
       implicit none
-      integer info,i,j
-      double precision rank
+      integer info,i,j, rank
+c      double precision rank
       integer m,pivot(m)
       double precision val(m),vec(m,m),invec(m,m),gamma(m,m),a(m),c(m),
      +     gmod(m,m),qraux(m),work(2*m),work3(m,m)
