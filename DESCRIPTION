@@ -1,5 +1,5 @@
 Package: repeated
-Version: 1.1.1
+Version: 1.1.2
 Title: Non-Normal Repeated Measurements Models
 Authors@R: c(
     person("Bruce", "Swihart", email="bruce.swihart@gmail.com", role=c("cre", "aut")),
