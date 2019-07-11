@@ -22,4 +22,4 @@ BugReports: https://github.com/swihart/repeated/issues
 Encoding: UTF-8
 LazyData: true
 LazyLoad: true
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
