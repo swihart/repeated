@@ -11,7 +11,7 @@ July 2019
   * 2.  In chidden.f, line 436: comment out real precision rank and make rank integer in line above (435)
   * 3.  chidden.f:462:12:  `dqrcf(gmod,m,rank,qraux,work3,m,invec,info,1)` -> `dqrcf(gmod,m,rank,qraux,work3,m,invec,info)`
   
-  In addition I've embellished the DESCRIPTION with information about models and citations to JK
+  In addition I've embellished the DESCRIPTION with information about models and citations   to JK
   Lindsey's textbooks.
 
 ## Test environments
