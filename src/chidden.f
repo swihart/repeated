@@ -459,7 +459,7 @@ c invert matrix of eigenvectors
  2       continue
  1    continue
       call dqrdc2(gmod,m,m,m,1d-07,rank,qraux,pivot,work)
-      call dqrcf(gmod,m,rank,qraux,work3,m,invec,info,1)
+      call dqrcf(gmod,m,rank,qraux,work3,m,invec,info)
       return
       end
 

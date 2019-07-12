@@ -1,19 +1,20 @@
 # repeated R package
 Bruce Swihart  
-Feb 2019
+July 2019
 
 ## Re-Submission 1
 
-  * https://github.com/swihart/repeated/issues/14
-  * Found no calls to: ‘R_registerRoutines’, ‘R_useDynamicSymbols’) Fixed Note
-  * abs --> fabs in gar.c
-  * comment out plevy .C calls because we just import from rmutil all along
-  * Corrected failure: length > 1 in coercion to logical errors
-  
+  * https://github.com/swihart/repeated/issues/15
+  * `repeated` was flagged for LTO mismatches using gcc9 and subsequently taken off CRAN.
+  * LTOs are fixed with the following 3 edits:
+  * 1.  In gausscop.f, line 157:  make 0 -> 0.0D0 for 6th argument in rs()
+  * 2.  In chidden.f, line 436: comment out real precision rank and make rank integer in line above (435)
+  * 3.  chidden.f:462:12:  `dqrcf(gmod,m,rank,qraux,work3,m,invec,info,1)` -> `dqrcf(gmod,m,rank,qraux,work3,m,invec,info)`
+
 ## Test environments
-* local OS X install: R version 3.5.2 (2018-12-20) -- "Eggshell Igloo"
-* Ubuntu 14.04.5 LTS (on travis-ci): R version 3.5.2 (2017-01-27)
-* win-builder: R Under development (unstable) (2019-01-31 r76038)
+* local OS X install: R version 3.6.0 (2019-04-26)
+* Ubuntu 14.04.5 LTS (on travis-ci): R version 3.6.0 (2017-01-27)
+* win-builder: R Under development (unstable) (2019-07-05 r76784)
 
 ## R CMD check results
 There were no ERRORs or WARNINGs or NOTEs.
@@ -21,68 +22,4 @@ There were no ERRORs or WARNINGs or NOTEs.
 
 ## Downstream dependencies
 There are currently no downstream dependencies for this package.
-
-# repeated R package
-Bruce Swihart  
-November 2016  
-
-## Resubmission 3
-Removed cmcre.R/.Rd.  
-
-## Resubmission 2
-Every .R/.Rd file has at least one example and the DESCRIPTION now lists all aut, ctb, cph.  Thanks!
-
-## Resubmission 1
-Hi, this is a resubmission.  I fixed Title case in DESCRIPTION.  Thanks!
-
-## Test environments
-* local OS X install: R version 3.3.2 (2016-10-31)
-* ubuntu 12.04 (on travis-ci): R version 3.3.1 (2016-06-21)
-* win-builder:        R Under development (unstable) (2016-11-25 r71694)
-
-## R CMD check results
-There were no ERRORs or WARNINGs. 
-
-There was 1 NOTE:
-
-* 1st submission (Package was archived on CRAN, see Miscellaneous)
-
-## Downstream dependencies
-There are currently no downstream dependencies for this package.
-
-## Miscellaneous
-As per the CRAN Repository Policy Version Revision 3577,
-
-  *  Explain any change in the maintainer’s email address and if possible send confirmation from the previous address (by a separate email to CRAN@R-project.org) or explain why it is not possible. 
-
-This Package was archived on CRAN.  I am resurrecting it.
-I have Jim Lindsey's permission to be maintainer of his packages on CRAN.  Currently he has them in .zip files on his homepage:  http://www.commanster.eu/rcode.html.  He does not have access to the original email address he used when this package was on CRAN, and thus cannot send a separate confirmation email.  However, you can contact him at James Lindsey <jlindsey@gen.unimaas.nl>.  
-
-He sent this confirmation message on 2016-11-24:
-
----------- Forwarded message ----------
-From: James Lindsey <jlindsey@gen.unimaas.nl>
-Date: Thu, Nov 24, 2016 at 9:26 AM
-Subject: transferring maintainer role to Bruce Swihart for 'rmutil', 'repeated', 'gnlm', 'growth', 'event', 'stable'
-To: CRAN@r-project.org, ligges@statistik.tu-dortmund.de, Kurt.Hornik@wu.ac.at
-Cc: bruce.swihart@gmail.com
-
-
-Dear CRAN,
-
-Bruce Swihart is taking on the role of maintainer for my R-packages which have been available on my homepage, http://www.commanster.eu/rcode.html.  Some of these R-packages were on CRAN but have since been archived. 
-I know it is CRAN repository policy to email confirmation from the previous maintainer's email address (jlindsey@luc.ac.be), but alas I can't due to LUC changing its name.
-
-Please accept this email as confirmation of the maintainer role changing for R packages 'rmutil', 'repeated', 'gnlm', 'growth', 'event', 'stable'.
-
-Regards,
-Jim Lindsey
-
-
-
-
-
-
-
-
 
