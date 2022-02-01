@@ -1,3 +1,27 @@
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - '.github/workflows/rchk.yml'
+      - 'src/**'
+      - 'inst/include/**'
+      - 'memcheck/**'
+      - 'tests/testthat/**.R'
+      - 'vignettes/**.Rmd'
+  pull_request:
+    paths:
+      - '.github/workflows/rchk.yml'
+      - 'src/**'
+      - 'inst/include/**'
+      - 'memcheck/**'
+      - 'tests/testthat/**.R'
+      - 'vignettes/**.Rmd'
+
+name: rchk
+
+jobs:  
   rchk:
     runs-on: ubuntu-latest
     container:
