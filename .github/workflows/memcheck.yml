@@ -82,7 +82,7 @@ jobs:
             remotes::install_github('r-lib/brio#20') # brio mem leak
           }
           if ("${{ matrix.config.test }}" == 'examples') {
-            remotes::install_github('r-lib/devtools') 
+            #remotes::install_github('r-lib/devtools') 
           }
           remotes::install_deps(dependencies = c('soft', 'Config/Needs/memcheck'))
         shell: Rscript {0}
@@ -98,7 +98,7 @@ jobs:
         run: |
           R -d "valgrind --tool=memcheck \
           --leak-check=full \
-          --track-origins=yes \
+          --track-origins=yes" \
           --vanilla < memcheck/${{ matrix.config.test }}.R
 #        run: |
 #          R -d "valgrind --tool=memcheck \
