@@ -95,14 +95,14 @@ jobs:
           cd repeated
 
       - name: valgrind - memcheck ${{ matrix.config.test }}
-        run: |
-          R -d "valgrind --tool=memcheck \
-          --leak-check=full \
-          --track-origins=yes" \
-          --vanilla < memcheck/${{ matrix.config.test }}.R
 #        run: |
 #          R -d "valgrind --tool=memcheck \
 #          --leak-check=full \
-#          --errors-for-leak-kinds=definite \
-#          --error-exitcode=1" \
+#          --track-origins=yes" \
 #          --vanilla < memcheck/${{ matrix.config.test }}.R
+        run: |
+          R -d "valgrind --tool=memcheck \
+          --leak-check=full \
+          --errors-for-leak-kinds=definite \
+          --error-exitcode=1" \
+          --vanilla < memcheck/${{ matrix.config.test }}.R
