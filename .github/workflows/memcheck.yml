@@ -56,7 +56,6 @@ jobs:
       - name: Query dependencies
         run: |
           install.packages('remotes')
-          install.packages('devtools')
           saveRDS(remotes::dev_package_deps(dependencies = c('soft', 'Config/Needs/memcheck')), ".github/depends.Rds", version = 2)
           writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/R-version")
         shell: Rscript {0}
@@ -81,6 +80,9 @@ jobs:
           remotes::install_github('swihart/rmutil')
           if ("${{ matrix.config.test }}" == 'tests') {
             remotes::install_github('r-lib/brio#20') # brio mem leak
+          }
+          if ("${{ matrix.config.test }}" == 'examples') {
+            remotes::install_github('r-lib/devtools') 
           }
           remotes::install_deps(dependencies = c('soft', 'Config/Needs/memcheck'))
         shell: Rscript {0}
