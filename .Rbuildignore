@@ -12,3 +12,7 @@ changes.txt
 \.dll$
 ^\.gitignore$
 ^\./old_code$
+^CRAN-SUBMISSION$
+^romberg\.c$
+^cmcre\.r$
+^cmcre\.Rd$
