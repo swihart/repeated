@@ -16,3 +16,5 @@ changes.txt
 ^romberg\.c$
 ^cmcre\.r$
 ^cmcre\.Rd$
+memcheck
+.github

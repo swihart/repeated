@@ -34,35 +34,14 @@ y <- c(8.674419, 11.506066, 11.386742, 27.414532, 12.135699,  4.359469,
 id <- rep(1:4, each=5)
 
 
-beg.jim <- Sys.time()
-jim <- gnlmix(y, mu=~a+b*dose+rand, random="rand", nest=id, pmu=c(a=8.7,b=0.25),
+beg.ex1 <- Sys.time()
+ex1 <- gnlmix(y, mu=~a+b*dose+rand, random="rand", nest=id, pmu=c(a=8.7,b=0.25),
               pshape=3.44, pmix=2.3)
-end.jim <- Sys.time()
-time.jim <- end.jim - beg.jim
+end.ex1 <- Sys.time()
+time.ex1 <- end.ex1 - beg.ex1
 
-beg.dotc <- Sys.time()
-dotc <- gnlmix_dotc(y, mu=~a+b*dose+rand, random="rand", nest=id, pmu=c(a=8.7,b=0.25),
-                    pshape=3.44, pmix=2.3)
-end.dotc <- Sys.time()
-time.dotc <- end.dotc - beg.dotc
+ex1$coef
 
+ex1$maxlike
 
-
-beg.dotcall <- Sys.time()
-dotcall <- gnlmix_dotcall(y, mu=~a+b*dose+rand, random="rand", nest=id, pmu=c(a=8.7,b=0.25),
-                          pshape=3.44, pmix=2.3)
-end.dotcall <- Sys.time()
-time.dotcall <- end.dotcall - beg.dotcall
-
-
-dotcall$coef
-dotc$coef
-jim$coef
-
-dotcall$maxlike
-dotc$maxlike
-jim$maxlike
-
-time.dotcall
-time.dotc
-time.jim
+time.ex1

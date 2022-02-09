@@ -17,7 +17,7 @@ extern void kserie_c(void *, void *, void *, void *, void *, void *, void *, voi
 extern void pginvgauss_c(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void ppowexp_c(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
 extern void psimplex_c(void *, void *, void *, void *, void *, void *, void *, void *, void *, void *);
-extern void romberg_c(void *, void *, void *, void *, void *, void *, void *, void *, void *);
+//extern void romberg_c(void *, void *, void *, void *, void *, void *, void *, void *, void *);
 
 static const R_CMethodDef CEntries[] = {
     {"countfb_c",    (DL_FUNC) &countfb_c,    21},
@@ -33,7 +33,7 @@ static const R_CMethodDef CEntries[] = {
     {"pginvgauss_c", (DL_FUNC) &pginvgauss_c, 10},
     {"ppowexp_c",    (DL_FUNC) &ppowexp_c,    10},
     {"psimplex_c",   (DL_FUNC) &psimplex_c,   10},
-    {"romberg_c",    (DL_FUNC) &romberg_c,     9},
+//   {"romberg_c",    (DL_FUNC) &romberg_c,     9},
     {NULL, NULL, 0}
 };
 
