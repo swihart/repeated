@@ -1,20 +1,11 @@
 # repeated R package
 Bruce Swihart  
-January 2022
+Mar 2022
 
 
-## Re-Submission 3
+## Submission
 
-  * Corrected the LTO issues by correcting registration in repeated_init.c, as
-  per BR email on 2022-01-31
-
-## Re-Submission 2
-
-  * https://github.com/swihart/repeated/issues/16
-  * `call_R()` be gone!
-  * rewrite the C-code of romberg integration in gnlmix to have entry .Call
-  * `https:` where appropriate
-
+  * I messed up when I took over maintaining responsibilities -- the License is supposed to be GPL>=2 as Lindsey originally had.
 
 ## Test environments
 * local OS X install: R version 4.1.2 (2021-11-01) 
