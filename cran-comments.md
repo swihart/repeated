@@ -2,6 +2,29 @@
 Bruce Swihart  
 Mar 2022
 
+## Submission
+
+  * Corrected clang15 warnings and news.md formatting
+
+## Test environments
+* local OS X install: R version 4.1.2 (2021-11-01) 
+    * Platform: x86_64-apple-darwin17.0 (64-bit)
+    * Running under: macOS Mojave 10.14.6
+* rhub: Debian Linux, R-devel, clang, ISO-8859-15 locale
+
+## R CMD check results
+There were no ERRORs or WARNINGs or NOTEs.
+
+
+## Downstream dependencies
+There are currently no downstream dependencies for this package.
+
+
+
+# repeated R package
+Bruce Swihart  
+Mar 2022
+
 
 ## Submission
 
