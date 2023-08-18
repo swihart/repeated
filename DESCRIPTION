@@ -1,5 +1,5 @@
 Package: repeated
-Version: 1.1.6
+Version: 1.1.7
 Title: Non-Normal Repeated Measurements Models
 Authors@R: c(
     person("Bruce", "Swihart", email="bruce.swihart@gmail.com", role=c("cre", "aut")),
@@ -28,11 +28,11 @@ Description: Various functions to fit models for non-normal repeated
     Ordinal Random Effects Models with Dropouts, marginal homogeneity models for square
     contingency tables, correlated negative binomial models with Kalman update.
     References include Lindsey's text books, 
-    JK Lindsey (2001) <isbn-10:0198508123> and JK Lindsey (1999) <isbn-10:0198505590>.
+    JK Lindsey (2001) <isbn:10-0198508123> and JK Lindsey (1999) <isbn:10-0198505590>.
 License: GPL (>=2)
 URL: https://www.commanster.eu/rcode.html
 BugReports: https://github.com/swihart/repeated/issues
 Encoding: UTF-8
 LazyData: true
 LazyLoad: true
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.1
