@@ -455,8 +455,9 @@ C
          GO TO 20
   170 CONTINUE
 C     .......... NOW BALANCE THE SUBMATRIX IN ROWS K TO L ..........
-      DO 180 I = K, L
-  180 SCALE(I) = 1.0D0
+      DO     I = K, L
+         SCALE(I) = 1.0D0
+      END DO   
 C     .......... ITERATIVE LOOP FOR NORM REDUCTION ..........
   190 NOCONV = .FALSE.
 C
@@ -1073,12 +1074,13 @@ C     .......... ALL ROOTS FOUND.  BACKSUBSTITUTE TO FIND
 C                VECTORS OF UPPER TRIANGULAR FORM ..........
   680 NORM = 0.0D0
 C
-      DO 720 I = 1, N
+      DO I = 1, N
 C
-         DO 720 J = I, N
+         DO J = I, N
             TR = DABS(HR(I,J)) + DABS(HI(I,J))
             IF (TR .GT. NORM) NORM = TR
-  720 CONTINUE
+         END DO
+      END DO   
 C
       IF (N .EQ. 1 .OR. NORM .EQ. 0.0D0) GO TO 1001
 C     .......... FOR EN=N STEP -1 UNTIL 2 DO -- ..........
