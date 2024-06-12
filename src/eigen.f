@@ -151,8 +151,9 @@ C     .......... NOW BALANCE ..........
          SCALE(I) = SCALE(I) * F
          NOCONV = .TRUE.
 C
-         DO 250 J = K, N
-  250    A(I,J) = A(I,J) * G
+         DO     J = K, N
+            A(I,J) = A(I,J) * G
+         END DO
 C
          DO 260 J = 1, L
   260    A(J,I) = A(J,I) * F
