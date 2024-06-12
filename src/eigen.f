@@ -155,8 +155,9 @@ C
             A(I,J) = A(I,J) * G
          END DO
 C
-         DO 260 J = 1, L
-  260    A(J,I) = A(J,I) * F
+         DO     J = 1, L
+            A(J,I) = A(J,I) * F
+         END DO   
 C
   270 CONTINUE
 C
@@ -218,8 +219,9 @@ C
 C     .......... LEFT HAND EIGENVECTORS ARE BACK TRANSFORMED
 C                IF THE FOREGOING STATEMENT IS REPLACED BY
 C                S=1.0D0/SCALE(I). ..........
-         DO 100 J = 1, M
-  100    Z(I,J) = Z(I,J) * S
+         DO J = 1, M
+            Z(I,J) = Z(I,J) * S
+         END DO   
 C
   110 CONTINUE
 C     ......... FOR I=LOW-1 STEP -1 UNTIL 1,
