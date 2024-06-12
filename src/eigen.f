@@ -116,8 +116,9 @@ C
          GO TO 20
   170 CONTINUE
 C     .......... NOW BALANCE THE SUBMATRIX IN ROWS K TO L ..........
-      DO 180 I = K, L
-  180 SCALE(I) = 1.0D0
+      DO I = K, L
+         SCALE(I) = 1.0D0
+      END DO
 C     .......... ITERATIVE LOOP FOR NORM REDUCTION ..........
   190 NOCONV = .FALSE.
 C
