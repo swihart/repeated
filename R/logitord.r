@@ -82,16 +82,14 @@
 ##' @keywords models
 ##' @examples
 ##' set.seed(400)
-##' num.meas <- 5
-##' num.subj <- 40
-##' y <- trunc(runif(num.meas*num.subj,max=4))
-##' id <- gl(num.subj,num.meas)
-##' age <- rpois(num.meas*num.subj, 20)
-##' times <- rep(1:num.meas, num.subj)
-##' head(cbind(id,times, age, y))
-##' tail(cbind(id,times, age, y))
+##' y <- trunc(runif(20,max=4))
+##' id <- gl(4,5)
+##' age <- rpois(20,20)
+##' times <- rep(1:5,4)
+##' logitord(y, id=id, out.ccov=~age, drop.ccov=age, pout=c(1,0,0),
+##'          pdrop=c(1,0), random.out.int=FALSE, random.drop.int=FALSE)
+##' logitord(y, id, tvcov=times, pout=c(1,0,0), pdrop=c(1,0), random.out.int=FALSE, random.drop.int=FALSE)
 ##' 
-##' logitord(y, id, tvcov=times, pout=c(1,0,0), pdrop=c(1,0))
 ##' 
 ##' @aliases logitord logitord.print
 ##' @export logitord
