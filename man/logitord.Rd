@@ -92,16 +92,45 @@ time to the ordinal outcomes and a logistic model to the probability of
 dropping out using a common random effect for the two.
 }
 \examples{
-\dontrun{
-set.seed(400)
-y <- trunc(runif(20,max=4))
-id <- gl(4,5)
+
+
+## y <- trunc(runif(20,max=4))
+y <- c(1,1,1,1,2,
+       1,1,1,2,3,
+       1,1,2,2,2,
+       1,1,3,0,0,
+       1,2,3,3,0,
+       0,1,1,3,0,
+       3,0,0,0,0)
+id <- gl(7,5)
 age <- rpois(20,20)
-times <- rep(1:5,4)
-logitord(y, id=id, out.ccov=~age, drop.ccov=age, pout=c(1,0,0),
-         pdrop=c(1,0), random.out.int=FALSE, random.drop.int=FALSE)
-logitord(y, id, tvcov=times, pout=c(1,0,0), pdrop=c(1,0), random.out.int=FALSE, random.drop.int=FALSE)
-}
+age <- c(seq(16,16+5-1),
+seq(16,16+5-1),
+seq(36,36+5-1),
+seq(16,16+5-1),
+seq(86,86+5-1),
+seq(16,16+5-1),
+seq(96,96+5-1)
+)
+age.std <- (age - mean(age)) / sd(age)
+times <- rep(1:5,7)
+cbind(id,times,age,y)
+logitord(y, 
+         id=id, 
+         out.ccov=~age.std, 
+         drop.ccov=age.std, 
+         pout=c(1,0,0),
+         pdrop=c(1,0), 
+         random.out.int=FALSE, 
+         random.drop.int=FALSE)
+logitord(y, 
+         id, 
+         tvcov=times, 
+         pout=c(1,0,0), 
+         pdrop=c(1,0), 
+         random.out.int=FALSE, 
+         random.drop.int=FALSE)
+
 
 }
 \references{
