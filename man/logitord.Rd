@@ -122,14 +122,18 @@ logitord(y,
          pout=c(1,0,0),
          pdrop=c(1,0), 
          random.out.int=FALSE, 
-         random.drop.int=FALSE)
+         random.drop.int=FALSE,
+         fcalls=1,
+         eps=1)
 logitord(y, 
          id, 
          tvcov=times, 
          pout=c(1,0,0), 
          pdrop=c(1,0), 
          random.out.int=FALSE, 
-         random.drop.int=FALSE)
+         random.drop.int=FALSE,
+         fcalls=1,
+         eps=1)
 
 
 }
