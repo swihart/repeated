@@ -2225,18 +2225,21 @@ C
 C     .......... MULTIPLY BY TRANSFORMATION MATRIX TO GIVE
 C                VECTORS OF ORIGINAL FULL MATRIX.
 C                FOR J=N STEP -1 UNTIL LOW DO -- ..........
-      DO 880 JJ = LOW, N
+      DO JJ = LOW, N
          J = N + LOW - JJ
          M = MIN0(J,IGH)
 C
-         DO 880 I = LOW, IGH
+         DO I = LOW, IGH
             ZZ = 0.0D0
 C
-            DO 860 K = LOW, M
-  860       ZZ = ZZ + Z(I,K) * H(K,J)
+            DO K = LOW, M
+               ZZ = ZZ + Z(I,K) * H(K,J)
+            END DO   
 C
             Z(I,J) = ZZ
-  880 CONTINUE
+
+         END DO
+      END DO   
 C
       GO TO 1001
 C     .......... SET ERROR -- ALL EIGENVALUES HAVE NOT
