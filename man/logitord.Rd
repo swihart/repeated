@@ -101,8 +101,7 @@ age <- rpois(num.meas*num.subj, 20)
 times <- rep(1:num.meas, num.subj)
 head(cbind(id,times, age, y))
 tail(cbind(id,times, age, y))
-logitord(y, id=id, out.ccov=~age, drop.ccov=age, pout=c(1,0,0),
-         pdrop=c(1,0))
+
 logitord(y, id, tvcov=times, pout=c(1,0,0), pdrop=c(1,0))
 
 }
