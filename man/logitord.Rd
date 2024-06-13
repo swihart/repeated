@@ -123,7 +123,7 @@ logitord(y,
          pdrop=c(1,0), 
          random.out.int=FALSE, 
          random.drop.int=FALSE,
-         fcalls=1,
+         fcalls=40,
          eps=1)
 logitord(y, 
          id, 
@@ -132,7 +132,7 @@ logitord(y,
          pdrop=c(1,0), 
          random.out.int=FALSE, 
          random.drop.int=FALSE,
-         fcalls=1,
+         fcalls=40,
          eps=1)
 
 
