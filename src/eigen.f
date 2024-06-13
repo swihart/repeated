@@ -1228,8 +1228,9 @@ C
          ORTI(M) = 0.0D0
          SCALE = 0.0D0
 C     .......... SCALE COLUMN (ALGOL TOL THEN NOT NEEDED) ..........
-         DO 90 I = M, IGH
-   90    SCALE = SCALE + DABS(AR(I,M-1)) + DABS(AI(I,M-1))
+         DO I = M, IGH
+            SCALE = SCALE + DABS(AR(I,M-1)) + DABS(AI(I,M-1))
+         END DO   
 C
          IF (SCALE .EQ. 0.0D0) GO TO 180
          MP = M + IGH
@@ -1404,11 +1405,13 @@ C
             Y = Y / X
             A(I,MM1) = Y
 C
-            DO 140 J = M, N
-  140       A(I,J) = A(I,J) - Y * A(M,J)
+            DO J = M, N
+               A(I,J) = A(I,J) - Y * A(M,J)
+            END DO   
 C
-            DO 150 J = 1, IGH
-  150       A(J,M) = A(J,M) + Y * A(J,I)
+            DO J = 1, IGH
+               A(J,M) = A(J,M) + Y * A(J,I)
+            END DO   
 C
   160    CONTINUE
 C
@@ -1465,8 +1468,9 @@ C
 C     .......... INITIALIZE Z TO IDENTITY MATRIX ..........
       DO 80 J = 1, N
 C
-         DO 60 I = 1, N
-   60    Z(I,J) = 0.0D0
+         DO I = 1, N
+            Z(I,J) = 0.0D0
+         END DO   
 C
          Z(J,J) = 1.0D0
    80 CONTINUE
@@ -1478,8 +1482,9 @@ C     .......... FOR MP=IGH-1 STEP -1 UNTIL LOW+1 DO -- ..........
          MP = IGH - MM
          MP1 = MP + 1
 C
-         DO 100 I = MP1, IGH
-  100    Z(I,MP) = A(I,MP-1)
+         DO I = MP1, IGH
+            Z(I,MP) = A(I,MP-1)
+         END DO   
 C
          I = INT(MP)
          IF (I .EQ. MP) GO TO 140
@@ -1602,8 +1607,9 @@ C     .......... STORE ROOTS ISOLATED BY BALANC
 C                AND COMPUTE MATRIX NORM ..........
       DO 50 I = 1, N
 C
-         DO 40 J = K, N
-   40    NORM = NORM + DABS(H(I,J))
+         DO J = K, N
+            NORM = NORM + DABS(H(I,J))
+         END DO   
 C
          K = I
          IF (I .GE. LOW .AND. I .LE. IGH) GO TO 50
