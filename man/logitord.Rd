@@ -92,7 +92,7 @@ time to the ordinal outcomes and a logistic model to the probability of
 dropping out using a common random effect for the two.
 }
 \examples{
-
+set.seed(400)
 y <- trunc(runif(20,max=4))
 id <- gl(4,5)
 age <- rpois(20,20)

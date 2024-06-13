@@ -1,24 +1,16 @@
 # repeated R package
 Bruce Swihart  
-Aug 2023
+Jun 2024
 
-## Submission no. 4
+## Submission
 
-  * Updated kalcount, binnest, gnlmm, gnlmm3, hidden, and gar examples
-  * Corrected binnest.f and logitord.f mixed free/fixed format
-  * fixed Description ISBNs
-  * fixed Mismatches for apparent methods not registered
-  * fixed line 1670 of logitord.f (thanks Uwe!)
-  * fixed line 1849 of binnest.f  (thanks Uwe!)
+  * fixed FORTRAN 2018 warnings in src/eigen.f as per Prof Ripley email
 
 ## Test environments
 * local OS X install: R version 4.2.2 (2022-10-31)
     * Platform: x86_64-apple-darwin17.0 (64-bit)
     * Running under: macOS Big Sur 11.2.3
-* rhub::check(platforms=c("debian-clang-devel",
-                          "fedora-clang-devel",
-                          "windows-x86_64-devel"))
-* https://mac.r-project.org/macbuilder/results/1691417905-95849834a2250182/
+* rhub::check(platforms=c("gcc13"))
 
 ## R CMD check results
 There were no ERRORs or WARNINGs or NOTEs.

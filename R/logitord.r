@@ -81,7 +81,7 @@
 ##' J.R. (1998) Biometrics 54, 367-383, for the binary case.
 ##' @keywords models
 ##' @examples
-##' 
+##' set.seed(400)
 ##' y <- trunc(runif(20,max=4))
 ##' id <- gl(4,5)
 ##' age <- rpois(20,20)
