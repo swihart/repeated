@@ -408,7 +408,7 @@ c     Call subroutine FORMUL
          
          if(Li.gt.0.)then
 c        formula (1)         
-            sli=sli+dlog(abs(Li))
+            sli=sli+dlog(Li)
             
             DO j=1,total1
 c     first derivatives w.r.t. beta j's            
@@ -608,7 +608,7 @@ c     Call subroutine FORMUL
      &        s2bjbl,s2bjsn1,s2snso1,ssigmn2,s2bjsn2,
      &        s2snso2,ssigmn12,s2snso12,x)
 c     formula (1)         
-         sli=sli+dlog(abs(Li))       
+         sli=sli+dlog(Li)       
          
          DO j=1,total1
 c     first derivatives w.r.t. beta j's         

@@ -20,3 +20,6 @@ memcheck
 .github
 Lindsey_kalcount_paper.pdf
 logitord_paper_biometrics_56_1_279.pdf
+^logitord\.r$
+^logitord\.Rd$
+^logitord\.f$
