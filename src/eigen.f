@@ -2301,12 +2301,13 @@ C
 C     .......... TRANSFORM THE EIGENVECTORS OF THE REAL SYMMETRIC
 C                TRIDIAGONAL MATRIX TO THOSE OF THE HERMITIAN
 C                TRIDIAGONAL MATRIX. ..........
-      DO 50 K = 1, N
+      DO K = 1, N
 C
-         DO 50 J = 1, M
+         DO J = 1, M
             ZI(K,J) = -ZR(K,J) * TAU(2,K)
             ZR(K,J) = ZR(K,J) * TAU(1,K)
-   50 CONTINUE
+         END DO
+      END DO   
 C
       IF (N .EQ. 1) GO TO 200
 C     .......... RECOVER AND APPLY THE HOUSEHOLDER MATRICES ..........
@@ -2394,8 +2395,9 @@ C
       TAU(1,N) = 1.0D0
       TAU(2,N) = 0.0D0
 C
-      DO 100 I = 1, N
-  100 D(I) = AR(I,I)
+      DO I = 1, N
+         D(I) = AR(I,I)
+      END DO   
 C     .......... FOR I=N STEP -1 UNTIL 1 DO -- ..........
       DO 300 II = 1, N
          I = N + 1 - II
@@ -2404,8 +2406,9 @@ C     .......... FOR I=N STEP -1 UNTIL 1 DO -- ..........
          SCALE = 0.0D0
          IF (L .LT. 1) GO TO 130
 C     .......... SCALE ROW (ALGOL TOL THEN NOT NEEDED) ..........
-         DO 120 K = 1, L
-  120    SCALE = SCALE + DABS(AR(I,K)) + DABS(AI(I,K))
+         DO K = 1, L
+            SCALE = SCALE + DABS(AR(I,K)) + DABS(AI(I,K))
+         END DO   
 C
          IF (SCALE .NE. 0.0D0) GO TO 140
          TAU(1,L) = 1.0D0
@@ -2463,7 +2466,7 @@ C     .......... FORM ELEMENT OF P ..........
 C
          HH = F / (H + H)
 C     .......... FORM REDUCED A ..........
-         DO 260 J = 1, L
+         DO J = 1, L
             F = AR(I,J)
             G = E(J) - HH * F
             E(J) = G
@@ -2471,12 +2474,13 @@ C     .......... FORM REDUCED A ..........
             GI = TAU(2,J) - HH * FI
             TAU(2,J) = -GI
 C
-            DO 260 K = 1, J
+            DO K = 1, J
                AR(J,K) = AR(J,K) - F * E(K) - G * AR(I,K)
      X                           + FI * TAU(2,K) + GI * AI(I,K)
                AI(J,K) = AI(J,K) - F * TAU(2,K) - G * AI(I,K)
      X                           - FI * E(K) - GI * AR(I,K)
-  260    CONTINUE
+            END DO
+         END DO   
 C
   270    DO 280 K = 1, L
             AR(I,K) = SCALE * AR(I,K)
@@ -2566,8 +2570,9 @@ C
       IERR = 0
       IF (N .EQ. 1) GO TO 1001
 C
-      DO 100 I = 2, N
-  100 E(I-1) = E(I)
+      DO I = 2, N
+         E(I-1) = E(I)
+      END DO   
 C
       F = 0.0D0
       TST1 = 0.0D0
@@ -2600,8 +2605,9 @@ C     .......... FORM SHIFT ..........
          H = G - D(L)
          IF (L2 .GT. N) GO TO 145
 C
-         DO 140 I = L2, N
-  140    D(I) = D(I) - H
+         DO I = L2, N
+            D(I) = D(I) - H
+         END DO   
 C
   145    F = F + H
 C     .......... QL TRANSFORMATION ..........
@@ -2722,8 +2728,9 @@ C
       IERR = 0
       IF (N .EQ. 1) GO TO 1001
 C
-      DO 100 I = 2, N
-  100 E(I-1) = E(I)
+      DO I = 2, N
+         E(I-1) = E(I)
+      END DO   
 C
       F = 0.0D0
       TST1 = 0.0D0
@@ -2756,8 +2763,9 @@ C     .......... FORM SHIFT ..........
          H = G - D(L)
          IF (L2 .GT. N) GO TO 145
 C
-         DO 140 I = L2, N
-  140    D(I) = D(I) - H
+         DO I = L2, N
+            D(I) = D(I) - H
+         END DO   
 C
   145    F = F + H
 C     .......... QL TRANSFORMATION ..........
@@ -2879,8 +2887,9 @@ C
       IERR = 0
       IF (N .EQ. 1) GO TO 1001
 C
-      DO 100 I = 2, N
-  100 E2(I-1) = E2(I)
+      DO I = 2, N
+         E2(I-1) = E2(I)
+      END DO
 C
       F = 0.0D0
       T = 0.0D0
@@ -2912,8 +2921,9 @@ C     .......... FORM SHIFT ..........
          D(L) = S / (P + DSIGN(R,P))
          H = G - D(L)
 C
-         DO 140 I = L1, N
-  140    D(I) = D(I) - H
+         DO I = L1, N
+            D(I) = D(I) - H
+         END DO   
 C
          F = F + H
 C     .......... RATIONAL QL TRANSFORMATION ..........
@@ -3020,8 +3030,9 @@ C     .......... FOR I=N STEP -1 UNTIL 1 DO -- ..........
          SCALE = 0.0D0
          IF (L .LT. 1) GO TO 130
 C     .......... SCALE ROW (ALGOL TOL THEN NOT NEEDED) ..........
-         DO 120 K = 1, L
-  120    SCALE = SCALE + DABS(D(K))
+         DO K = 1, L
+            SCALE = SCALE + DABS(D(K))
+         END DO   
 C
          IF (SCALE .NE. 0.0D0) GO TO 140
 C
@@ -3048,8 +3059,9 @@ C
          D(L) = F - G
          IF (L .EQ. 1) GO TO 285
 C     .......... FORM A*U ..........
-         DO 170 J = 1, L
-  170    E(J) = 0.0D0
+         DO J = 1, L
+            E(J) = 0.0D0
+         END DO   
 C
          DO 240 J = 1, L
             F = D(J)
@@ -3074,15 +3086,17 @@ C
 C
          H = F / (H + H)
 C     .......... FORM Q ..........
-         DO 250 J = 1, L
-  250    E(J) = E(J) - H * D(J)
+         DO J = 1, L
+            E(J) = E(J) - H * D(J)
+         END DO   
 C     .......... FORM REDUCED A ..........
          DO 280 J = 1, L
             F = D(J)
             G = E(J)
 C
-            DO 260 K = J, L
-  260       A(K,J) = A(K,J) - F * E(K) - G * D(K)
+            DO K = J, L
+               A(K,J) = A(K,J) - F * E(K) - G * D(K)
+            END DO   
 C
   280    CONTINUE
 C
@@ -3143,8 +3157,9 @@ C     ------------------------------------------------------------------
 C
       DO 100 I = 1, N
 C
-         DO 80 J = I, N
-   80    Z(J,I) = A(J,I)
+         DO J = I, N
+            Z(J,I) = A(J,I)
+         END DO   
 C
          D(I) = A(N,I)
   100 CONTINUE
@@ -3158,8 +3173,9 @@ C     .......... FOR I=N STEP -1 UNTIL 2 DO -- ..........
          SCALE = 0.0D0
          IF (L .LT. 2) GO TO 130
 C     .......... SCALE ROW (ALGOL TOL THEN NOT NEEDED) ..........
-         DO 120 K = 1, L
-  120    SCALE = SCALE + DABS(D(K))
+         DO K = 1, L
+            SCALE = SCALE + DABS(D(K))
+         END DO   
 C
          IF (SCALE .NE. 0.0D0) GO TO 140
   130    E(I) = D(L)
@@ -3183,8 +3199,9 @@ C
          H = H - F * G
          D(L) = F - G
 C     .......... FORM A*U ..........
-         DO 170 J = 1, L
-  170    E(J) = 0.0D0
+         DO J = 1, L
+            E(J) = 0.0D0
+         END DO   
 C
          DO 240 J = 1, L
             F = D(J)
@@ -3210,15 +3227,17 @@ C
 C
          HH = F / (H + H)
 C     .......... FORM Q ..........
-         DO 250 J = 1, L
-  250    E(J) = E(J) - HH * D(J)
+         DO J = 1, L
+            E(J) = E(J) - HH * D(J)
+         END DO   
 C     .......... FORM REDUCED A ..........
          DO 280 J = 1, L
             F = D(J)
             G = E(J)
 C
-            DO 260 K = J, L
-  260       Z(K,J) = Z(K,J) - F * E(K) - G * D(K)
+            DO K = J, L
+               Z(K,J) = Z(K,J) - F * E(K) - G * D(K)
+            END DO   
 C
             D(J) = Z(L,J)
             Z(I,J) = 0.0D0
@@ -3234,21 +3253,25 @@ C     .......... ACCUMULATION OF TRANSFORMATION MATRICES ..........
          H = D(I)
          IF (H .EQ. 0.0D0) GO TO 380
 C
-         DO 330 K = 1, L
-  330    D(K) = Z(K,I) / H
+         DO K = 1, L
+            D(K) = Z(K,I) / H
+         END DO   
 C
-         DO 360 J = 1, L
+         DO J = 1, L
             G = 0.0D0
 C
-            DO 340 K = 1, L
-  340       G = G + Z(K,I) * Z(K,J)
+            DO K = 1, L
+               G = G + Z(K,I) * Z(K,J)
+            END DO   
 C
-            DO 360 K = 1, L
+            DO K = 1, L
                Z(K,J) = Z(K,J) - G * D(K)
-  360    CONTINUE
+            END DO
+         END DO   
 C
-  380    DO 400 K = 1, L
-  400    Z(K,I) = 0.0D0
+  380    DO K = 1, L
+            Z(K,I) = 0.0D0
+         END DO   
 C
   500 CONTINUE
 C
