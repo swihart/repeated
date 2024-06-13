@@ -1647,8 +1647,9 @@ C     .......... FORM SHIFT ..........
 C     .......... FORM EXCEPTIONAL SHIFT ..........
       T = T + X
 C
-      DO 120 I = LOW, EN
-  120 H(I,I) = H(I,I) - X
+      DO I = LOW, EN
+         H(I,I) = H(I,I) - X
+      END DO
 C
       S = DABS(H(EN,NA)) + DABS(H(NA,ENM2))
       X = 0.75D0 * S
@@ -1866,8 +1867,9 @@ C     .......... STORE ROOTS ISOLATED BY BALANC
 C                AND COMPUTE MATRIX NORM ..........
       DO 50 I = 1, N
 C
-         DO 40 J = K, N
-   40    NORM = NORM + DABS(H(I,J))
+         DO J = K, N
+            NORM = NORM + DABS(H(I,J))
+         END DO
 C
          K = I
          IF (I .GE. LOW .AND. I .LE. IGH) GO TO 50
@@ -1905,8 +1907,9 @@ C     .......... FORM SHIFT ..........
 C     .......... FORM EXCEPTIONAL SHIFT ..........
       T = T + X
 C
-      DO 120 I = LOW, EN
-  120 H(I,I) = H(I,I) - X
+      DO I = LOW, EN
+         H(I,I) = H(I,I) - X
+      END DO   
 C
       S = DABS(H(EN,NA)) + DABS(H(NA,ENM2))
       X = 0.75D0 * S
@@ -2095,8 +2098,9 @@ C     .......... FOR I=EN-1 STEP -1 UNTIL 1 DO -- ..........
             W = H(I,I) - P
             R = 0.0D0
 C
-            DO 610 J = M, EN
-  610       R = R + H(I,J) * H(J,EN)
+            DO J = M, EN
+               R = R + H(I,J) * H(J,EN)
+            END DO   
 C
             IF (WI(I) .GE. 0.0D0) GO TO 630
             ZZ = W
@@ -2213,8 +2217,9 @@ C                VECTORS OF ISOLATED ROOTS ..........
       DO 840 I = 1, N
          IF (I .GE. LOW .AND. I .LE. IGH) GO TO 840
 C
-         DO 820 J = I, N
-  820    Z(I,J) = H(I,J)
+         DO J = I, N
+            Z(I,J) = H(I,J)
+         END DO   
 C
   840 CONTINUE
 C     .......... MULTIPLY BY TRANSFORMATION MATRIX TO GIVE
