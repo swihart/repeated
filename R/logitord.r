@@ -126,8 +126,8 @@
 ##'          eps=1)
 ##' }
 ##' 
-##' @aliases logitord logitord.print
-##' @export logitord
+## @aliases logitord logitord.print
+## @export logitord
 logitord <- function(y, id, out.ccov=NULL, drop.ccov=NULL, tvcov=NULL,
 	out.tvcov=!is.null(tvcov), drop.tvcov=!is.null(tvcov),
 	pout, pdrop, prand.out, prand.drop,

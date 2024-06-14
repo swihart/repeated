@@ -2,7 +2,6 @@
 % Please edit documentation in R/logitord.r
 \name{logitord}
 \alias{logitord}
-\alias{logitord.print}
 \title{Ordinal Random Effects Models with Dropouts}
 \usage{
 logitord(
