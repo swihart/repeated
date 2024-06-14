@@ -93,7 +93,7 @@ dropping out using a common random effect for the two.
 }
 \examples{
 
-\dontrun{
+
 ## y <- trunc(runif(20,max=4))
 y <- c(1,1,1,1,2,
        1,1,1,2,3,
@@ -125,6 +125,7 @@ logitord(y,
          random.drop.int=FALSE,
          fcalls=40,
          eps=1)
+\dontrun{         
 logitord(y, 
          id, 
          tvcov=times, 
