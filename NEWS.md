@@ -3,6 +3,9 @@ version 1.1.8
 ------------------------------------------------------------------------------
 
   * fixed FORTRAN 2018 warnings in src/eigen.f
+  * fixed FORTRAN portability: deprecated usage
+  * removed logitord() -- it segfaults on clang18 but not on gcc
+
 
 ------------------------------------------------------------------------------
 version 1.1.7
