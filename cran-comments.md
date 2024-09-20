@@ -1,19 +1,18 @@
 # repeated R package
 Bruce Swihart  
-Jun 2024
+Sept 2024
 
 ## Submission 1
 
-  * fixed FORTRAN 2018 warnings in src/eigen.f as per Prof Ripley email
-  * fixed FORTRAN portability: deprecated usage
-  * removed logitord()
+   * Fixed PI -> M_PI as per the strict test and BDR email
+   
   
 ## Test environments
 * local OS X install: R version 4.2.2 (2022-10-31)
     * Platform: x86_64-apple-darwin17.0 (64-bit)
     * Running under: macOS Big Sur 11.2.3
-* rhub::check(platforms=c("gcc13","clang18"))
-* 
+* rhub::rhub_check(platforms=c("gcc13","clang18"))
+
 
 ## R CMD check results
 There were no ERRORs or WARNINGs or NOTEs.
