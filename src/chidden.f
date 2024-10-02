@@ -171,68 +171,164 @@ c initial conditions
                endif
             endif
             if(ppar)work2(j)=s(nm)-tmp
-            goto(201,202,203,204,205,206,207,208,209,210,211,212,213,
-     +           214,215,216,217,218,219,220,221,222,223,224,225,226,
-     +           227,228,229),model
- 201        pi = bernpr(s(nm),tmp)
-            goto 250
- 202        pi = poispr(s(nm),tmp)
-            goto 250
- 203        pi = multpr(s(nm),ismu,mu,cmu,tvmu,i,j,1,iq,m,l,mobs,nm,nn)
-            goto 250
- 204        pi = cmultpr(s,ismu,mu,cmu,tvmu,i,j,1,iq,m,l,mobs,nm,nn,
-     +           lgam)
-            goto 250
- 205        pi = contpr(s(nm),ismu,mu,cmu,tvmu,i,j,1,iq,m,l,mobs,nm,nn)
-            goto 250
- 206        pi = proppr(s(nm),ismu,mu,cmu,tvmu,i,j,1,iq,m,l,mobs,nm,nn)
-            goto 250
- 207        pi = binpr(s(nm),n(nm),tmp)
-            goto 250
- 208        pi = exppr(s(nm),tmp)
-            goto 250
- 209        pi = bbinpr(s(nm),n(nm),tmp,pshape(j))
-            goto 250
- 210        pi = nbinpr(s(nm),tmp,pshape(j))
-            goto 250
- 211        pi = normpr(s(nm),tmp,pshape(j))
-            goto 250
- 212        pi = invgpr(s(nm),tmp,pshape(j))
-            goto 250
- 213        pi = logispr(s(nm),tmp,pshape(j))
-            goto 250
- 214        pi = cauchpr(s(nm),tmp,pshape(j))
-            goto 250
- 215        pi = laplpr(s(nm),tmp,pshape(j))
-            goto 250
- 216        pi = levypr(s(nm),tmp,pshape(j))
-            goto 250
- 217        pi = paretpr(s(nm),tmp,pshape(j))
-            goto 250
- 218        pi = gammpr(s(nm),tmp,pshape(j))
-            goto 250
- 219        pi = weibpr(s(nm),tmp,pshape(j))
-            goto 250
- 220        pi = ggampr(s(nm),tmp,pshape(j),pfam)
-            goto 250
- 221        pi = glogpr(s(nm),tmp,pshape(j),pfam)
-            goto 250
- 222        pi = hjorpr(s(nm),tmp,pshape(j),pfam)
-            goto 250
- 223        pi = burrpr(s(nm),tmp,pshape(j),pfam)
-            goto 250
- 224        pi = gweipr(s(nm),tmp,pshape(j),pfam)
-            goto 250
- 225        pi = gextpr(s(nm),tmp,pshape(j),pfam)
-            goto 250
- 226        pi = ginvgpr(s(nm),tmp,pshape(j),pfam)
-            goto 250
- 227        pi = powexpr(s(nm),tmp,pshape(j),pfam)
-            goto 250
- 228        pi = slaplpr(s(nm),tmp,pshape(j),pfam)
-            goto 250
- 229        pi = studpr(s(nm),tmp,pshape(j),pfam)
- 250        a(j) = a(j) + pi
+c            goto(201,202,203,204,205,206,207,208,209,210,211,212,213,
+c     +           214,215,216,217,218,219,220,221,222,223,224,225,226,
+c     +           227,228,229),model
+c 201        pi = bernpr(s(nm),tmp)
+c            goto 250
+c 202        pi = poispr(s(nm),tmp)
+c            goto 250
+c 203        pi = multpr(s(nm),ismu,mu,cmu,tvmu,i,j,1,iq,m,l,mobs,nm,nn)
+c            goto 250
+c 204        pi = cmultpr(s,ismu,mu,cmu,tvmu,i,j,1,iq,m,l,mobs,nm,nn,
+c     +           lgam)
+c            goto 250
+c 205        pi = contpr(s(nm),ismu,mu,cmu,tvmu,i,j,1,iq,m,l,mobs,nm,nn)
+c            goto 250
+c 206        pi = proppr(s(nm),ismu,mu,cmu,tvmu,i,j,1,iq,m,l,mobs,nm,nn)
+c            goto 250
+c 207        pi = binpr(s(nm),n(nm),tmp)
+c            goto 250
+c 208        pi = exppr(s(nm),tmp)
+c            goto 250
+c 209        pi = bbinpr(s(nm),n(nm),tmp,pshape(j))
+c            goto 250
+c 210        pi = nbinpr(s(nm),tmp,pshape(j))
+c            goto 250
+c 211        pi = normpr(s(nm),tmp,pshape(j))
+c            goto 250
+c 212        pi = invgpr(s(nm),tmp,pshape(j))
+c            goto 250
+c 213        pi = logispr(s(nm),tmp,pshape(j))
+c            goto 250
+c 214        pi = cauchpr(s(nm),tmp,pshape(j))
+c            goto 250
+c 215        pi = laplpr(s(nm),tmp,pshape(j))
+c            goto 250
+c 216        pi = levypr(s(nm),tmp,pshape(j))
+c            goto 250
+c 217        pi = paretpr(s(nm),tmp,pshape(j))
+c            goto 250
+c 218        pi = gammpr(s(nm),tmp,pshape(j))
+c            goto 250
+c 219        pi = weibpr(s(nm),tmp,pshape(j))
+c            goto 250
+c 220        pi = ggampr(s(nm),tmp,pshape(j),pfam)
+c            goto 250
+c 221        pi = glogpr(s(nm),tmp,pshape(j),pfam)
+c            goto 250
+c 222        pi = hjorpr(s(nm),tmp,pshape(j),pfam)
+c            goto 250
+c 223        pi = burrpr(s(nm),tmp,pshape(j),pfam)
+c            goto 250
+c 224        pi = gweipr(s(nm),tmp,pshape(j),pfam)
+c            goto 250
+c 225        pi = gextpr(s(nm),tmp,pshape(j),pfam)
+c            goto 250
+c 226        pi = ginvgpr(s(nm),tmp,pshape(j),pfam)
+c            goto 250
+c 227        pi = powexpr(s(nm),tmp,pshape(j),pfam)
+c            goto 250
+c 228        pi = slaplpr(s(nm),tmp,pshape(j),pfam)
+c            goto 250
+c 229        pi = studpr(s(nm),tmp,pshape(j),pfam)
+c 250        a(j) = a(j) + pi
+             select case(model)
+             case(1)
+                 pi = bernpr(s(nm),tmp)
+                 a(j) = a(j) + pi
+             case(2)        
+                 pi = poispr(s(nm),tmp)
+                 a(j) = a(j) + pi
+             case(3)        
+                 pi = multpr(s(nm),ismu,mu,cmu,tvmu,i,j,1,iq,m,l,
+     +                       mobs,nm,nn)
+                 a(j) = a(j) + pi
+             case(4)        
+                 pi = cmultpr(s,ismu,mu,cmu,tvmu,i,j,1,
+     +                        iq,m,l,mobs,nm,nn,lgam)
+                 a(j) = a(j) + pi
+             case(5)        
+                 pi = contpr(s(nm),ismu,mu,cmu,tvmu,i,j,1,
+     +                       iq,m,l,mobs,nm,nn)
+                 a(j) = a(j) + pi
+             case(6)        
+                 pi = proppr(s(nm),ismu,mu,cmu,tvmu,i,j,1,
+     +                       iq,m,l,mobs,nm,nn)
+                 a(j) = a(j) + pi
+             case(7)        
+                 pi = binpr(s(nm),n(nm),tmp)
+                 a(j) = a(j) + pi
+             case(8)        
+                 pi = exppr(s(nm),tmp)
+                 a(j) = a(j) + pi
+             case(9)        
+                 pi = bbinpr(s(nm),n(nm),tmp,pshape(j))
+                 a(j) = a(j) + pi
+             case(10)        
+                 pi = nbinpr(s(nm),tmp,pshape(j))
+                 a(j) = a(j) + pi
+             case(11)        
+                 pi = normpr(s(nm),tmp,pshape(j))
+                 a(j) = a(j) + pi
+             case(12)        
+                 pi = invgpr(s(nm),tmp,pshape(j))
+                 a(j) = a(j) + pi
+             case(13)        
+                 pi = logispr(s(nm),tmp,pshape(j))
+                 a(j) = a(j) + pi
+             case(14)        
+                 pi = cauchpr(s(nm),tmp,pshape(j))
+                 a(j) = a(j) + pi
+             case(15)        
+                 pi = laplpr(s(nm),tmp,pshape(j))
+                 a(j) = a(j) + pi
+             case(16)        
+                 pi = levypr(s(nm),tmp,pshape(j))
+                 a(j) = a(j) + pi
+             case(17)        
+                 pi = paretpr(s(nm),tmp,pshape(j))
+                 a(j) = a(j) + pi
+             case(18)        
+                 pi = gammpr(s(nm),tmp,pshape(j))
+                 a(j) = a(j) + pi
+             case(19)        
+                 pi = weibpr(s(nm),tmp,pshape(j))
+                 a(j) = a(j) + pi
+             case(20)        
+                 pi = ggampr(s(nm),tmp,pshape(j),pfam)
+                 a(j) = a(j) + pi
+             case(21)        
+                 pi = glogpr(s(nm),tmp,pshape(j),pfam)
+                 a(j) = a(j) + pi
+             case(22)        
+                 pi = hjorpr(s(nm),tmp,pshape(j),pfam)
+                 a(j) = a(j) + pi
+             case(23)        
+                 pi = burrpr(s(nm),tmp,pshape(j),pfam)
+                 a(j) = a(j) + pi
+             case(24)        
+                 pi = gweipr(s(nm),tmp,pshape(j),pfam)
+                 a(j) = a(j) + pi
+             case(25)        
+                 pi = gextpr(s(nm),tmp,pshape(j),pfam)
+                 a(j) = a(j) + pi
+             case(26)        
+                 pi = ginvgpr(s(nm),tmp,pshape(j),pfam)
+                 a(j) = a(j) + pi
+             case(27)        
+                 pi = powexpr(s(nm),tmp,pshape(j),pfam)
+                 a(j) = a(j) + pi
+             case(28)        
+                 pi = slaplpr(s(nm),tmp,pshape(j),pfam)
+                 a(j) = a(j) + pi
+             case(29)        
+                 pi = studpr(s(nm),tmp,pshape(j),pfam)
+                 a(j) = a(j) + pi
+             case default
+                 pi = studpr(s(nm),tmp,pshape(j),pfam)
+                 a(j) = a(j) + pi
+             end select
  30      continue
 
 c filtered conditional probabilities of states
