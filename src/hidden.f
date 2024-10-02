@@ -359,218 +359,218 @@ c$$$ 70         continue
              select case(model)
              case(1)
                 pi = bernpr(s(nm),tmp)
-                if(tt.eq.1.0)then
+
                   do 601 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  601               continue
-               endif
+
              case(2)        
                  pi = poispr(s(nm),tmp)
-                 if(tt.eq.1.0)then
+
                   do 602 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  602               continue
-               endif
+
              case(3)        
                  pi = multpr(s(nm),ismu,mu,cmu,tvmu,i,j,1,iq,m,l,
      +                       mobs,nm,nn)
-                 if(tt.eq.1.0)then
+
                   do 603 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  603               continue
-               endif
+
              case(4)        
                  pi = cmultpr(s,ismu,mu,cmu,tvmu,i,j,1,
      +                        iq,m,l,mobs,nm,nn,lgam)
-                 if(tt.eq.1.0)then
+
                   do 604 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  604               continue
-               endif
+
              case(5)        
                  pi = contpr(s(nm),ismu,mu,cmu,tvmu,i,j,1,
      +                       iq,m,l,mobs,nm,nn)
-                 if(tt.eq.1.0)then
+
                   do 605 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  605               continue
-               endif
+
              case(6)        
                  pi = proppr(s(nm),ismu,mu,cmu,tvmu,i,j,1,
      +                       iq,m,l,mobs,nm,nn)
-                 if(tt.eq.1.0)then
+
                   do 606 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  606               continue
-               endif
+
              case(7)        
                  pi = binpr(s(nm),n(nm),tmp)
-                 if(tt.eq.1.0)then
+
                   do 607 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  607               continue
-               endif
+
              case(8)        
                  pi = exppr(s(nm),tmp)
-                 if(tt.eq.1.0)then
+
                   do 608 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  608               continue
-               endif
+
              case(9)        
                  pi = bbinpr(s(nm),n(nm),tmp,pshape(j))
-                 if(tt.eq.1.0)then
+
                   do 609 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  609               continue
-               endif
+
              case(10)        
                  pi = nbinpr(s(nm),tmp,pshape(j))
-                 if(tt.eq.1.0)then
+
                   do 6010 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  6010               continue
-               endif
+
              case(11)        
                  pi = normpr(s(nm),tmp,pshape(j))
-                 if(tt.eq.1.0)then
+
                   do 6011 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  6011               continue
-               endif
+
              case(12)        
                  pi = invgpr(s(nm),tmp,pshape(j))
-                 if(tt.eq.1.0)then
+
                   do 6012 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  6012               continue
-               endif
+
              case(13)        
                  pi = logispr(s(nm),tmp,pshape(j))
-                 if(tt.eq.1.0)then
+
                   do 6013 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  6013               continue
-               endif
+
              case(14)        
                  pi = cauchpr(s(nm),tmp,pshape(j))
-                 if(tt.eq.1.0)then
+
                   do 6014 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  6014               continue
-               endif
+
              case(15)        
                  pi = laplpr(s(nm),tmp,pshape(j))
-                 if(tt.eq.1.0)then
+
                   do 6015 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  6015               continue
-               endif
+
              case(16)        
                  pi = levypr(s(nm),tmp,pshape(j))
-                 if(tt.eq.1.0)then
+
                   do 6016 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  6016               continue
-               endif
+
              case(17)        
                  pi = paretpr(s(nm),tmp,pshape(j))
-                 if(tt.eq.1.0)then
+
                   do 6017 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  6017               continue
-               endif
+
              case(18)        
                  pi = gammpr(s(nm),tmp,pshape(j))
-                 if(tt.eq.1.0)then
+
                   do 6018 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  6018               continue
-               endif
+
              case(19)        
                  pi = weibpr(s(nm),tmp,pshape(j))
-                 if(tt.eq.1.0)then
+
                   do 6019 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  6019              continue
-               endif
+
              case(20)        
                  pi = ggampr(s(nm),tmp,pshape(j),pfam)
-                 if(tt.eq.1.0)then
+
                   do 6020 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  6020               continue
-               endif
+
              case(21)        
                  pi = glogpr(s(nm),tmp,pshape(j),pfam)
-                 if(tt.eq.1.0)then
+
                   do 6021 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  6021               continue
-               endif
+
              case(22)        
                  pi = hjorpr(s(nm),tmp,pshape(j),pfam)
-                 if(tt.eq.1.0)then
+
                   do 6022 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  6022               continue
-               endif
+
              case(23)        
                  pi = burrpr(s(nm),tmp,pshape(j),pfam)
-                 if(tt.eq.1.0)then
+
                   do 6023 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  6023               continue
-               endif
+
              case(24)        
                  pi = gweipr(s(nm),tmp,pshape(j),pfam)
-                 if(tt.eq.1.0)then
+
                   do 6024 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  6024               continue
-               endif
+
              case(25)        
                  pi = gextpr(s(nm),tmp,pshape(j),pfam)
-                 if(tt.eq.1.0)then
+
                   do 6025 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  6025               continue
-               endif
+
              case(26)        
                  pi = ginvgpr(s(nm),tmp,pshape(j),pfam)
-                 if(tt.eq.1.0)then
+
                   do 6026 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  6026               continue
-               endif
+
              case(27)        
                  pi = powexpr(s(nm),tmp,pshape(j),pfam)
-                 if(tt.eq.1.0)then
+
                   do 6027 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  6027               continue
-               endif
+
              case(28)        
                  pi = slaplpr(s(nm),tmp,pshape(j),pfam)
-                 if(tt.eq.1.0)then
+
                   do 6028 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  6028               continue
-               endif
+
              case(29)        
                  pi = studpr(s(nm),tmp,pshape(j),pfam)
-                 if(tt.eq.1.0)then
+
                   do 6029 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  6029               continue
-               endif
+
              case default
                  pi = studpr(s(nm),tmp,pshape(j),pfam)
-                 if(tt.eq.1.0)then
+
                   do 6030 ii = 1, m
                      b(ii,j) = gamma(ii,j)+pi
  6030            continue
-               endif
+
              end select
  70       continue
           
