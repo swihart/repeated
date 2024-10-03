@@ -1,5 +1,28 @@
 # repeated R package
 Bruce Swihart  
+OCT 2024
+
+## Submission 1
+
+* changed some fortran source code for CRAN compliance
+  
+## Test environments
+* local OS X install: R version 4.2.2 (2022-10-31)
+    * Platform: x86_64-apple-darwin17.0 (64-bit)
+    * Running under: macOS Big Sur 11.2.3
+* rhub::rhub_check(platforms=c("gcc14"))
+
+
+## R CMD check results
+There were no ERRORs or WARNINGs or NOTEs.
+
+
+## Downstream dependencies
+There are currently no downstream dependencies for this package.
+
+
+# repeated R package
+Bruce Swihart  
 Sept 2024
 
 ## Submission 1
